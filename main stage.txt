@@ -1,0 +1,11 @@
+Converation System
+------------------------
+The player can ask other characters about topics and characters of interest. The player can ask one character about another character to learn about their traits and preferences.
+
+Traits and Preferences
+---------------------------
+Characters have a set of traits and preferences. Traits are attributes of a character (strong, fearless, etc). Preferences are the likes and dislikes of a character. Traits and preferences are discovered through activities that use them or by finding out from other people. 
+
+Micro Quests
+----------------
+Through directed conversations and activities the player can take part in a number of small quests to learn more about the clan, it's members and the world. 

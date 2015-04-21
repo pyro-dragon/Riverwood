@@ -1,0 +1,32 @@
+Prom Prep Stage
+===============
+
+The player is informed of some kind of prom or ball that is comming up in a months time. 
+They have 30 days to win the heart of a fellow gnoll to take along to the ball. 
+A player may try to persue multiple romantic interests but cannot get too far down the line. Your rival will work this out and use it to take both away from the player. 
+
+Goals
+	The player must survive challenges to stay alive. 
+	The player must must find a date or face humeliation. 
+
+Script
+	The ball/prom is announced (as a years aneversery since becomeing adults). 
+	Everyone is advised to find a partner for the ball. 
+	There is also a change up in the training cycle now. The player can now be in charge of their own training choices. Training with fellow gnolls, possibly a way of gaining favour with a future date. 
+	The player must ballence their time between [ersuing a date and keeping up their training. 
+	Part way through this stage there will be some major and minor skill challenege. Some just offer paise/embarisment your the player and rival. Others may hold an oportunity for death. 
+	There may be one big challenge- an ork raid or something. Player must use skills to survive and save someone, possibly their most persued date. 
+
+Skill Training
+	Chosen skill
+	Archery
+	Combat
+	Hunting
+	Scouting
+	Devise usage
+	Magic
+
+Free Time
+The free time is interchanged with training time. 
+
+Gaining Favour/Dating
