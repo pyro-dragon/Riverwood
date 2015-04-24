@@ -126,7 +126,6 @@ label greetHunter:
     
     return
     
-#-----------------------------
 # Meet the Coppertails. 
 #-----------------------------
 label meetTheCoppertails: 
@@ -154,7 +153,7 @@ label meetTheCoppertails:
 
     C "Alright! [player.name] you are now a trainee [player.career.name]."
     
-    scene expression black.name with fade
+    scene black with fade
     "You wait while the other young gnolls are sorted into their specialisation."
     C "Alright then. Lets head on over to the forge where I can talk you guys through what it is to be a Coppertail."
 
