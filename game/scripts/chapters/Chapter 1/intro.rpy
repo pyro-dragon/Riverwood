@@ -193,7 +193,7 @@ label checkName:
 #-----------------------------
 label pickName:
     "Ok, here is a list of names you can choose"
-    if player.family == "Bloodrunners":
+    if player.family == "Bloodrunner":
         menu: 
             "Leaf-mould":
                 $player.name = "Leaf-mould"
@@ -201,7 +201,7 @@ label pickName:
             "Sprint":
                 $player.name = "Sprint"
                 jump checkName
-    elif player.family == "Coppertails":
+    elif player.family == "Coppertail":
         menu: 
             "Weld":
                 $player.name = "Weld"
@@ -209,7 +209,7 @@ label pickName:
             "Rivet":
                 $player.name = "Rivet"
                 jump checkName
-    elif player.family == "Daggermaws":
+    elif player.family == "Daggermaw":
         menu: 
             "Crash":
                 $player.name = "Crash"
@@ -217,7 +217,7 @@ label pickName:
             "Ducker":
                 $player.name = "Ducker"
                 jump checkName
-    elif player.family == "Gildclaws":
+    elif player.family == "Gildclaw":
         menu: 
             "Credit":
                 $player.name = "Credit"
