@@ -1,3 +1,6 @@
 *.rpyb
 *.save
 tmp/navigation.json
+*.txt
+*.rpyc
+game/saves/persistent
