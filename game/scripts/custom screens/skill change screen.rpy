@@ -1,17 +1,24 @@
 #-------------------------------------------------------------------------------
 # This shows changes to the skills
 #-------------------------------------------------------------------------------
-screen skillNoteScreen(skill, score):
-    modal False
-    timer 0.1 action Show("skillShowBox", dissolve, skill, score)
-    timer 3.0 action Hide("skillShowBox", dissolve)
-    timer 4.0 action [Hide("skillNoteScreen"), Return()]
-
 screen skillShowBox(skill, score):
-    modal False
-    vbox xalign 0.1 yalign 0.3 xfill True yfill True:
-        frame xalign 0.1 yalign 0.3:
-            text skill + " " + score
-                
-    #timer 3.0 action Hide("skillShowBox", transition=slideawaydown)
+    frame at slideTransform:
+        text skill + " " + score
+            
+    timer 3.0 action Hide("skillShowBox")
+
+transform slideTransform:
+    yalign 0.1
     
+    on show:
+        parallel:
+            alpha 0
+            easein 0.5 alpha 1.0
+        parallel:
+            xalign 0.0
+            easein 0.5 xalign .05
+    on hide:
+        parallel:
+            easeout 0.5 alpha 0
+        parallel:
+            easeout 0.5 xalign 0.0
