@@ -8,7 +8,7 @@ label coppertailLesson1:
     C "Welcome to your first lesson."
     C "Mathematics 1: Simple arithmetics"
     "Inteligence +1"
-    $player.attr["int"] += 1
+    $player.changeAttr("int", 1)
     hide clarance
 
     scene black with fade
@@ -20,7 +20,7 @@ label coppertailLesson2:
     C "Welcome to your second lesson."
     C "Technical drawing"
     "Engineering +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide clarance
 
     scene black with fade
@@ -32,7 +32,7 @@ label coppertailLesson3:
     C "Welcome to your third lesson."
     C "Weights and measures"
     "Engineering +1"
-    $player.skillBonus["engineering"] += 1
+    $player.changeSkillBonus("engineering", 1)
     hide clarance
 
     scene black with fade
@@ -44,7 +44,7 @@ label coppertailLesson4:
     C "Welcome to your fourth lesson."
     C "Workshop safety"
     "Investigation +1"
-    $player.skillBonus["investigation"] += 1
+    $player.changeSkillBonus("investigation", 1)
     hide clarance
 
     scene black with fade
@@ -56,7 +56,7 @@ label coppertailLesson5:
     C "Welcome to your fifth lesson."
     C "Hand tool usage"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide clarance
 
     scene black with fade
@@ -68,7 +68,7 @@ label coppertailLesson6:
     C "Welcome to your sith lesson."
     C "Woodwork"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide clarance
 
     scene black with fade
@@ -80,7 +80,7 @@ label coppertailLesson7:
     C "Welcome to your seventh lesson."
     C "Joinery"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide clarance
 
     scene black with fade
@@ -92,7 +92,7 @@ label coppertailLesson8:
     C "Welcome to your eighth lesson."
     C "Glues and their applications"
     "Engineering +1"
-    $player.skillBonus["engineering"] += 1
+    $player.changeSkillBonus("engineering", 1)
     hide clarance
 
     scene black with fade
@@ -104,7 +104,7 @@ label coppertailLesson9:
     C "Welcome to your ninth lesson."
     C "Finishing"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide clarance
 
     scene black with fade
@@ -116,7 +116,7 @@ label coppertailLesson10:
     C "Welcome to your tenth lesson."
     C "Mathematics 2: Algebra"
     "Inteligence +1"
-    $player.attr["int"] += 1
+    $player.changeAttr("int", 1)
     hide clarance
 
     scene black with fade
@@ -128,7 +128,7 @@ label coppertailLesson11:
     C "Welcome to your eleventh lesson."
     C "Ore surveying"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide clarance
 
     scene black with fade
@@ -140,7 +140,7 @@ label coppertailLesson12:
     C "Welcome to your twelth lesson."
     C "Mining"
     "Strength +1"
-    $player.attr["str"] += 1
+    $player.changeAttr("str", 1)
     hide clarance
 
     scene black with fade
@@ -152,7 +152,7 @@ label coppertailLesson13:
     C "Welcome to your thirteenth lesson."
     C "Metallogy"
     "Firearms +1"
-    $player.skillBonus["firearms"] += 1
+    $player.changeSkillBonus("firearms", 1)
     hide clarance
 
     scene black with fade
@@ -164,7 +164,7 @@ label coppertailLesson14:
     C "Welcome to your fourteenth lesson."
     C "Materials"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide clarance
 
     scene black with fade
@@ -176,7 +176,7 @@ label coppertailLesson15:
     C "Welcome to your fifteenth lesson."
     C "Mathematics 3: Quatratics"
     "Inteligence +1"
-    $player.attr["int"] += 1
+    $player.changeAttr("int", 1)
     hide clarance
 
     scene black with fade
@@ -188,7 +188,7 @@ label coppertailLesson16:
     C "Welcome to your sixteenth lesson."
     C "Riviting"
     "Engineering +1"
-    $player.skillBonus["engineering"] += 1
+    $player.changeSkillBonus("engineering", 1)
     hide clarance
 
     scene black with fade
@@ -200,7 +200,7 @@ label coppertailLesson17:
     C "Welcome to your seventeenth lesson."
     C "Welding"
     "Engineering +1"
-    $player.skillBonus["engineering"] += 1
+    $player.changeSkillBonus("engineering", 1)
     hide clarance
 
     scene black with fade
@@ -212,7 +212,7 @@ label coppertailLesson18:
     C "Welcome to your eighteenth lesson."
     C "Lathe work"
     "Engineering +1"
-    $player.skillBonus["engineering"] += 1
+    $player.changeSkillBonus("engineering", 1)
     hide clarance
 
     scene black with fade
@@ -224,7 +224,7 @@ label coppertailLesson19:
     C "Welcome to your ninteenth lesson."
     C "Basic architecture"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide clarance
 
     scene black with fade
@@ -236,7 +236,7 @@ label coppertailLesson20:
     C "Welcome to your twentith lesson."
     C "Clockwork"
     "Engineering +1"
-    $player.skillBonus["engineering"] += 1
+    $player.changeSkillBonus("engineering", 1)
     hide clarance
 
     scene black with fade

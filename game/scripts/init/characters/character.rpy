@@ -132,6 +132,12 @@ init:
                     renpy.show_screen("skillShowBox", skill, str(change))
                     #renpy.call_screen("notify", "hello")
                     #renpy.notify(skill+" +"+str(change))
+                    
+            # Add to the attributes
+            def changeAttr(self, attr, change):
+                if self.attr.has_key(attr):
+                    self.attr[attr] += change
+                    renpy.show_screen("skillShowBox", attr, str(change))
 
             # Add a preference
             def addPreference(self, preference):

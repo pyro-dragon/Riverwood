@@ -5,7 +5,9 @@ init:
     $playerCompanion = "none"
     $peopleKnown = 2
     $discoveredPlaces = 0
-    $player = GameCharacter("Unnamed Player", "", "", Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
+    #$crt_mechanic = GameCharacter("Maria", "Coppertail", crr_mechanic, Character("crt_mechanic.name", dynamic = True, color = "#5ca75c"), renpy.image("mechanic", "characters/maria.png"), False, True, "mariaTN.png")
+    #$player = GameCharacter("Unnamed Player", "", "", Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
+    $player = GameCharacter("Unnamed Player", "Coppertail", crr_mechanic, Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
     define P = player.c
 
     $playerCompanion = "none"

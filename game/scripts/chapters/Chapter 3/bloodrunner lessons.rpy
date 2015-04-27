@@ -8,7 +8,7 @@ label bloodrunnerLesson1:
     S "Welcome to your first lesson."
     S "The seasons"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide shana
 
     scene black with fade
@@ -20,7 +20,7 @@ label bloodrunnerLesson2:
     S "Welcome to your second lesson."
     S "Fruits and berries"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide shana
 
     scene black with fade
@@ -32,7 +32,7 @@ label bloodrunnerLesson3:
     S "Welcome to your third lesson."
     S "Roots and fungus"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide shana
 
     scene black with fade
@@ -44,7 +44,7 @@ label bloodrunnerLesson4:
     S "Welcome to your fourth lesson."
     S "Useful herbs"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide shana
 
     scene black with fade
@@ -56,7 +56,7 @@ label bloodrunnerLesson5:
     S "Welcome to your fifth lesson."
     S "Birds of the forest"
     "Tracking +1"
-    $player.skillBonus["tracking"] += 1
+    $player.changeSkillBonus("tracking", 1)
     hide shana
 
     scene black with fade
@@ -68,7 +68,7 @@ label bloodrunnerLesson6:
     S "Welcome to your sith lesson."
     S "Arrow fletching"
     "Archery +1"
-    $player.skillBonus["archery"] += 1
+    $player.changeSkillBonus("archery", 1)
     hide shana
 
     scene black with fade
@@ -80,7 +80,7 @@ label bloodrunnerLesson7:
     S "Welcome to your seventh lesson."
     S "Archery 1: Draw and release"
     "Archery +1"
-    $player.skillBonus["archery"] += 1
+    $player.changeSkillBonus("archery", 1)
     hide shana
 
     scene black with fade
@@ -92,7 +92,7 @@ label bloodrunnerLesson8:
     S "Welcome to your eighth lesson."
     S "Basic potions and pultices"
     "Medicine +1"
-    $player.skillBonus["medicine"] += 1
+    $player.changeSkillBonus("medicine", 1)
     hide shana
 
     scene black with fade
@@ -104,7 +104,7 @@ label bloodrunnerLesson9:
     S "Welcome to your ninth lesson."
     S "First aid"
     "Medicine +1"
-    $player.skillBonus["medicine"] += 1
+    $player.changeSkillBonus("medicine", 1)
     hide shana
 
     scene black with fade
@@ -116,7 +116,7 @@ label bloodrunnerLesson10:
     S "Welcome to your tenth lesson."
     S "Archery 2: Targeting"
     "Archery +1"
-    $player.skillBonus["archery"] += 1
+    $player.changeSkillBonus("archery", 1)
     hide shana
 
     scene black with fade
@@ -128,7 +128,7 @@ label bloodrunnerLesson11:
     S "Welcome to your eleventh lesson."
     S "Tracking"
     "Tracking +1"
-    $player.skillBonus["tracking"] += 1
+    $player.changeSkillBonus("tracking", 1)
     hide shana
 
     scene black with fade
@@ -140,7 +140,7 @@ label bloodrunnerLesson12:
     S "Welcome to your twelth lesson."
     S "Stalking"
     "Silent movement +1"
-    $player.skillBonus["silent movement"] += 1
+    $player.changeSkillBonus("silent movement", 1)
     hide shana
 
     scene black with fade
@@ -152,7 +152,7 @@ label bloodrunnerLesson13:
     S "Welcome to your thirteenth lesson."
     S "Poisons"
     "Medicine +1"
-    $player.skillBonus["medicine"] += 1
+    $player.changeSkillBonus("medicine", 1)
     hide shana
 
     scene black with fade
@@ -164,7 +164,7 @@ label bloodrunnerLesson14:
     S "Welcome to your fourteenth lesson."
     S "Archery 3: Hitting moving targets"
     "Archery +1"
-    $player.skillBonus["archery"] += 1
+    $player.changeSkillBonus("archery", 1)
     hide shana
 
     scene black with fade
@@ -176,7 +176,7 @@ label bloodrunnerLesson15:
     S "Welcome to your fifteenth lesson."
     S "Broken limbs"
     "Medicine +1"
-    $player.skillBonus["medicine"] += 1
+    $player.changeSkillBonus("medicine", 1)
     hide shana
 
     scene black with fade
@@ -188,7 +188,7 @@ label bloodrunnerLesson16:
     S "Welcome to your sixteenth lesson."
     S "Tanning"
     "Dexterity +1"
-    $player.attr["dex"] += 1
+    $player.changeAttr("dex", 1)
     hide shana
 
     scene black with fade
@@ -200,7 +200,7 @@ label bloodrunnerLesson17:
     S "Welcome to your seventeenth lesson."
     S "Butchery"
     "Close combat +1"
-    $player.skillBonus["hand weapon"] += 1
+    $player.changeSkillBonus("hand weapon", 1)
     hide shana
 
     scene black with fade
@@ -212,7 +212,7 @@ label bloodrunnerLesson18:
     S "Welcome to your eighteenth lesson."
     S "Infections"
     "Medicine +1"
-    $player.skillBonus["medicine"] += 1
+    $player.changeSkillBonus("medicine", 1)
     hide shana
 
     scene black with fade
@@ -224,7 +224,7 @@ label bloodrunnerLesson19:
     S "Welcome to your ninteenth lesson."
     S "Archery 4: Shooting on the move	"
     "Archery +1"
-    $player.skillBonus["archery"] += 1
+    $player.changeSkillBonus("archery", 1)
     hide shana
 
     scene black with fade
@@ -236,7 +236,7 @@ label bloodrunnerLesson20:
     S "Welcome to your twentith lesson."
     S "Major lacerations"
     "Medicine +1"
-    $player.skillBonus["medicine"] += 1
+    $player.changeSkillBonus("medicine", 1)
     hide shana
 
     scene black with fade

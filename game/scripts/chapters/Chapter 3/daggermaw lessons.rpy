@@ -8,7 +8,7 @@ label daggermawLesson1:
     M "Welcome to your first lesson."
     M "PT: Limbering up"
     "Dodge +1"
-    $player.skillBonus["dodge"] += 1
+    $player.changeSkillBonus("dodge", 1)
     hide marrack
 
     scene black with fade
@@ -20,7 +20,7 @@ label daggermawLesson2:
     M "Welcome to your second lesson."
     M "Simple weapon usage"
     "Close combat +1"
-    $player.skillBonus["hand weapon"] += 1
+    $player.changeSkillBonus("hand weapon", 1)
     hide marrack
 
     scene black with fade
@@ -32,7 +32,7 @@ label daggermawLesson3:
     M "Welcome to your third lesson."
     M "Weapon maintinance"
     "Close combat +1"
-    $player.skillBonus["hand weapon"] += 1
+    $player.changeSkillBonus("hand weapon", 1)
     hide marrack
 
     scene black with fade
@@ -44,7 +44,7 @@ label daggermawLesson4:
     M "Welcome to your fourth lesson."
     M "PT: Endurance"
     "Strength +1"
-    $player.attr["str"] += 1
+    $player.changeAttr("str", 1)
     hide marrack
 
     scene black with fade
@@ -56,7 +56,7 @@ label daggermawLesson5:
     M "Welcome to your fifth lesson."
     M "Tactics 1: Looking for the high ground"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide marrack
 
     scene black with fade
@@ -68,7 +68,7 @@ label daggermawLesson6:
     M "Welcome to your sith lesson."
     M "Shield usage"
     "Shield usage +1"
-    $player.skillBonus["shield"] += 1
+    $player.changeSkillBonus("shield", 1)
     hide marrack
 
     scene black with fade
@@ -80,7 +80,7 @@ label daggermawLesson7:
     M "Welcome to your seventh lesson."
     M "PT: Flexibility"
     "Dexterity +1"
-    $player.attr["dex"] += 1
+    $player.changeAttr("dex", 1)
     hide marrack
 
     scene black with fade
@@ -92,7 +92,7 @@ label daggermawLesson8:
     M "Welcome to your eighth lesson."
     M "Arour types"
     "Shield usage +1"
-    $player.skillBonus["shield"] += 1
+    $player.changeSkillBonus("shield", 1)
     hide marrack
 
     scene black with fade
@@ -104,7 +104,7 @@ label daggermawLesson9:
     M "Welcome to your ninth lesson."
     M "Armour usage"
     "Shield usage +1"
-    $player.skillBonus["shield"] += 1
+    $player.changeSkillBonus("shield", 1)
     hide marrack
 
     scene black with fade
@@ -116,7 +116,7 @@ label daggermawLesson10:
     M "Welcome to your tenth lesson."
     M "PT: Strength"
     "Strength +1"
-    $player.attr["str"] += 1
+    $player.changeAttr("str", 1)
     hide marrack
 
     scene black with fade
@@ -128,7 +128,7 @@ label daggermawLesson11:
     M "Welcome to your eleventh lesson."
     M "Tactics 2: Abushing"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide marrack
 
     scene black with fade
@@ -140,7 +140,7 @@ label daggermawLesson12:
     M "Welcome to your twelth lesson."
     M "Unarmed combat"
     "Close combat +1"
-    $player.skillBonus["hand weapon"] += 1
+    $player.changeSkillBonus("hand weapon", 1)
     hide marrack
 
     scene black with fade
@@ -152,7 +152,7 @@ label daggermawLesson13:
     M "Welcome to your thirteenth lesson."
     M "Two-handed weapons"
     "Close combat +1"
-    $player.skillBonus["hand weapon"] += 1
+    $player.changeSkillBonus("hand weapon", 1)
     hide marrack
 
     scene black with fade
@@ -164,7 +164,7 @@ label daggermawLesson14:
     M "Welcome to your fourteenth lesson."
     M "Defensive combat"
     "Shield usage +1"
-    $player.skillBonus["shield"] += 1
+    $player.changeSkillBonus("shield", 1)
     hide marrack
 
     scene black with fade
@@ -176,7 +176,7 @@ label daggermawLesson15:
     M "Welcome to your fifteenth lesson."
     M "Crossbow usage"
     "Archery +1"
-    $player.skillBonus["archery"] += 1
+    $player.changeSkillBonus("archery", 1)
     hide marrack
 
     scene black with fade
@@ -188,7 +188,7 @@ label daggermawLesson16:
     M "Welcome to your sixteenth lesson."
     M "Tactics 3: Mixed weapons"
     "Firearms +1"
-    $player.skillBonus["firearms"] += 1
+    $player.changeSkillBonus("firearms", 1)
     hide marrack
 
     scene black with fade
@@ -200,7 +200,7 @@ label daggermawLesson17:
     M "Welcome to your seventeenth lesson."
     M "Defensive structures"
     "Construction +1"
-    $player.skillBonus["construction"] += 1
+    $player.changeSkillBonus("construction", 1)
     hide marrack
 
     scene black with fade
@@ -212,7 +212,7 @@ label daggermawLesson18:
     M "Welcome to your eighteenth lesson."
     M "Dirty tactics"
     "Silent movement +1"
-    $player.skillBonus["silent movement"] += 1
+    $player.changeSkillBonus("silent movement", 1)
     hide marrack
 
     scene black with fade
@@ -224,7 +224,7 @@ label daggermawLesson19:
     M "Welcome to your ninteenth lesson."
     M "Camoflarge"
     "Dodge +1"
-    $player.skillBonus["dodge"] += 1
+    $player.changeSkillBonus("dodge", 1)
     hide marrack
 
     scene black with fade
@@ -236,7 +236,7 @@ label daggermawLesson20:
     M "Welcome to your twentith lesson."
     M "Exotic weapons"
     "Close combat +1"
-    $player.skillBonus["hand weapon"] += 1
+    $player.changeSkillBonus("hand weapon", 1)
     hide marrack
 
     scene black with fade

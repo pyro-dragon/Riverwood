@@ -8,7 +8,7 @@ label gildclawLesson1:
     T "Welcome to your first lesson."
     T "Posture"
     "Presentation +1"
-    $player.skillBonus["presentation"] += 1
+    $player.changeSkillBonus("presentation", 1)
     hide temesh
 
     scene black with fade
@@ -20,7 +20,7 @@ label gildclawLesson2:
     T "Welcome to your second lesson."
     T "Pursuasion"
     "Diplomacy +1"
-    $player.skillBonus["diplomacy"] += 1
+    $player.changeSkillBonus("diplomacy", 1)
     hide temesh
 
     scene black with fade
@@ -32,7 +32,7 @@ label gildclawLesson3:
     T "Welcome to your third lesson."
     T "Valuation"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -44,7 +44,7 @@ label gildclawLesson4:
     T "Welcome to your fourth lesson."
     T "Economics 1: Coinage and currency"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -56,7 +56,7 @@ label gildclawLesson5:
     T "Welcome to your fifth lesson."
     T "Clan history"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide temesh
 
     scene black with fade
@@ -68,7 +68,7 @@ label gildclawLesson6:
     T "Welcome to your sith lesson."
     T "Presentation"
     "Presentation +1"
-    $player.skillBonus["presentation"] += 1
+    $player.changeSkillBonus("presentation", 1)
     hide temesh
 
     scene black with fade
@@ -80,7 +80,7 @@ label gildclawLesson7:
     T "Welcome to your seventh lesson."
     T "Aesthetics"
     "Presentation +1"
-    $player.skillBonus["presentation"] += 1
+    $player.changeSkillBonus("presentation", 1)
     hide temesh
 
     scene black with fade
@@ -92,7 +92,7 @@ label gildclawLesson8:
     T "Welcome to your eighth lesson."
     T "Economics 2: Supply and demand"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -104,7 +104,7 @@ label gildclawLesson9:
     T "Welcome to your ninth lesson."
     T "Local history"
     "Exploring +1"
-    $player.skillBonus["exploring"] += 1
+    $player.changeSkillBonus("exploring", 1)
     hide temesh
 
     scene black with fade
@@ -116,7 +116,7 @@ label gildclawLesson10:
     T "Welcome to your tenth lesson."
     T "Politics 1: Speachcraft/Rhetoric"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -128,7 +128,7 @@ label gildclawLesson11:
     T "Welcome to your eleventh lesson."
     T "Manors and manorisms"
     "Presentation +1"
-    $player.skillBonus["presentation"] += 1
+    $player.changeSkillBonus("presentation", 1)
     hide temesh
 
     scene black with fade
@@ -140,7 +140,7 @@ label gildclawLesson12:
     T "Welcome to your twelth lesson."
     T "Reading faces"
     "Diplomacy +1"
-    $player.skillBonus["diplomacy"] += 1
+    $player.changeSkillBonus("diplomacy", 1)
     hide temesh
 
     scene black with fade
@@ -152,7 +152,7 @@ label gildclawLesson13:
     T "Welcome to your thirteenth lesson."
     T "Economics 3: Specilaisations"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -164,7 +164,7 @@ label gildclawLesson14:
     T "Welcome to your fourteenth lesson."
     T "Chess"
     "Performance +1"
-    $player.skillBonus["performance"] += 1
+    $player.changeSkillBonus("performance", 1)
     hide temesh
 
     scene black with fade
@@ -176,7 +176,7 @@ label gildclawLesson15:
     T "Welcome to your fifteenth lesson."
     T "Politics 2: Debate"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -188,7 +188,7 @@ label gildclawLesson16:
     T "Welcome to your sixteenth lesson."
     T "Dance"
     "Performance +1"
-    $player.skillBonus["performance"] += 1
+    $player.changeSkillBonus("performance", 1)
     hide temesh
 
     scene black with fade
@@ -200,7 +200,7 @@ label gildclawLesson17:
     T "Welcome to your seventeenth lesson."
     T "Book keeping"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -212,7 +212,7 @@ label gildclawLesson18:
     T "Welcome to your eighteenth lesson."
     T "The peerage"
     "Performance +1"
-    $player.skillBonus["performance"] += 1
+    $player.changeSkillBonus("performance", 1)
     hide temesh
 
     scene black with fade
@@ -224,7 +224,7 @@ label gildclawLesson19:
     T "Welcome to your ninteenth lesson."
     T "Language"
     "Negotiation +1"
-    $player.skillBonus["negotiation"] += 1
+    $player.changeSkillBonus("negotiation", 1)
     hide temesh
 
     scene black with fade
@@ -236,7 +236,7 @@ label gildclawLesson20:
     T "Welcome to your twentith lesson."
     T "Law"
     "Diplomacy +1"
-    $player.skillBonus["iplomacy"] += 1
+    $player.changeSkillBonus("iplomacy", 1)
     hide temesh
 
     scene black with fade
