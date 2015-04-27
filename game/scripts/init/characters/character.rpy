@@ -129,6 +129,9 @@ init:
             def changeSkillBonus(self, skill, change): 
                 if self.skillBonus.has_key(skill): 
                     self.skillBonus[skill] += change
+                    #renpy.call_screen("skillNoteScreen", skill, str(change))
+                    #renpy.call_screen("notify", "hello")
+                    renpy.notify(skill+" +"+str(change))
 
             # Add a preference
             def addPreference(self, preference):

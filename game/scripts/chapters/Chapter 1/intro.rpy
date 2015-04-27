@@ -10,6 +10,9 @@ label introduction:
     scene expression camp.name
     "The celebrations had been loud and wild but now everyone rests. The four family heads call everyone to gather as they begin the naming ceremony. All the young cubs, you among them gather on logs in the front."
     
+    $player.changeSkillBonus("dodge", 1)
+    #notify("Hello there")
+    
     show ellie with dissolve
     e "This is so exciting!"
     hide ellie with dissolve

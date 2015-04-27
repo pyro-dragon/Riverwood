@@ -4,3 +4,4 @@ tmp/navigation.json
 *.txt
 *.rpyc
 game/saves/persistent
+*.odt#

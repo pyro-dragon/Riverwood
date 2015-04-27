@@ -1,2 +1,2 @@
 label test:
-    call screen skillNote
+    call screen skillNote("Test", "+1")
