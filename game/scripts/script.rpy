@@ -5,10 +5,10 @@
 # The game starts here.
 label start:
     # Do the introduction
-    call introduction
+    #call introduction
     
     # Do the meeting stage
-    call meetings
+    #call meetings
     
     # Start the main cycle
     call chapter3
