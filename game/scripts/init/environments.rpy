@@ -27,9 +27,12 @@ init:
     $forge = Environment("Forge", "environments/workshop.jpg", 0, True, False, [])
     $arena = Environment("Arena", "environments/provingGrounds.jpg", 0, True, False, [])
     $tent = Environment("Tent", "environments/tent.jpg", 0, True, False, [])
+    
+    # Quest locations
+    $forestRoad = Environment("ForestRoad", "environments/forestRoad.jpg", 0, False, True, [])
 
     # Discoverable areas
-    $forrest = Environment("Forrest", "environments/forrest.jpg", 50, False, True, ["nature", "peace"])
+    $forest = Environment("Forest", "environments/forest.jpg", 50, False, True, ["nature", "peace"])
     $river = Environment("River", "environments/river.jpg", 50, False, True, ["nature", "peace", "water"])
     $village = Environment("Village", "environments/village.jpg", 50, False, True, ["buildings"])
     $cave = Environment("Cave", "environments/cave.jpg", 50, False, True, ["dirt", "dark", "scary"])

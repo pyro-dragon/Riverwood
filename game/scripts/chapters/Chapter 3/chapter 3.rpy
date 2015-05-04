@@ -27,6 +27,13 @@ label mainActivityCycle:
     # Advance the lesson count
     $lessons[lessonTarget] += 1
     
+    # Perform todays activity
     call expression activityTarget
+    
+    # Check to see if we can make any quests active
+    $game.checkForActiveQuests()
+    
+    # Perform quest updates
+    $game.updateActiveQuests()
     
     jump chapter3

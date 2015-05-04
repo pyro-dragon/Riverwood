@@ -20,14 +20,18 @@
 #-------------------------------------------------------------------------------
 
 init 10:
-    #$mistakenIdentity = Quest("Mistaken Identity", lambda: True if player.family == "Daggermaw" else False)
+    # Declare quest
     $mistakenIdentity = Quest("Mistaken Identity", lambda: True if player.family == "Daggermaw" else False)
+    
+    # Add quest stages
     $mistakenIdentity.addStage(QuestStage("Raid", "mi_raid", lambda: True))
     $mistakenIdentity.addStage(QuestStage("Interview aftermath", "mi_aftermath", lambda: True))
     $mistakenIdentity.addStage(QuestStage("Baron's response", "mi_response", lambda: True))
     $mistakenIdentity.addStage(QuestStage("Daggermaw disgust", "mi_disgust", lambda: True))
     
+    # Add quest to game
     $game.questList.append(mistakenIdentity)
     
-label mi_raid:
-    "This is a raid"
+    # Quest variables
+    mi_raid_playerAttend = False        # If the player attended the raid or not
+    mi_raid_attackChoice = "close"      # The form of attack the player makes

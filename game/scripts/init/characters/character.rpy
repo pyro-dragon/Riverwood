@@ -129,15 +129,13 @@ init:
             def changeSkillBonus(self, skill, change): 
                 if self.skillBonus.has_key(skill): 
                     self.skillBonus[skill] += change
-                    renpy.show_screen("skillShowBox", skill, str(change))
-                    #renpy.call_screen("notify", "hello")
-                    #renpy.notify(skill+" +"+str(change))
+                    renpy.show_screen("skillShowBox", skill, change)
                     
             # Add to the attributes
             def changeAttr(self, attr, change):
                 if self.attr.has_key(attr):
                     self.attr[attr] += change
-                    renpy.show_screen("skillShowBox", attr, str(change))
+                    renpy.show_screen("skillShowBox", attr, change)
 
             # Add a preference
             def addPreference(self, preference):
@@ -160,6 +158,7 @@ init:
             # Add relationship points
             def addRp(self, points): 
                 self.rp += points
+                renpy.show_screen("skillShowBox", self.name + " relationship", points)
 
             def getRpStatement(self):
                 if(self.rp <= 0):               # Zero or less

@@ -35,4 +35,4 @@ init 1:
             # Run the stage scene
             def runScene(self):
                 renpy.say("None", "SCENE: " + self.stageLabel)
-                renpy.jump(self.stageLabel)
+                renpy.call(self.stageLabel)
