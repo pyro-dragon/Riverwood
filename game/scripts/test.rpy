@@ -1,2 +1,6 @@
 label test:
-    call screen skillNote("Test", "+1")
+    "Checking for active quests..."
+    $game.checkForActiveQuests()
+    
+    "Executing active quest stages..."
+    $game.updateActiveQuests()

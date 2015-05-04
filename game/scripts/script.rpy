@@ -11,10 +11,10 @@ label start:
     #call meetings
     
     # Start the main cycle
-    call chapter3
+    #call chapter3
 
     # Test
-    #call test
+    call test
 
     # End of game
     return
