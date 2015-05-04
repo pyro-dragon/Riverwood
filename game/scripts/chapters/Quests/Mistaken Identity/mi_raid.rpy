@@ -75,15 +75,21 @@ label mi_raid_scene:
     
     menu:
         "Stick with [fighter.name] for a Close Combat attack":
-            mi_raid_attackChoice = "close"
+            $mi_raid_attackChoice = "close"
+            $playerCompanion = fighter
         "Go with [hunter.name] for a Ranged Combat attack":
-            mi_raid_attackChoice = "ranged"
+            $mi_raid_attackChoice = "ranged"
+            $playerCompanion = hunter
     
     scene black with fade
     
     call mi_raid_action
     
 label mi_raid_action:
+    "You wait in anticipation"
+    "The sound of the approaching cart makes the adrenaline rise in your chest"
+    "You spot the cart, it is magnificent and surrounded by a number of armed men on horseback."
+    $playerCompanion.c("Get ready")
     
-# The scen after the raid
+# The scene after the raid
 label mi_raid_complete:
