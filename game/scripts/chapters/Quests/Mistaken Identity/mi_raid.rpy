@@ -48,7 +48,7 @@ label mi_raid_disagree:
     
 # The scene in which the player attends the raid
 label mi_raid_scene: 
-    scene expression forestPath.name with fade
+    scene expression forestRoad.name with fade
     
     show crt_fighter with dissolve
     f "Alright pipsqueek, we are going to hide down in this ditch." 
@@ -62,7 +62,7 @@ label mi_raid_scene:
     hide crt_hunter
     
     show crt_fighter with vpunch
-    f "Oi! [hunter.name]!" 
+    f "Oi! [crt_hunter.name]!" 
     f "[player.name] is with me!"
     hide crt_fighter
     
@@ -74,16 +74,20 @@ label mi_raid_scene:
     f "Fine, it makes sense. Well?"
     
     menu:
-        "Stick with [fighter.name] for a Close Combat attack":
+        "Stick with [crt_fighter.name] for a Close Combat attack":
             $mi_raid_attackChoice = "close"
-            $playerCompanion = fighter
-        "Go with [hunter.name] for a Ranged Combat attack":
+            $playerCompanion = crt_fighter
+            $playerCompanion.addRp(2)
+        "Go with [crt_hunter.name] for a Ranged Combat attack":
             $mi_raid_attackChoice = "ranged"
-            $playerCompanion = hunter
+            $playerCompanion = crt_hunter
+            $playerCompanion.addRp(2)
     
     scene black with fade
     
     call mi_raid_action
+    
+    return
     
 label mi_raid_action:
     "You wait in anticipation"
@@ -91,5 +95,64 @@ label mi_raid_action:
     "You spot the cart, it is magnificent and surrounded by a number of armed men on horseback."
     $playerCompanion.c("Get ready")
     
+    show expression playerCompanion.c with hpunch
+    $playerCompanion.c("Now!")
+    
+    "You and [playerCompanion.name] spring the ambush on the caravan."
+    
+    scene black with fade
+
+    if(mi_raid_attackChoice == "close"):
+        $mi_raid_success = player.skillTest("hand weapon", 20)
+    else:
+        $mi_raid_success = player.skillTest("archery", 20)
+        
+    if(mi_raid_success): 
+        $playerCompanion.c("Nice one! Lets finish them off!")
+    else:
+        $playerCompanion.c("What the hell are you doing? Careful with that!")
+        
+    call mi_raid_complete
+
+    return
+    
 # The scene after the raid
 label mi_raid_complete:
+    scene expression forestRoad.name with fade
+    show expression playerCompanion with dissolve
+    
+    if(mi_raid_attackChoice == "close"):
+        if(mi_raid_success):
+            $player.changeSkillBonus("hand weapon", 2)
+            $playerCompanion.c("Whack! Slash! Stab!")
+            $playerCompanion.c("You were a deamon out there!")
+            P "Yeah! Did you see the look on that guys face as I went for his head?"
+            $playerCompanion.c("Ha ha ha, yeah!")
+            $playerCompanion.c("We really showed them! And we got a hostage too!")
+            $playerCompanion.addRp(2)
+        else:
+            $player.changeSkillBonus("hand weapon", 1)
+            $playerCompanion.c("You let us down.")
+            $playerCompanion.c("I had to come in and save your ass a few times!")
+            P "Yeah but they were in full armour and they were on horseback too."
+            $playerCompanion.c("Yeah I supposed. We lost some of our guys, but we got a sweet hostage out of all of that.")
+            $playerCompanion.addRp(1)
+    else:
+        if(mi_raid_success):
+            $player.changeSkillBonus("archery", 2)
+            $playerCompanion.c("Wow, you really showed them!")
+            P "Yeah, did you see the way that guard was going for [fighter.name] and I got an arrow right between his eyes!"
+            $playerCompanion.c("If it wans't for you we would have lost some for sure.")
+            $playerCompanion.addRp(2)
+        else:
+            $player.changeSkillBonus("archery", 1)
+            $playerCompanion.c("You really arn't very good with that bow yet are you?")
+            P "I'm sorry, I'm not a fully fledged warrior yet."
+            $playerCompanion.c("We lost some of our people but we managed to capture a high profile captive by the looks of things.")
+            $playerCompanion.addRp(1)
+        
+    $playerCompanion.c("Come on, lets go get a drink.")    
+    
+    scene black with fade
+    
+    return

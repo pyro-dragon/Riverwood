@@ -33,5 +33,6 @@ init 10:
     $game.questList.append(mistakenIdentity)
     
     # Quest variables
-    mi_raid_playerAttend = False        # If the player attended the raid or not
-    mi_raid_attackChoice = "close"      # The form of attack the player makes
+    $mi_raid_playerAttend = False        # If the player attended the raid or not
+    $mi_raid_attackChoice = "close"      # The form of attack the player makes
+    $mi_raid_success = False             # If the player successfully attcked or not

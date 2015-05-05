@@ -122,7 +122,7 @@ init:
    
             # Return the total skill result
             # Skill bonus + attribute
-            def getSkill(self, skill): 
+            def getSkillTotal(self, skill): 
                 return self.skillBonus[skill] + self.attr[self.skillIndex[skill]]
             
             # Add to the skill bonus
@@ -136,6 +136,18 @@ init:
                 if self.attr.has_key(attr):
                     self.attr[attr] += change
                     renpy.show_screen("skillShowBox", attr, change)
+                    
+            # Test against a skill
+            def skillTest(self, skill, goal, bonus = 0):
+                total = bonus + self.getSkillTotal(skill)       # Get the total to check the skill against
+                roll = renpy.random.randint(1, 20)              # Roll the dice
+                
+                # Test against the dice
+                result = False
+                if(roll < total):
+                    result = True         # Pass!
+                
+                    renpy.show_screen("challenegeShowBox", skill, result)
 
             # Add a preference
             def addPreference(self, preference):

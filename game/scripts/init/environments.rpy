@@ -46,7 +46,7 @@ init:
     $junkyard = Environment("Junkyard", "environments/junkyard.jpg", 50, False, True, ["buildings" "scary"])
     
     # Mutable list for player discovery
-    $discoverableAreas = [forrest, river, village, cave, lake, waterfall, overlook, fields, windmill, monument, ruins, junkyard]
+    $discoverableAreas = [forest, river, village, cave, lake, waterfall, overlook, fields, windmill, monument, ruins, junkyard]
 
     #image bgCamp = "camp.jpg"
     #image bgSilentGrove = "silentGrove.jpg"
