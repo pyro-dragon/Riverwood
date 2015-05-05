@@ -2,7 +2,7 @@
 # Hunter
 #-----------------------------
 init:
-    $crt_hunter = GameCharacter("Kacela", "Bloodrunner", crr_hunter, Character("crt_hunter.name", dynamic = True, color = "#5ca75c"), renpy.image("hunter", "characters/hunter.png"), False, True, "hunterTN.png")
+    $crt_hunter = GameCharacter("Kacela", "Bloodrunner", crr_hunter, Character("crt_hunter.name", dynamic = True, color = "#5ca75c"), "characters/hunter.png", False, True, "hunterTN.png")
     $crt_hunter.addPreference(CharacterPreference("exploring", True, "I love to explore!"))
     $crt_hunter.addPreference(CharacterPreference("hunting", True, "I love hunting!"))
     $crt_hunter.addPreference(CharacterPreference("meat", True, "Nom! Lets eat meat!"))

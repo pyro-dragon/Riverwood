@@ -68,11 +68,11 @@ init:
             }
             
             # Constructor
-            def __init__(self, name, family, career, renpyCharacter, image, met, hideName, thumbnail):
+            def __init__(self, name, family, career, renpyCharacter, imageName, met, hideName, thumbnail):
                 self.family = family            # The character family
                 self.career = career            # The character career
                 self.c = renpyCharacter         # The renpy character representation
-                self.image = image              # The chracter image
+                self.imageName = imageName      # The chracter image name
                 self.met = met                  # If the character has been met or not
                 self.preferences = {}           # A list of character preferences
                 self.rp = 35                    # Relationship points

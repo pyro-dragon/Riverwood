@@ -2,7 +2,7 @@
 # Rival
 #-----------------------------
 init 1:
-    $crt_rival = GameCharacter("Charrd", "none", "none", Character("crt_rival.name", dynamic = True, color = "#9999e6"), renpy.image("charrd", "characters/charrd.png"), True, False, "charrdTN.png")
+    $crt_rival = GameCharacter("Charrd", "none", "none", Character("crt_rival.name", dynamic = True, color = "#9999e6"), "characters/charrd.png", True, False, "charrdTN.png")
     $crt_rival.rp = 9
     $crt_rival.addPreference(CharacterPreference("action", True, "Yeah! That looks fun."))
     $crt_rival.addPreference(CharacterPreference("danger", True, "Sounds like great fun!"))

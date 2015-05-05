@@ -4,9 +4,9 @@
 
 # The root scene
 label mi_raid:
-    scene expression arena.name
+    scene expression arena.name with fade
     
-    show fighter with dissolve
+    show expression crt_fighter.imageName with dissolve
     f "Hey pipsqueak."
     f "The scouts say there's a caravan headed down the forest road."
     f "Its unregistered"
@@ -26,9 +26,21 @@ label mi_raid:
     
     if mi_raid_playerAttend:
         call mi_raid_scene
+        call mi_raid_complete
+    else:
+        scene black with dissolve
+        "..."
+        "... ..."
         
-    call mi_raid_complete
+        scene expression arena.name with fade
+        show expression crt_fighter.imageName with dissolve
+        f "We could have really done with your help back there."
+        crt_fighter.addRP(-2)
+        f "We lost a few."
+        f "But we do have this sweet prisoner. Seems like a price or something."
     
+    scene black with dissolve
+
     return
     
 # Player agrees to attend the raid
@@ -50,27 +62,27 @@ label mi_raid_disagree:
 label mi_raid_scene: 
     scene expression forestRoad.name with fade
     
-    show crt_fighter with dissolve
+    show expression crt_fighter.imageName with dissolve
     f "Alright pipsqueek, we are going to hide down in this ditch." 
     f "There are a couple other guys over behind those fallen trees."
-    hide crt_fighter
+    hide expression crt_fighter.imageName
     
-    show crt_hunter 
+    show expression crt_hunter.imageName
     h "Hey, [player.name], I didn't know you were involved in this"
     h "Any good with a bow?"
     h "We could use another shooter."
-    hide crt_hunter
+    hide expression crt_hunter.imageName
     
-    show crt_fighter with vpunch
+    show expression crt_fighter.imageName with vpunch
     f "Oi! [crt_hunter.name]!" 
     f "[player.name] is with me!"
-    hide crt_fighter
+    hide expression crt_fighter.imageName
     
-    show crt_hunter
+    show expression crt_hunter.imageName
     h "Perhaps, but it makes better sense if [player.name] goes to a position they think they are best at."
-    hide crt_hunter
+    hide expression crt_hunter.imageName
     
-    show crt_fighter
+    show expression crt_fighter.imageName
     f "Fine, it makes sense. Well?"
     
     menu:
@@ -95,7 +107,7 @@ label mi_raid_action:
     "You spot the cart, it is magnificent and surrounded by a number of armed men on horseback."
     $playerCompanion.c("Get ready")
     
-    show expression playerCompanion.c with hpunch
+    show expression playerCompanion.imageName with hpunch
     $playerCompanion.c("Now!")
     
     "You and [playerCompanion.name] spring the ambush on the caravan."
@@ -112,14 +124,14 @@ label mi_raid_action:
     else:
         $playerCompanion.c("What the hell are you doing? Careful with that!")
         
-    call mi_raid_complete
+    #call mi_raid_complete
 
     return
     
 # The scene after the raid
 label mi_raid_complete:
     scene expression forestRoad.name with fade
-    show expression playerCompanion with dissolve
+    show expression playerCompanion.imageName with dissolve
     
     if(mi_raid_attackChoice == "close"):
         if(mi_raid_success):

@@ -22,13 +22,13 @@ label chapter3:
         
 label mainActivityCycle:
     # Call the appropriate lesson
-    call expression (lessonTarget + str(lessons[lessonTarget]))
+    #call expression (lessonTarget + str(lessons[lessonTarget]))
     
     # Advance the lesson count
-    $lessons[lessonTarget] += 1
+    #$lessons[lessonTarget] += 1
     
     # Perform todays activity
-    call expression activityTarget
+    #call expression activityTarget
     
     # Check to see if we can make any quests active
     $game.checkForActiveQuests()

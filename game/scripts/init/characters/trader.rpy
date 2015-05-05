@@ -2,7 +2,7 @@
 # Trader
 #-----------------------------
 init: 
-    $crt_trader = GameCharacter("Denmar", "Gildclaw", crr_trader, Character("crt_trader.name", dynamic = True, color = "#5ca75c"), renpy.image("trader", "characters/trader.png"), False, True, "traderTN.png")
+    $crt_trader = GameCharacter("Denmar", "Gildclaw", crr_trader, Character("crt_trader.name", dynamic = True, color = "#5ca75c"), "characters/trader.png", False, True, "traderTN.png")
     $crt_trader.addPreference(CharacterPreference("art", True, "This is truely delightful!"))
     $crt_trader.addPreference(CharacterPreference("gold", True, "Oh my, my, my. Yes, yes, gold... "))
     $crt_trader.addPreference(CharacterPreference("peace", True, "Ah, this is so nice."))
