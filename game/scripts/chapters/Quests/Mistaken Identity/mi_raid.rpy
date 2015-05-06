@@ -35,7 +35,7 @@ label mi_raid:
         scene expression arena.name with fade
         show expression crt_fighter.imageName with dissolve
         f "We could have really done with your help back there."
-        crt_fighter.addRP(-2)
+        $crt_fighter.addRp(-2)
         f "We lost a few."
         f "But we do have this sweet prisoner. Seems like a price or something."
     

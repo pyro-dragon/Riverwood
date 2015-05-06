@@ -195,7 +195,7 @@ label visitingTheCoppertails:
     # Encounter your rival
     if crt_rival.family == "Coppertail":
         hide clarance with dissolve
-        show charrd
+        show expression crt_rival
         c "Why do we have to share our time with the damn [player.family]s?"
         c "They are totally worthless!"
         hide charrd
@@ -204,29 +204,29 @@ label visitingTheCoppertails:
         C "Calm yourself young [crt_rival.name]. It is good to see that you have a fiery loyalty to your family aready but that was a little rude."
         hide clarance
         
-        show charrd
+        show expression crt_rival.imageName
         c "Yeah but... "
         c "grrr... "
         c "ok..."
-        hide charrd
+        hide expression rival.imageName
         
     # Encounter your ally
     if crt_ally.family == "Coppertail": 
         hide clarance with dissolve
-        show ellie
+        show expression crt_ally.imageName
         e "Hey, fancy meeting you here!"
         e "How are you finding life in the [player.family] family?"
         P "Yeah. Its good. Although my first experience was being woken up too early and talked at for far too long."
         e "More or less the same thing with me."
-        hide ellie
-        
+        hide expression crt_ally.imageName        
         show clarance
         C "Its great that you two are on such good terms but we really have to be getting on."
         hide clarance
         
-        show ellie
+        show expression crt_ally.imageName
         e "I'm sorry sir"
-        hide ellie
+        hide expression crt_ally.imageName
+        show clarance
     
     C "So today we are going to have a look at fletching. This is a basic skill that you should all learn."
     C "We will be making a simple wooden crossbow bolt. Nearly all of you will end up with a crossbow at some point and having the skill to make your own ammunition would be an incredibly useful skill to have."
@@ -237,7 +237,7 @@ label visitingTheCoppertails:
     
     "Feeling somewhat off ballence you turn to your partner at the work bench"
     
-    show mechanic with dissolve
+    show expression crt_mechanic.imageName with dissolve
     m "Hey there!"
     $crt_mechanic.showName()
     m "I'm [crt_mechanic.name]. Who are you then?"
@@ -253,7 +253,7 @@ label visitingTheCoppertails:
     m "Yeah... "
     m "But I learned a lot!"
     $crt_mechanic.met = True
-    hide mechanic
+    hide expression crt_mechanic.imageName
     
     show clarance
     C "Ok then everyone, settle down, settle down. Lets get on with this. "
@@ -275,7 +275,7 @@ label visitingTheCoppertails:
     menu: 
         "Turn to [crt_mechanic.name]...": 
             $playerCompanion = crt_mechanic
-            show mechanic
+            show expression crt_mechanic.imageName
             P "Do you want to do anything after this?"
             m "Sure! Did you have anything in mind?"
         "Hurry off.": 
@@ -302,9 +302,9 @@ label visitingTheDaggermaws:
     M "[crt_fighter.name]!"
     hide marrack
     
-    show fighter
+    show expression crt_fighter.imageName
     f "Yeah?"
-    hide fighter
+    hide expression crt_fighter.imageName
     
     show marrack
     M "Come here."
@@ -316,14 +316,14 @@ label visitingTheDaggermaws:
     M "... Ok, who can tell me what [player.name] did wrong?"
     hide marrack
     
-    show fighter
+    show expression crt_fighter.imageName
     f "Yeah I know. They didn't have it ready."
     P "I didn't what-"
-    show fighter with hpunch
+    show expression crt_fighter.imageName with hpunch
     "[crt_fighter.name] knocks the knife from your hand."
     f "You got a weak grip there!"
     f "Ha ha ha!"
-    hide fighter
+    hide expression crt_fighter.imageName
     
     show marrack
     M "Ha ha ha!"
@@ -333,10 +333,10 @@ label visitingTheDaggermaws:
     "Marrack turns and sweeps [crt_fighter.name] to the floor."
     hide marrack
     
-    show fighter
+    show expression crt_fighter.imageName
     f "Ow!"
     f "Hey that wasn't fair. I wasn't-"
-    hide fighter
+    hide expression crt_fighter.imageName
     
     show marrack
     M "Ready?"
@@ -365,7 +365,7 @@ label visitingTheDaggermaws:
     "You see [crt_fighter.name] marching away. Do you..."
     menu:
         "Run up to join him.":
-            show fighter
+            show expression crt_fighter
             P "Hey there. That was pretty intense."
             f "Yeah, it was a bit. You arn't too bad you know. Maybe you should ask Marrack if you can be a [crt_fighter.family]."
             P "I don't think she would let me!"
@@ -430,7 +430,7 @@ label visitingTheGildclaws:
     T "Lets begin by introducing ourselves..."
     hide temesh
     
-    show trader
+    show expression crt_trader.imageName
     t "Err, good morning to you."
     $crt_trader.showName()
     t "I'm [crt_trader.name]. Nice to meet you... "
@@ -439,7 +439,7 @@ label visitingTheGildclaws:
     t "..."
     P "..."
     t "... what do we do now?"
-    hide trader
+    hide expression crt_trader.imageName
     
     show temesh
     T "Well I hope we are all nicely aquanted with each other now."
@@ -469,7 +469,7 @@ label visitingTheGildclaws:
         "Help him.": 
             P "Do you need a hand there?"
             
-            show trader
+            show expression crt_trader.imageName
             t "Oh, no. I should be ok I think."
             t "Thank you though."
             P "Hey, after this do you want to hang out for a bit?"
@@ -495,56 +495,56 @@ label visitingTheBloodrunners:
     
     "Everyone begins to mvoe about, finding a working partner"
     
-    show hunter with dissolve
+    show expression crt_hunter.imageName with dissolve
     h "You. You'll do."
     P "Me?"
     $crt_hunter.showName()
     h "Yeah, come along. I'm [crt_hunter.name]. Lets get this over with."
-    hide hunter
+    hide expression crt_hunter.imageName
     
     if crt_rival.family == "Bloodclaw": 
         "You notice a familier face as he knocks shoulders with you"
         
-        show charrd
+        show expression crt_rival.imageName
         c "Whatch where you are going butthead!"
         c "I don't want to catch some [player.family] stupidity from you."
         P "You can't catch stupidity. Thats..."
         P "... stupid."
         c "Oh yeah! Why don't you make something of it then."
-        hide charrd
+        hide expression crt_rival.imageName
         
-        show hunter
+        show expression crt_hunter.imageName
         h "Hey, hold it [rival.name]!"
         h "Stop picking on the stupid little [player.family]."
         P "Hey, I'm not-"
         h "Shut up, come with me, you are my partner."
-        hide hunter
+        hide expression crt_hunter.imageName
         
-        show charrd
+        show expression crt_rival.imageName
         c "You can't just-"
-        hide charrd
+        hide expression crt_rival.imageName
         
-        show hunter
+        show expression crt_hunter.imageName
         h "Shut up [crt_rival.name]. I can and I have." 
         h "Now frack off."
-        hide hunter
+        hide expression crt_hunter.imageName
         
         show shana
         S "I think language like that brings disharmony to the glade."
         
     if crt_ally.family == "Bloodrunner": 
-        show ellie
+        show expression crt_ally.imageName
         e "Hey there! Welcome to the Bloodrunner grove."
         e "How is life with the [player.family]s?"
         P "Its ok I think. Still trying to find my feet."
         P "How about you?"
         e "I'm doing great! I'm a [crt_ally.career]! Lots of things to learn."
-        hide ellie
+        hide expression crt_ally.imageName
         
-        show hunter
+        show expression crt_hunter.imageName
         h "Come on pip-squeek. We have some learning to do."
         P "See you later [crt_ally.name]."
-        hide hunter
+        hide expression crt_hunter.imageName
         
     show shana
     S "Ok, has everyone found a partner? Good."
@@ -556,7 +556,7 @@ label visitingTheBloodrunners:
     
     P "Have you seen many of these before?"
     
-    show hunter
+    show expression crt_hunter.imageName
     h "Of course. Now, if I could just try and remember the names."
     h "Maybe if I taste one... "
     
@@ -569,18 +569,18 @@ label visitingTheBloodrunners:
     S "Well that was an... interesting session."
     hide shana
     
-    show hunter
+    show expression crt_hunter.imageName
     h "*wheeze*"
-    hide hunter
+    hide expression crt_hunter.imageName
     
     show shana
     S "Are you sure you are ok now?"
     hide shana
     
-    show hunter
+    show expression crt_hunter.imageName
     h "*nods*"
     h "I'm fine now. Just a bit of a shock."
-    hide hunter
+    hide expression crt_hunter.imageName
     
     show shana
     S "Well if you are sure."
@@ -595,7 +595,7 @@ label visitingTheBloodrunners:
 
     menu:
         "Ask if she is ok.": 
-            show hunter
+            show expression crt_hunter.imageName
             P "Are you ok?"
             h "I am fine, like I said."
             P "Well then, do you want to go and do something for the afternoon?"

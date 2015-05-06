@@ -10,18 +10,18 @@ label introduction:
     scene expression camp.name
     "The celebrations had been loud and wild but now everyone rests. The four family heads call everyone to gather as they begin the naming ceremony. All the young cubs, you among them gather on logs in the front."
     
-    show ellie with dissolve
+    show expression crt_ally.imageName with dissolve
     e "This is so exciting!"
-    hide ellie with dissolve
+    hide expression crt_ally.imageName with dissolve
     
-    "You laugh. Ellie has been a friend for as long as you can remember. Ellie though, as with you yourself will be known by your cub names no longer after tonight."
-    "You want to respond but you are too nervous. Before you can work up the courage Charrd nudges you."
+    "You laugh. [crt_ally.name] has been a friend for as long as you can remember. [crt_ally.name] though, as with you yourself will be known by your cub names no longer after tonight."
+    "You want to respond but you are too nervous. Before you can work up the courage [crt_rival.name] nudges you."
     
-    show charrd with dissolve
+    show expression crt_rival.imageName with dissolve
     c "Hey butthead! I bet you get picked last. I bet no one wants you in their family."
-    hide charrd with dissolve
+    hide expression crt_rival.imageName with dissolve
     
-    "You hate Charrd. Ever since you could walk he would try to beat you, try to be better than you. You ignore him for now but you wonder what family he will be in."
+    "You hate [crt_rival.name]. Ever since you could walk he would try to beat you, try to be better than you. You ignore him for now but you wonder what family he will be in."
     "The head of the clan speaks up, silencing everyone."
     
     show temesh with dissolve
@@ -65,9 +65,9 @@ label introduction:
     "Temesh indicated for you to come forward"
     hide temesh with dissolve
     
-    show ellie with dissolve 
+    show expression crt_ally.imageName with dissolve 
     e "Good luck!"
-    hide ellie with dissolve
+    hide expression crt_ally.imageName with dissolve
     
     show temesh with dissolve
     T "Now you, you are interesting. From what I have seen of you, you could join any family."
@@ -237,51 +237,51 @@ label concludeCeremony:
     T "Now you, approach."
     hide temesh with dissolve
     
-    show ellie with dissolve
+    show expression crt_ally.imageName with dissolve
     e "Yes..."
-    hide ellie with dissolve
+    hide expression crt_ally.imageName with dissolve
     
     show temesh with dissolve
     T "I know you will suite the [crt_ally.family] well. Will you choose this?"
     hide temesh with dissolve
 
-    show ellie with dissolve
+    show expression crt_ally.imageName with dissolve
     "For a moment she looked toward you, an apologetic look in her eyes. She turns back to Temesh and nods."
     e "Yes, I choose the [crt_ally.family]s"
-    hide ellie with dissolve
+    hide expression crt_ally.imageName with dissolve
     
     show temesh with dissolve
     T "Very well. And what name will you go by?"
     hide temesh with dissolve
     
-    show ellie with dissolve
+    show expression crt_ally.imageName with dissolve
     e "[crt_ally.name]"
-    hide ellie with dissolve
+    hide expression crt_ally.imageName with dissolve
     
     show temesh with dissolve
     T "[crt_ally.name], of the [crt_ally.family]s family. Welcome."
     hide temesh with dissolve
     
-    show charrd with dissolve
+    show expression crt_rival.imageName with dissolve
     c "Damn, I am being picked last aren't I?"
-    hide charrd with dissolve
+    hide expression crt_rival.imageName with dissolve
     
     show temesh with dissolve
     T "Calm yourself there young cub. Come forth."
     T "You, I think, you will do well in the [crt_rival.family] family. Would you agree?"
     hide temesh with dissolve
 
-    show charrd with dissolve
+    show expression crt_rival.imageName with dissolve
     c "Damn right I will!"
-    hide charrd with dissolve
+    hide expression crt_rival.imageName with dissolve
 
     show temesh with dissolve
     T "And what name do you want?"
     hide temesh with dissolve
 
-    show charrd with dissolve
+    show expression crt_rival.imageName with dissolve
     c "[crt_rival.name]"
-    hide charrd with dissolve
+    hide expression crt_rival.imageName with dissolve
     
     "You watch as [crt_rival.name] takes up station next to his new family."
     
@@ -292,7 +292,7 @@ label concludeCeremony:
     T "Goodnight and fair-future to all."
     hide temesh with dissolve
     
-    "You take another look over toward Ellie-"
+    "You take another look over toward [crt_ally.name]-"
     "no..."
     "[crt_ally.name]... It is going to take some getting use to now."
     "You try to catch her eye but she is already lost in the crowd of her new family."
