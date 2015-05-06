@@ -195,10 +195,10 @@ label visitingTheCoppertails:
     # Encounter your rival
     if crt_rival.family == "Coppertail":
         hide clarance with dissolve
-        show expression crt_rival
+        show expression crt_rival.imageName
         c "Why do we have to share our time with the damn [player.family]s?"
         c "They are totally worthless!"
-        hide charrd
+        hide expression rival.imageName
         
         show clarance
         C "Calm yourself young [crt_rival.name]. It is good to see that you have a fiery loyalty to your family aready but that was a little rude."
@@ -365,7 +365,7 @@ label visitingTheDaggermaws:
     "You see [crt_fighter.name] marching away. Do you..."
     menu:
         "Run up to join him.":
-            show expression crt_fighter
+            show expression crt_fighter.imageName
             P "Hey there. That was pretty intense."
             f "Yeah, it was a bit. You arn't too bad you know. Maybe you should ask Marrack if you can be a [crt_fighter.family]."
             P "I don't think she would let me!"
