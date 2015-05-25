@@ -10,4 +10,4 @@ init 1:
     $crt_ally.addPreference(CharacterPreference("destruction", False, "Thats terrible! Such a waste."))
     $crt_ally.addPreference(CharacterPreference("making", False, "I am really not very good at making things."))
     $crt_ally.addPreference(CharacterPreference("danger", False, "That is way too scary for me"))
-    define e = crt_ally.c
+    define a = crt_ally.c

@@ -5,7 +5,7 @@
 # The game starts here.
 label start:
     # Do the introduction
-    call introduction
+    call chapter1
     
     # Do the meeting stage
     call meetings

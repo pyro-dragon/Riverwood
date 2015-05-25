@@ -6,303 +6,136 @@
 #-----------------------------
 # Introduce the families.
 #-----------------------------
+scene expression forge.name with fade
+
 label introduction:
-    scene expression camp.name
-    "The celebrations had been loud and wild but now everyone rests. The four family heads call everyone to gather as they begin the naming ceremony. All the young cubs, you among them gather on logs in the front."
-    
-    show expression crt_ally.imageName with dissolve
-    e "This is so exciting!"
-    hide expression crt_ally.imageName with dissolve
-    
-    "You laugh. [crt_ally.name] has been a friend for as long as you can remember. [crt_ally.name] though, as with you yourself will be known by your cub names no longer after tonight."
-    "You want to respond but you are too nervous. Before you can work up the courage [crt_rival.name] nudges you."
-    
-    show expression crt_rival.imageName with dissolve
-    c "Hey butthead! I bet you get picked last. I bet no one wants you in their family."
-    hide expression crt_rival.imageName with dissolve
-    
-    "You hate [crt_rival.name]. Ever since you could walk he would try to beat you, try to be better than you. You ignore him for now but you wonder what family he will be in."
-    "The head of the clan speaks up, silencing everyone."
-    
-    show temesh with dissolve
-    T "Greetings friends, family and cubs. Tonight is a very special night and it comes once every four years. Tonight the cubs who are of age receive their names and are received officially into their family's."
-    T "A name and a family is very important. Your choice now will affect the life you lead going forth. You may choose a name yourself or ask one of the the family heads to choose one for you. Be warned though, this choice is final and will be what you will be known as for every day that comes after this night."
-    T "Many of you have already chosen your family allegiances too. For those that have not and those that wish to change you may do so, but this is also a permanent choice so I will urge you to give great thought about this also."
-    T "Each family head will now introduce themselves and tell you a little about them and the ways their family follows to aid you in your choice tonight. "
-    hide temesh with dissolve
+    "The celebrations had been been going on from the early evening."
+    "You, among others have been marking the passing into adulthood. The fire roars and voices rise in song about it."
+    "{i}Every few years the gnolls of the Riverwood clan gather all those who have come of age and formally welcome them to the clan as adults.{/i}"
+    "{i}It is a time of joy, where the daily struggle for survival is forgotten for a precious few hours.{/i}" 
+    "{i}The former cubs can enjoy one last night of fun before they must pick up their duties and responsibilities as full adults.{/i}"
 
-    "Temesh takes a step back, giving the floor to a slender, sharp-faced gnoll female."
-    
-    show shana with dissolve
-    S "I am Shana Bloodrunner, head of the Bloodrunner family. We are a cunning family, knowledgeable in the ways of nature. We are the food gatherers and medicine makers of the clan. We offer training in herbs, hunting and the cycles of the seasons. We expect our members to be patient, to move silently and to open up their senses to the world around them."
-    hide shana with dissolve
-    #"She gives a silent nod and then steps back letting a scraggly, wizened gnoll male take the floor. His fur is dull but his eyes are bright."
-    "She gives a silent nod and then steps back, letting a scrawny, oddly dressed gnoll male take the floor. Brass and copper instruments hang from his belt."
-    
+    show Ellie
+    a "Oh, hey there!"
+    a "Are you enjoying the party?"
 
-    show clarance with dissolve
-    C "Thank you. I'm Clarance Coppertail. Head honcho of the Coppertail family. We are for those young'ns with an inquiring mind. You want to know how a crossbow works? What makes iron armor better than copper? We can tell you and much more! The Coppertails want cubs who are inquisitive, quick of mind and aren't afraid to ask 'why?' long after everyone has lost patients in them."
-    hide clarance with dissolve
-    "With a nod he stepped back, giving way to a hulking bruit of a gnoll."
+    menu:
+        "Yeah! Its going really well thanks.": 
+            a "Thats great! Have you tried any of the fish? Its sooooo good!"
+            a "*hick*"
+        "Its ok I guess.": 
+            a "Aww don’t be so glum. Cheer up! We might not get another night like this."
 
-    show marrack with dissolve
-    M "Raaaaghh!! I am Marrack Daggermaw! We Daggermaws haven't got time for all that nonsense about nature and machines, we just know we are the toughest and best! We defend the clan from all its enemies. If you think you are tough, strong headed and have the dexterity of paw to handle a blade or bow then we want you."
-    hide marrack with dissolve
-    "With a smart salute and a jangle of chain mail Marrack stepped aside to allow Temesh back."
-    
-    show temesh with dissolve
-    T "And as you know, I am Temesh Gildclaw. While Marrack might be the iron fist, we, the Gildclaws are the velvet glove. We negotiate, trade and discuss. We are looking for cubs who are after the more refined things in life. We want those with a quick mouth and a quick mind behind it. We want level-headed cubs who's first instinct is to words when conflict raises its head."
-    "Temesh gave a flourishing bow. On standing again she glared out at the young gnolls gathered in front of her."
-    
-    T "Now, we shall begin. You there, come forward."
-    "Temesh pointed at a small cub sat on the far left, urging them forwards... "
-    hide temesh with dissolve
+    a "Listen, I gotta go see Temesh. She needs some help with something or something."
+
+    "You laugh. [crt_ally.name] has been your best friend for as long as you can remember. You hope your friendship can withstand the pressures  that adulthood will place on the two of you."
+    "You also wander what her name will be after tonight. The tradition of the clan is that new adults can pick their own name."
+    "You open your mouth to respond but she had already wandered away."
+    hide expression crt_ally.c
+
+    show expression crt_rival.c
+    r "Hey butthead! I bet you get picked last. I bet no one wants you in their family!"
+
+    menu:
+        "Shut up [crt_rival.name]! I’d rather be without a family than join yours.":
+            r "Wow, what a comeback. That was like you- weak!"
+            
+        "*Ignore him*":
+            r "Ooooo, taking the high-ground are we? You’re pathetic!"
+
+    r "Well I don’t really care about you anymore. My future is golden."
+    r "I know exactly what family I am joining and I’ll be going straight to the top! You mark my words."
+
+    "You hate [Rival Name] and [Rival Name] hates you. It seems like that is the way things have always been."
+    "You hope that the responsibilities of adulthood mellow him out somewhat…"
+    "… but you hope to the Seven Hells that [Rival Name] is not in your family."
+    "He does make a good point though. You have to choose a family to join tonight and you have been unable to decide."
+    "This will affect your whole future and that is a worrying prospect…"
+
+    r "Ugh, I don’t have the time to hang out with loser trash like you."
+    r "I’m outta here."
+    hide expression crt_rival.c
+
+    "Temesh, the clan leader walks to the middle of the gathering and calls for silence. She waits until all eyes are upon her."
+
+    show Temesh
+    T "Tonight is an auspicious night. For a night like this comes but once every few years."
+    T "Tonight is the night where we welcome the next generation into our families."
+    T "It is with new blood that we refresh our families. It is with new blood that we bring new ideas and new ways of doing things."
+    T "And in exchange we, of the old blood must pass on our skills and our learning before we pass from this world."
+    T "In order to take your first steps into this new phase of your lives you will have to make some crucial decisions."
+    T "You must choose a family and you must choose a name."
+    T "Your family with take you the rest of the way through your life. Although you are now considered adults, you nevertheless have a long journey ahead of you to learn the skills that will make you an effective member of the clan." 
+    T "Your family will teach you these skills and give you a career and role within the clan."
+    T "I am sure many of you have already decided which family to join, but some of you I know have yet to decide your future."
+    T "Each family head will now come forward and tell you something about their families. "
+    hide Temesh
+
+    "Temesh takes a step back, letting a gentle-eyed gnoll female take the centre."
+        
+    show Shana
+    S "Good evening dears. I am Shana of the Bloodrunner family."
+    S "We, the Bloodrunners are the hunters and gatherers of the clan. We are also its medics and holders of natural lore."
+    S "We treasure those who consider themselves cunning and keen hunters, but also those of a quiet and more contemplative nature."
+    S "The Bloodrunners seek to learn more about the ways of nature and our place within it. We will teach you the skills to fulfil some of the most important roles within the clan. For without food and medicine we would crumble."
+    S "If this is the path you wish to follow then the Bloodrunners will welcome you with open arms."
+    hide Shana
+
+    "Shana smiles and nods and then steps back letting a scraggly, wizened gnoll male take the floor. His fur is dull but his eyes are bright."
+
+    show Clarence
+    C "Thank you, Shana."
+    C "I'm Clarence Coppertail; head honcho of the Coppertail family. "
+    C "We are for those young'ns with an enquiring mind. You want to know how a crossbow works? What makes steel  armour better than iron? We can tell you and much more!" 
+    C "The Coppertails want those who are inquisitive, quick of mind and aren't afraid to ask 'why?' long after everyone has lost patients in them."
+    C "We can teach you how to work metal, how to construct things and how to really look at things." 
+    C "Our engineers and researchers are forging ahead with pushing the boundaries of nature and conventional thinking."
+    C "If these are the things that really get you excited then I urge you to join our family."
+    hide Clarence
+
+    "Clarence gives the next gnoll a salute before exchanging places with her."
+
+    show Marrack
+    M "Pfft. I’m Marrack Daggermaw of the Daggermaw family. If you want to mess about with flowers or bits of wire then the Bloodrunners and Coppertails are your family."
+    M "But if you want to be a true gnoll then the Daggermaws are the only family for you!"
+    M "We want only the toughest, strongest and most nimble in our ranks."
+    M "Its a tough life but we will train you hard; Teach you the ways of the blade and the bow."
+    M "Our family fill the most important role in the clan- keeping everyone safe."
+    M "We keep the Orc tribes at bay, protect registered trade caravans and continually scout our lands making sure that we are the first to know of any impending threats."
+    M "If you think you are tough enough for our family we will welcome you into the fold."
+    hide Marrack
+
+    "With a thump on her chest and a roar, Marrack stepped aside to allow Temesh back to take the centre once again."
+        
+    show Temesh
+    T "As you know, I am Temesh Gildclaw; the clan matriarch and also head of the Gildclaw family."
+    T "While Marrack might be the iron fist of the clan; we, the Gildclaws are the velvet glove. We negotiate, trade and discuss." 
+    T "We are responsible for the political and mercantile force of the clan in the wider world."
+    T "It is the Gildclaws that discuss border disputes. It is the Gildclaws who conducte trade missions. And it is the Gildclaws who keep the clan strong and protected through agreements and contracts."
+    T "If you are looking for the finer things in life and wish to get to know the powers that really run things then the Gildclaw family should be your family of choice."
+
+    "Temesh looks around at everyone present. "
+        
+    T "Now, we shall begin. I will call you up once at a time and ask you each for your choice of family and name."
+
+    "Temesh points to someone to your left and urges them forward …"
+    hide Temesh
+
+    scene black with fade
     "..."
     "... ..."
-    
-    show temesh with dissolve
-    T "And now you. Come." 
-    "Temesh indicated for you to come forward"
-    hide temesh with dissolve
-    
-    show expression crt_ally.imageName with dissolve 
-    e "Good luck!"
-    hide expression crt_ally.imageName with dissolve
-    
-    show temesh with dissolve
-    T "Now you, you are interesting. From what I have seen of you, you could join any family."
-    jump chooseFamily
 
-#-----------------------------
-# Choose the family and assign 
-# the ally and rival.
-#-----------------------------
-label chooseFamily:
-    T "Which family will you choose?"
-    
-    menu: 
-        "I like the ways of the Bloodrunners. (Nature, Hunters, Medicine)":
-            jump bloodrunners
+    scene expression camp.name with fade
+    show Temesh
+    "Temesh looks directly at you and summons you forward."
+    "You take a nervous look around and step forward, aware of many eyes upon you."
+    hide Temesh
+
+    show expression crt_ally.c
+    A "Good luck!"
+    hide expression crt_ally.c
         
-        "I have a great interest in joining the Coppertails. (Machines, Metal craft, Investigation)":
-            jump coppertails
-            
-        "The others seem so wimpy, I'll join the Daggermaww. (Fighting, Tactics, Intimidation)":
-            jump daggermaws
-            
-        "It will be an honour to join the Gildclaws. (Diplomacy, Trade, Economics)":
-            jump gildclaws
-
-#-----------------------------
-# Choose the Bloodrunners.
-#-----------------------------
-label bloodrunners:
-    $player.family = "Bloodrunner"
-    $crt_ally.family = "Daggermaw"
-    $crt_ally.name = "Scarah"
-    $crt_rival.family = "Coppertail"
-    $crt_rival.name= "Scorch"
-    jump checkFamily
+    show Temesh
+    T "You are one of those that have yet to show alignment with any family as yet."
     
-#-----------------------------
-# Choose the Coppertails.
-#-----------------------------
-label coppertails:
-    $player.family = "Coppertail"
-    $crt_ally.family = "Gildclaw"
-    $crt_ally.name = "Deft"
-    $crt_rival.family = "Daggermaw"
-    $crt_rival.name = "Dirge"
-    jump checkFamily
-    
-#-----------------------------
-# Choose the Daggermaws.
-#-----------------------------
-label daggermaws:
-    $player.family = "Daggermaw"
-    $crt_ally.family = "Bloodrunner"
-    $crt_ally.name = "Swift"
-    $crt_rival.family = "Gildclaw"
-    $crt_rival.name = "Silver"
-    jump checkFamily
-    
-#-----------------------------
-# Choose the Gildclaws.
-#-----------------------------
-label gildclaws:
-    $player.family = "Gildclaw"
-    $crt_ally.family = "Coppertail"
-    $crt_ally.name = "Spark"
-    $crt_rival.family = "Bloodrunner"
-    $crt_rival.name = "Shade"
-    jump checkFamily
-    
-#-----------------------------
-# Check that the player is ok
-# with their choice of family.
-#-----------------------------
-label checkFamily:
-    "Is that your final choice?"
-    
-    menu: 
-        "Yes, I want to join the [player.family]!":
-            jump chooseName
-            
-        "No, I want to know the choices again.":
-            jump chooseFamily
-    
-#-----------------------------
-# Choose how to decide the 
-# player name. 
-#-----------------------------
-label chooseName:
-    T "Excellent. I am sure you will be an asset to your chosen family."
-    T "Now, you must take a name for yourself. You can either choose one yourself of have your new family head give you a name. Which would you like?"
-    
-    menu:
-        "I'll choose my own name.":
-            jump makeName
-            
-        "I'll let my family pick for me": 
-            jump pickName
-            
-#-----------------------------
-# Type out the player name. 
-#-----------------------------
-label makeName:
-    $player.name = renpy.input("Very well, what will your name be?")
-    $player.name = player.name.strip()
-    jump checkName
-    
-#-----------------------------
-# Check that the player is ok
-# with their choice of name. 
-#-----------------------------
-label checkName:
-    T "So you want [player.name] to be your name?"
-    
-    menu: 
-        "Yes! I shall be known as [player.name]!":
-            jump concludeCeremony
-        
-        "No, on second thoughts I want to pick again.":
-            jump chooseName
-    
-#-----------------------------
-# Select the name from a list.
-#-----------------------------
-label pickName:
-    "Ok, here is a list of names you can choose"
-    if player.family == "Bloodrunner":
-        menu: 
-            "Leaf-mould":
-                $player.name = "Leaf-mould"
-                jump checkName
-            "Sprint":
-                $player.name = "Sprint"
-                jump checkName
-    elif player.family == "Coppertail":
-        menu: 
-            "Weld":
-                $player.name = "Weld"
-                jump checkName
-            "Rivet":
-                $player.name = "Rivet"
-                jump checkName
-    elif player.family == "Daggermaw":
-        menu: 
-            "Crash":
-                $player.name = "Crash"
-                jump checkName
-            "Ducker":
-                $player.name = "Ducker"
-                jump checkName
-    elif player.family == "Gildclaw":
-        menu: 
-            "Credit":
-                $player.name = "Credit"
-                jump checkName
-            "Debit":
-                $player.name = "Debit"
-                jump checkName
-
-#-----------------------------
-# The outro to the naming 
-# ceremony. 
-#-----------------------------
-label concludeCeremony:
-    "Very well. [player.name] of the [player.family] family. Welcome."
-    
-    "You take your place at the side of your chosen family and watch as the other cubs are called..."
-    T "Now you, approach."
-    hide temesh with dissolve
-    
-    show expression crt_ally.imageName with dissolve
-    e "Yes..."
-    hide expression crt_ally.imageName with dissolve
-    
-    show temesh with dissolve
-    T "I know you will suite the [crt_ally.family] well. Will you choose this?"
-    hide temesh with dissolve
-
-    show expression crt_ally.imageName with dissolve
-    "For a moment she looked toward you, an apologetic look in her eyes. She turns back to Temesh and nods."
-    e "Yes, I choose the [crt_ally.family]s"
-    hide expression crt_ally.imageName with dissolve
-    
-    show temesh with dissolve
-    T "Very well. And what name will you go by?"
-    hide temesh with dissolve
-    
-    show expression crt_ally.imageName with dissolve
-    e "[crt_ally.name]"
-    hide expression crt_ally.imageName with dissolve
-    
-    show temesh with dissolve
-    T "[crt_ally.name], of the [crt_ally.family]s family. Welcome."
-    hide temesh with dissolve
-    
-    show expression crt_rival.imageName with dissolve
-    c "Damn, I am being picked last aren't I?"
-    hide expression crt_rival.imageName with dissolve
-    
-    show temesh with dissolve
-    T "Calm yourself there young cub. Come forth."
-    T "You, I think, you will do well in the [crt_rival.family] family. Would you agree?"
-    hide temesh with dissolve
-
-    show expression crt_rival.imageName with dissolve
-    c "Damn right I will!"
-    hide expression crt_rival.imageName with dissolve
-
-    show temesh with dissolve
-    T "And what name do you want?"
-    hide temesh with dissolve
-
-    show expression crt_rival.imageName with dissolve
-    c "[crt_rival.name]"
-    hide expression crt_rival.imageName with dissolve
-    
-    "You watch as [crt_rival.name] takes up station next to his new family."
-    
-    show temesh with dissolve
-    T "That now concludes the naming ceremony of the Riverwood clan. I would like to welcome you all as fresh young adults. You now have every privilege a full clan member is entitled to, but you also have responsibilities too."
-    T "You will do well to listen to those older and wiser than you as they guide you into the future. Take heed of their teachings and you will become a full and productive member of our clan. Making both your families and your clanmates proud of you and of the clan itself."
-    T "The rest of the evening is your own but I urge you to get an early night for tomorrow begins your training in whatever skill your family will teach you."
-    T "Goodnight and fair-future to all."
-    hide temesh with dissolve
-    
-    "You take another look over toward [crt_ally.name]-"
-    "no..."
-    "[crt_ally.name]... It is going to take some getting use to now."
-    "You try to catch her eye but she is already lost in the crowd of her new family."
-    
-    scene black with dissolve
-    "..."
-    "You turn back toward your new family. You smile and greet faces, young and old and talk until the fires die down into embers."
-    "Your new life begins... "
-    
-#-----------------------------
-# End of scene
-#-----------------------------
-return
+    return
