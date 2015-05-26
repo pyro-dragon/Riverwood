@@ -4,6 +4,10 @@
 
 # The game starts here.
 label start:
+
+    # Test
+    #call test
+    
     # Do the introduction
     call chapter1
     
@@ -12,9 +16,6 @@ label start:
     
     # Start the main cycle
     call chapter3
-
-    # Test
-    #call test
 
     # End of game
     return

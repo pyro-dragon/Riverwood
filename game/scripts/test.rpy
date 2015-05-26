@@ -1,8 +1,10 @@
 label test:
-    #"Checking for active quests..."
-    #$game.checkForActiveQuests()
     
-    #"Executing active quest stages..."
-    #$game.updateActiveQuests()
+    scene expression grove.name
     
-    jump chapter3
+    show expression crt_fighter.image
+    "This is words"
+    f "This is fighting words"
+    hide fighter
+    
+    jump meetTheDaggermaws

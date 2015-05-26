@@ -72,7 +72,7 @@ init:
                 self.family = family            # The character family
                 self.career = career            # The character career
                 self.c = renpyCharacter         # The renpy character representation
-                self.imageName = imageName      # The chracter image name
+                self.image = imageName          # The chracter image given by file name
                 self.met = met                  # If the character has been met or not
                 self.preferences = {}           # A list of character preferences
                 self.rp = 35                    # Relationship points
