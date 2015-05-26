@@ -6,4 +6,8 @@ label chapter1:
 
     call introduction
 
-    call chooseFamily
+    call characterCreation
+    
+    call concludeCeremony
+    
+    return

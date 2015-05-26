@@ -2,7 +2,8 @@
 # Ally
 #-----------------------------
 init 1: 
-    $crt_ally = GameCharacter("Ellie", "none", "none", Character("crt_ally.name", dynamic = True, color = "#848484"), "characters/ellie.png", True, False, "ellieTN.png")
+    $crt_ally = GameCharacter("Ellie", "none", "none", Character("crt_ally.name", dynamic = True, color = "#848484"), "characters/ellie.png", True, True, "ellieTN.png")
+    $crt_ally.name = "Ellie"    # Set to override "?????" for a hidden name
     $crt_ally.rp = 45
     $crt_ally.addPreference(CharacterPreference("exploring", True, "I love looking around interesting places."))
     $crt_ally.addPreference(CharacterPreference("animals", True, "Aww, I just love cute animals."))
