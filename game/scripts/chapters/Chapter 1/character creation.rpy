@@ -7,7 +7,7 @@
 #-----------------------------
 label chooseFamily: 
 
-    Temesh: "Which family will you choose?"
+    T "Which family will you choose?"
     
     menu:
         "I in tune with the ways of the Bloodrunners. (Nature, Hunters, Medicine)":
@@ -27,7 +27,7 @@ label chooseFamily:
 #-----------------------------
 # Choose the Bloodrunners.
 #-----------------------------
-label bloodrunners:
+label chooseBloodrunners:
     $player.family = "Bloodrunner"
     $crt_ally.family = "Daggermaw"
     $crt_ally.name = "Scarah"
@@ -38,7 +38,7 @@ label bloodrunners:
 #-----------------------------
 # Choose the Coppertails.
 #-----------------------------
-label coppertails:
+label chooseCoppertails:
     $player.family = "Coppertail"
     $crt_ally.family = "Gildclaw"
     $crt_ally.name = "Deft"
@@ -49,7 +49,7 @@ label coppertails:
 #-----------------------------
 # Choose the Daggermaws.
 #-----------------------------
-label daggermaws:
+label chooseDaggermaws:
     $player.family = "Daggermaw"
     $crt_ally.family = "Bloodrunner"
     $crt_ally.name = "Swift"
@@ -60,7 +60,7 @@ label daggermaws:
 #-----------------------------
 # Choose the Gildclaws.
 #-----------------------------
-label gildclaws:
+label chooseGildclaws:
     $player.family = "Gildclaw"
     $crt_ally.family = "Coppertail"
     $crt_ally.name = "Spark"
@@ -95,6 +95,14 @@ label chooseName:
             
         "I'll let my family pick for me": 
             jump pickName
+
+#-----------------------------
+# Type out the player name. 
+#-----------------------------
+label makeName:
+    $player.name = renpy.input("Very well, what will your name be?")
+    $player.name = player.name.strip()
+    jump checkName
             
 #-----------------------------
 # Check that the player is ok
@@ -158,7 +166,7 @@ label pickName:
 # The outro to the naming 
 # ceremony. 
 #-----------------------------
-Label: concludeCeremony
+label concludeCeremony:
     show Temesh
     T "Very well. [player.name] of the [player.family] family. Welcome."
     T "Take your place with your family."
@@ -171,50 +179,50 @@ Label: concludeCeremony
     T "Are you ready to pick your family?"
     hide Temesh
 
-    show Ally
+    show expression crt_ally.image
     a "Yes. I think I have decided."
     a "I choose the [crt_ally.family] family."
 
     "For a moment she looked toward you, an apologetic look in her eyes. She turns back to Temesh and nods."
     a "Yes, I choose the [crt_ally.family]s"
-    hide Ally
+    hide expression crt_ally.image
 
     show Temesh
     T "Very well. And what name will you go by?"
     hide Temesh
 
-    show Ally
-    a "[Ally name]"
-    hide Ally
+    show expression crt_ally.image
+    a "[crt_ally.name]"
+    hide expression crt_ally.image
 
     show Temesh
-    T "[Ally name], of the [crt_ally.family]s family. Welcome."
+    T "[crt_ally.name], of the [crt_ally.family]s family. Welcome."
     hide Temesh
 
-    show Rival
+    show expression crt_rival.image
     r "Damn, I’m being picked last aren't I?"
-    hide Rival
+    hide expression crt_rival.image
 
     show Temesh
     T "Calm yourself there young one. Come forth."
     T "Which family will you join?"
     hide Temesh
 
-    show Rival
-    "[Rival name] glares at you before turning back to Temesh."
+    show expression crt_rival.image
+    "[crt_rival.name] glares at you before turning back to Temesh."
     r "I will join the [crt_rival.family]s."
-    hide Rival
+    hide expression crt_rival.image
 
     show Temesh
     T "And what name will you go by?"
     hide Temesh
 
-    show Rival
-    r "[rival name]!"
-    hide Rival
+    show expression crt_rival.image
+    r "[crt_rival.name]!"
+    hide expression crt_rival.image
 
     show Temesh
-    T "Then I welcome you [crt_rival.name] of the [Rival family]s."
+    T "Then I welcome you [crt_rival.name] of the [crt_rival.family]s."
     hide Temesh
 
     "You watch as [crt_rival.name] takes up station next to his new family."
@@ -230,7 +238,7 @@ Label: concludeCeremony
     "It will take some getting used to."
     "You try to catch her eye but she is already lost in the crowd of her new family."
 
-    scene black
+    scene black with fade
     "..."
     "You turn back toward your new family. You smile and greet faces, young and old and talk until the fires die down into embers."
     "Your new life begins... "
