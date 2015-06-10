@@ -10,4 +10,4 @@ init:
     $player = GameCharacter("Unnamed Player", "Daggermaw", crr_mechanic, Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
     define P = player.c
 
-    $playerCompanion = null
+    $playerCompanion = 0

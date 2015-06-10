@@ -15,7 +15,7 @@ label start:
     call chapter2
     
     # Start the main cycle
-    call chapter3
+    #call chapter3
 
     # End of game
     return

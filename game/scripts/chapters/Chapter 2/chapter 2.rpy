@@ -26,7 +26,7 @@ label chapter2:
     # What to do after the introduction
     if playerCompanion:
         call activityList
-    elif:
+    else:
         # Instroduce the first datable
         if player.family != "Coppertail"]:
             call mechanicIntroduction

@@ -12,13 +12,13 @@ label mechanicIntroduction:
     m "Oh mallets, are you ok?"
     "You rub your leg. You must have had your head so far up in the clouds that you did not see where you were going."
     menu:
-        "Yeah thanks, how about yourself?"
+        "Yeah thanks, how about yourself?":
             $player.changeSkillBonus("Social", 1)
             $crt_mechanic.addRP(2)
             m "Nothings broken."
             m "Gosh I am so sorry. I was carrying this big stack and just didn’t see where I was going."
         
-        "Watch out where the hells you are walking!"
+        "Watch out where the hells you are walking!":
             $player.changeSkillBonus("Social", -1)
             $crt_mechanic.addRP(-3)
             m "Eeek!"
@@ -26,17 +26,17 @@ label mechanicIntroduction:
             m "I really didn’t mean to-"
         
     "You look around at all the long sheets of metal scattered on the ground. There is a slight curvature to their shape."
-    menu
-        "What are all these things anyway?"
+    menu:
+        "What are all these things anyway?":
             $crt_mechnaic.addRP(1)
             m "They are blades for the wind turbine we have over near the Overlook"
             m "Clarence says that repairing them would be a good first lesson for us [Mechanic family]s"
         
-        "Ignore the metal sheets, you have no interest in bits of metal"
+        "Ignore the metal sheets, you have no interest in bits of metal":
             pass
     
-    menu
-        "Let me help you pick them up."
+    menu:
+        "Let me help you pick them up.":
             $player.changeSkillBonus("Social", 1)
             $crt_mechanic.addRP(1)
             m "Thank you!"
@@ -51,7 +51,7 @@ label mechanicIntroduction:
             m "But, like, you need to get the chemistry just right"
             m "And the heat too. He’s had to get a whole new furnace built and… "
             
-        "I haven’t got time for this."
+        "I haven’t got time for this.":
             $crt_mechanic.addRP(-1)
             $ignoringMechanic = True
             pass
@@ -75,10 +75,10 @@ label mechanicIntroduction:
     C "How did you find your first lesson?"
 
     menu:
-        "Very interesting, very engaging sir. I am enjoying my time with the [player.family]s."
+        "Very interesting, very engaging sir. I am enjoying my time with the [player.family]s.":
             C "Thats good to hear."
 
-        "Well to be honest sir, its a little dull."
+        "Well to be honest sir, its a little dull.":
             C "Ha ha ha!"
             C "The [player.family]s can get a little tedious at times!"
             C "You should have joined the [crt_mechanic.family]s."
