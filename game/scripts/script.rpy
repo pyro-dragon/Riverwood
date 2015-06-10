@@ -12,7 +12,7 @@ label start:
     call chapter1
     
     # Do the meeting stage
-    call meetings
+    call chapter2
     
     # Start the main cycle
     call chapter3
