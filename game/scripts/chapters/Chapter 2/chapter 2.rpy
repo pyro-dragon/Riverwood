@@ -28,5 +28,7 @@ label chapter2:
         call activityList
     else:
         # Instroduce the first datable
-        if player.family != "Coppertail"]:
+        if player.family != "Coppertail":
             call mechanicIntroduction
+
+    return

@@ -168,7 +168,7 @@ init:
                     return False
 
             # Add relationship points
-            def addRp(self, points): 
+            def addRP(self, points): 
                 self.rp += points
                 renpy.show_screen("skillShowBox", self.name + " relationship", points)
 

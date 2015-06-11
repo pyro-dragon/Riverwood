@@ -23,7 +23,7 @@ init:
     $camp = Environment("Camp", "environments/camp.jpg", 0, True, False, [])
     
     # Family rooms
-    $grove = Environment("Grove", "environments/silentGrove.jpg", 0, True, False, [])
+    $glade = Environment("Glade", "environments/silentGrove.jpg", 0, True, False, [])
     $forge = Environment("Forge", "environments/workshop.jpg", 0, True, False, [])
     $arena = Environment("Arena", "environments/provingGrounds.jpg", 0, True, False, [])
     $tent = Environment("Tent", "environments/tent.jpg", 0, True, False, [])

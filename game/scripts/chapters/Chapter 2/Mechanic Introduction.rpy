@@ -28,9 +28,9 @@ label mechanicIntroduction:
     "You look around at all the long sheets of metal scattered on the ground. There is a slight curvature to their shape."
     menu:
         "What are all these things anyway?":
-            $crt_mechnaic.addRP(1)
+            $crt_mechanic.addRP(1)
             m "They are blades for the wind turbine we have over near the Overlook"
-            m "Clarence says that repairing them would be a good first lesson for us [Mechanic family]s"
+            m "Clarence says that repairing them would be a good first lesson for us [crt_mechanic.family]s"
         
         "Ignore the metal sheets, you have no interest in bits of metal":
             pass
@@ -86,7 +86,7 @@ label mechanicIntroduction:
     C "Well we should get back to the forge now."
     hide Clarence
 
-    if ignoringMechanic:
+    if ignoringMechanic == True:
         show mechanic
         m "Thanks for helping me out!"
         m "It was nice meeting you."

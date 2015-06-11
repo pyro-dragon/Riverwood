@@ -7,9 +7,9 @@ label bloodrunnerIntroduction:
     S "Please, follow me and I will take you to the sacred grounds of our family."
     hide Shana
 
-    "You trail after your fellow [Player family]s, heading out of the den site and into the forest."
+    "You trail after your fellow [player.family]s, heading out of the den site and into the forest."
     "After what seems like twenty minutes you emerge into an open space. The ground is mossy and the sun shines down brightly."
-    scene glade
+    scene expression glade.name with fade
 
     show Shana
     S "Welcome to the [player.family] glade."
@@ -22,6 +22,8 @@ label bloodrunnerIntroduction:
     
         "Let someone else answer":
             pass
+            
+    return
         
 label bi_answerQuestion:
     S "Yes, [player.name]?"
@@ -44,9 +46,9 @@ label bi_answerQuestion:
 
     if bi_answerWrong:
         hide Shana
-        show crt_hunter
+        show expression crt_hunter.image with dissolve
         h "I know the answer."
-        hide crt_hunter
+        hide expression crt_hunter.image
 
         show Shana
         S "Go ahead [crt_hunter.name]."
@@ -54,10 +56,10 @@ label bi_answerQuestion:
             
         $crt_hunter.showName()
 
-        show crt_hunter
+        show expression crt_hunter.image with dissolve
         h "This is a place of power."
         h "You can draw energy up from the node point of two intersecting lay lines."
-        hide crt_hunter
+        hide expression crt_hunter.image
         
         show Shana
         S "Thats right!"
@@ -88,19 +90,19 @@ label bi_answerQuestion:
 
     "You close your eyes and take a deep breath, taking in the scent of fresh moss, pollen and the many other natural odours of this green spot."
 
-    scene black
+    scene black with fade
     "You try to imagine your own internal spirit expanding downward into the soil."
     "You visualise it reaching into the vast, glowing network of life that runs under you."
     "You sense someone approach."
     "They kick you."
 
     scene glade
-    show crt_hunter
+    show expression crt_hunter.image
     h "Are you coming or what?"
     P "Oh, yeah sorry. I was just trying to sense this natural energy Shana was-"
     h "You don’t believe all of that do you?"
 
-    if bi_answerWrong == true:
+    if bi_answerWrong == True:
         P "But you answered the question."
         h "Yeah, I know. I’ve studied under Shana for a while."
         h "I know her way of thinking."
@@ -137,9 +139,9 @@ label bi_answerQuestion:
         P "Or that."
     
     h "Come on then, we should get this back to Shana so she can do whatever nonsense she has in mind for it"
-    hide hunter
+    hide expression crt_hunter.image
     
-    scene grove
+    scene expression grove.name
     show Shana
     S "Oh my, you two have returned with a mushroom! And so quickly too."
     S "[crt_hunter.name] I knew you would be great at this. The forest spirits constantly smile down on you."
@@ -160,12 +162,12 @@ label bi_answerQuestion:
     
     menu:
         "Call her over":
-            show crt_hunter
+            show expression crt_hunter.image
             h "what is it?"
             P "do you want to do something together?"
             h "Ok, what did you have in mind?"
             $playerCompanion == crt_hunter
         "Let her go":
             pass
-
+            
     return
