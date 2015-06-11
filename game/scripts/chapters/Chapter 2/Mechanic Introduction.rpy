@@ -7,8 +7,8 @@ label mechanicIntroduction:
 
     m "Ouch!"
 
-    scene camp
-    show crt_mechanic
+    scene expression camp.name
+    show expression crt_mechanic.image with hpunch
     m "Oh mallets, are you ok?"
     "You rub your leg. You must have had your head so far up in the clouds that you did not see where you were going."
     menu:
@@ -56,18 +56,18 @@ label mechanicIntroduction:
             $ignoringMechanic = True
             pass
     
-    hide crt_mechanic
-
-    show Clarence
+    hide expression crt_mechanic.image with dissolve
+    $crt_mechanic.showName()
+    show Clarence with dissolve
     C "[crt_mechanic.name], there you are."
     C "I thought you had gotten lost."
     hide Clarence
 
-    show crt_mechanic
+    show expression crt_mechanic.image
     m "Oh, no, sorry sir."
     m "I just dropped them and [player.name] here was helping me pick them up."
     "You grin sheepishly at Clarence."
-    hide crt_mechanic
+    hide expression crt_mechanic.image
 
     show Clarence
     C "You are that young [player.family] ain’t you?"
@@ -87,7 +87,9 @@ label mechanicIntroduction:
     hide Clarence
 
     if ignoringMechanic == True:
-        show mechanic
+        show expression crt_mechanic.image
         m "Thanks for helping me out!"
         m "It was nice meeting you."
-        hide mechanic
+        hide expression crt_mechanic.image
+    
+    return

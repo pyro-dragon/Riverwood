@@ -1,17 +1,17 @@
 label bloodrunnerIntroduction:
 
-    show Shana
+    show Shana with dissolve
     S "Suns blessings my young ones."
     S "This is the first dawn of your new life with your new family." 
     S "I am pleased so many of you chose to walk the path of the [player.family]s."
     S "Please, follow me and I will take you to the sacred grounds of our family."
-    hide Shana
+    hide Shana with dissolve
 
     "You trail after your fellow [player.family]s, heading out of the den site and into the forest."
     "After what seems like twenty minutes you emerge into an open space. The ground is mossy and the sun shines down brightly."
+    
     scene expression glade.name with fade
-
-    show Shana
+    show Shana with dissolve
     S "Welcome to the [player.family] glade."
     S "It is where we come to meditate, discuss with our fellow [player.family]s."
     S "Now then, who can tell me what is so special about this spot?"
@@ -21,50 +21,9 @@ label bloodrunnerIntroduction:
             call bi_answerQuestion
     
         "Let someone else answer":
-            pass
-            
-    return
-        
-label bi_answerQuestion:
-    S "Yes, [player.name]?"
-    
-    menu:
-        "Its a long way from the Coppertails horrible, smoky forge.":
-            S "True! But not the significant reason. "
-            $bi_answerWrong = True
-        
-        "The trees look nicer here.":
-            S "They are a lot greener here, thats true."
-            S "But I’m looking for the reason of why that is"
-            $bi_answerWrong = True
-
-        "Its a sight of natural power.":
-            S "Thats right!"
-            S "Our beautiful glade here is on the site of two crossing lay lines."
-            S "Through their power we can summon up the natural energies to help us in our work."
             $bi_answerWrong = False
-
-    if bi_answerWrong:
-        hide Shana
-        show expression crt_hunter.image with dissolve
-        h "I know the answer."
-        hide expression crt_hunter.image
-
-        show Shana
-        S "Go ahead [crt_hunter.name]."
-        hide Shana
-            
-        $crt_hunter.showName()
-
-        show expression crt_hunter.image with dissolve
-        h "This is a place of power."
-        h "You can draw energy up from the node point of two intersecting lay lines."
-        hide expression crt_hunter.image
+            call bi_wrongNoAnswer
         
-        show Shana
-        S "Thats right!"
-        S "Did everyone get that?"
-
     S "This node can also allow those who are specially attuned to read the health of the land."
     S "It can help us predict good hunting seasons and lean times when we should prepare."
     S "So, my young ones. Let me tell you a little about our history."
@@ -74,7 +33,7 @@ label bi_answerQuestion:
     S "I was asked if I would like to form my own family."
     S "She wanted me to take those from the Daggermaws who did not wish to pursue a military career."
     S "While it is true that both we and the Daggermaws have an extensive cross over in skills;"
-    S "weapons, tracking, camouflage, ambushing, trapping."
+    S "Weapons, tracking, camouflage, ambushing, trapping."
     S "It is the motivations behind these that make us differ."
     S "We are hunters, trappers, gatherers."
     S "They are soldiers, guards, strategists."
@@ -95,8 +54,9 @@ label bi_answerQuestion:
     "You visualise it reaching into the vast, glowing network of life that runs under you."
     "You sense someone approach."
     "They kick you."
+    P "Ouch!"
 
-    scene glade
+    scene expression glade.name with fade
     show expression crt_hunter.image
     h "Are you coming or what?"
     P "Oh, yeah sorry. I was just trying to sense this natural energy Shana was-"
@@ -124,14 +84,14 @@ label bi_answerQuestion:
     "… …"
     if findMushroom:
         P "Here is one, look!"
-        show crt_hunter
+        show expression crt_hunter.image
         h "How did you find one so quickly?"
         P "Well, you know. I am just in tune with the natural energies after all!"
         h "Hmph."
         h "Maybe it was just dumb luck."
     else:    # Most likely outcome
         h "I found one!"
-        show crt_hunter
+        show expression crt_hunter.image
         h "I’ve got one of those mushrooms."
         P "That was pretty quick."
         P "Maybe you are in tune with the natural energies after all!"
@@ -141,7 +101,7 @@ label bi_answerQuestion:
     h "Come on then, we should get this back to Shana so she can do whatever nonsense she has in mind for it"
     hide expression crt_hunter.image
     
-    scene expression grove.name
+    scene expression glade.name
     show Shana
     S "Oh my, you two have returned with a mushroom! And so quickly too."
     S "[crt_hunter.name] I knew you would be great at this. The forest spirits constantly smile down on you."
@@ -169,5 +129,50 @@ label bi_answerQuestion:
             $playerCompanion == crt_hunter
         "Let her go":
             pass
-            
+    return
+        
+label bi_answerQuestion:
+    S "Yes, [player.name]?"
+    
+    menu:
+        "Its a long way from the Coppertails horrible, smoky forge.":
+            S "True! But not the significant reason. "
+            $bi_answerWrong = True
+        
+        "The trees look nicer here.":
+            S "They are a lot greener here, thats true."
+            S "But I’m looking for the reason of why that is"
+            $bi_answerWrong = True
+
+        "Its a sight of natural power.":
+            S "Thats right!"
+            S "Our beautiful glade here is on the site of two crossing lay lines."
+            S "Through their power we can summon up the natural energies to help us in our work."
+            $bi_answerWrong = False
+
+    if bi_answerWrong:
+        call bi_wrongNoAnswer
+
+label bi_wrongNoAnswer:
+    hide Shana
+    show expression crt_hunter.image with dissolve
+    h "I know the answer."
+    hide expression crt_hunter.image
+
+    $crt_hunter.showName()
+    
+    show Shana
+    S "Go ahead [crt_hunter.name]."
+    hide Shana
+    
+
+    show expression crt_hunter.image with dissolve
+    h "This is a place of power."
+    h "You can draw energy up from the node point of two intersecting lay lines."
+    hide expression crt_hunter.image
+        
+    show Shana
+    S "Thats right!"
+    S "Did everyone get that?"
+    
     return
