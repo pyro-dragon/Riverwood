@@ -8,14 +8,6 @@ init:
 screen activity():
     window:
         vbox xalign 0.5 yalign 0.5 xfill True yfill True:
-        #vbox:
-    #        text "So, how do you feel."
-    #        textbutton "I feel fine." action Jump("fine")
-    #        textbutton "A little bit of a cold." action Jump("cold")
-    #        textbutton "Genuflect." action Jump("genuflect")
-
-    #    window:
-    #        vbox:
             text "Today's activities"
             side "l r" xalign 0.5 yalign 0.5:
                 frame xalign 0.5:

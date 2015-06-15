@@ -6,7 +6,7 @@ screen skillShowBox(skill, score):
     $scoreStr = str(score)           # Assign the score to a string
     if score > 0:                    # Check if it is a positive number
         $scoreStr = "+" + str(score) # Append '+' if it is (+1)
-    frame at slideTransform:
+    frame at easeTransform:
         text skill + " " + scoreStr     # Print the string
             
     timer 3.0 action Hide("skillShowBox")
@@ -15,12 +15,12 @@ screen challenegeShowBox(skill, result):
     $resultStr = "Failed"
     if result:                          # Check if it is a positive number
         $resultStr = "Sucess"           # Append '+' if it is (+1)
-    frame at slideTransform:
+    frame at easeTransform:
         text skill + ": " + resultStr    # Print the string
             
-    timer 3.0 action Hide("skillShowBox")
+    timer 3.0 action Hide("challenegeShowBox")
 
-transform slideTransform:
+transform easeTransform:
     yalign 0.1
     
     on show:
