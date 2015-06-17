@@ -9,14 +9,16 @@ label start:
     #call test
     
     # Do the introduction
-    call chapter("Chapter 1", "The snake pitTT")
+    call chapter("Chapter 1", "Initiation")
     call chapter1
     
     # Do the meeting stage
+    call chapter("Chapter 2", "Meet your family")
     call chapter2
     
     # Start the main cycle
-    #call chapter3
+    call chapter("Chapter 3", "On your own")
+    call chapter3
 
     # End of game
     return
