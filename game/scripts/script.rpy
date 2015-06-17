@@ -9,7 +9,7 @@ label start:
     #call test
     
     # Do the introduction
-    call screen chapter(title="Chapter 1", subtitle="The snake pit", jumppoint="chapter1")
+    call chapter("Chapter 1", "The snake pitTT")
     call chapter1
     
     # Do the meeting stage
