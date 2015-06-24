@@ -11,3 +11,6 @@ init:
     define P = player.c
 
     $playerCompanion = 0
+    $playerOpponent = 0
+    $playerHealth = 100
+    $opponentHealth = 100

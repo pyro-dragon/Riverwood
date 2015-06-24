@@ -146,7 +146,8 @@ init:
                 if(total > goal):
                     result = True         # Pass!
                 
-                    renpy.show_screen("challenegeShowBox", skill, result)
+                renpy.show_screen("challenegeShowBox", skill, result)
+                return result
 
             # Add a preference
             def addPreference(self, preference):
