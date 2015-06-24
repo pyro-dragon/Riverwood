@@ -139,12 +139,11 @@ init:
                     
             # Test against a skill
             def skillTest(self, skill, goal, bonus = 0):
-                total = bonus + self.getSkillTotal(skill)       # Get the total to check the skill against
-                roll = renpy.random.randint(1, 20)              # Roll the dice
+                total = bonus + self.getSkillTotal(skill) + renpy.random.randint(1, 20)       # Get the total to check the skill against
                 
                 # Test against the dice
                 result = False
-                if(roll < total):
+                if(total > goal):
                     result = True         # Pass!
                 
                     renpy.show_screen("challenegeShowBox", skill, result)
