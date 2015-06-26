@@ -7,6 +7,7 @@ label introFight:
     
     #while playerHealth > 75 | opponentHealth > 75:
     $knockout = False
+    $playerWins = False
     while knockout == False:
         menu:
             "Strike": 
@@ -21,6 +22,7 @@ label introFight:
             $knockout = True
         elif opponentHealth < 85: 
             $knockout = True
+            $playerWins = True
     return
     
 label attackMenu:
