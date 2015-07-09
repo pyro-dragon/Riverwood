@@ -109,7 +109,9 @@ label coppertailIntroduction:
                 m "For this you need a hammer and then you start banging away."
 
             "No! Its fine, everythings fine.":
-                pass
+                $crt_mechanic.addRP(-1)
+                m "Well obviously you do! You havn't even picked the right tool."
+                m "Pick up the hammer."
         hide expression crt_mechanic.image
 
     "You start hammering away at the metal."
@@ -155,6 +157,8 @@ label coppertailIntroduction:
         $crt_mechanic.addRP(1)
         m "Lets see you do this then!"
         call playerForgeDemo
+    else: 
+        call mechanicForgeDemo
 
     call closeCoppertailsFirstLesson
 
@@ -241,6 +245,9 @@ label playerForgeDemo:
             m "Still, no worries. I can get this into shape in a jiffy. Good job!"
         
     hide expression crt_mechanic.image with dissolve
+    scene black with fade
+    "..."
+    "... ..."
     
     return
 
@@ -295,9 +302,9 @@ label refuseTongs:
 
     return
 
-    label takeTongs: 
-    "You take the tongs and put the metal back in the fire."
+label takeTongs: 
     $crt_mechanic.addRP(2)
+    "You take the tongs and put the metal back in the fire."
     m "Be careful not to burn it. You have to watch the colour change very carefully."
 
     show black with fade
@@ -308,7 +315,7 @@ label refuseTongs:
     return
 
 label closeCoppertailsFirstLesson: 
-    show expression forge.name with fade
+    scene expression forge.name with fade
     show Clarence with dissolve
     C "Alright guys, these are looking really good now!"
     C "I think the wind mills are certainly going to give us a few more months of service with these repairs."
