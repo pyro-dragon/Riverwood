@@ -1,0 +1,1751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AeonTimeline AppVersion="1.1.11" AppPlatform="Windows" FileVersion="19">
+	<Calendar>
+		<CalendarName>Floating Days</CalendarName>
+		<CalendarDescription>A calendar that counts forward and backward from Day 0 and includes time of day</CalendarDescription>
+		<HoursInDay>24</HoursInDay>
+		<Weekdays>
+			<Weekday Index="0">
+				<WeekdayName>Sunday</WeekdayName>
+				<WeekdayShortName>Sun</WeekdayShortName>
+			</Weekday>
+			<Weekday Index="1">
+				<WeekdayName>Monday</WeekdayName>
+				<WeekdayShortName>Mon</WeekdayShortName>
+			</Weekday>
+			<Weekday Index="2">
+				<WeekdayName>Tuesday</WeekdayName>
+				<WeekdayShortName>Tue</WeekdayShortName>
+			</Weekday>
+			<Weekday Index="3">
+				<WeekdayName>Wednesday</WeekdayName>
+				<WeekdayShortName>Wed</WeekdayShortName>
+			</Weekday>
+			<Weekday Index="4">
+				<WeekdayName>Thursday</WeekdayName>
+				<WeekdayShortName>Thu</WeekdayShortName>
+			</Weekday>
+			<Weekday Index="5">
+				<WeekdayName>Friday</WeekdayName>
+				<WeekdayShortName>Fri</WeekdayShortName>
+			</Weekday>
+			<Weekday Index="6">
+				<WeekdayName>Saturday</WeekdayName>
+				<WeekdayShortName>Sat</WeekdayShortName>
+			</Weekday>
+		</Weekdays>
+		<Months>
+			<Month Index="0">
+				<MonthName>January</MonthName>
+				<MonthShortName>Jan</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+			<Month Index="1">
+				<MonthName>February</MonthName>
+				<MonthShortName>Feb</MonthShortName>
+				<MonthDuration>28</MonthDuration>
+				<MonthLeapDuration>29</MonthLeapDuration>
+			</Month>
+			<Month Index="2">
+				<MonthName>March</MonthName>
+				<MonthShortName>Mar</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+			<Month Index="3">
+				<MonthName>April</MonthName>
+				<MonthShortName>Apr</MonthShortName>
+				<MonthDuration>30</MonthDuration>
+				<MonthLeapDuration>30</MonthLeapDuration>
+			</Month>
+			<Month Index="4">
+				<MonthName>May</MonthName>
+				<MonthShortName>May</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+			<Month Index="5">
+				<MonthName>June</MonthName>
+				<MonthShortName>Jun</MonthShortName>
+				<MonthDuration>30</MonthDuration>
+				<MonthLeapDuration>30</MonthLeapDuration>
+			</Month>
+			<Month Index="6">
+				<MonthName>July</MonthName>
+				<MonthShortName>Jul</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+			<Month Index="7">
+				<MonthName>August</MonthName>
+				<MonthShortName>Aug</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+			<Month Index="8">
+				<MonthName>September</MonthName>
+				<MonthShortName>Sep</MonthShortName>
+				<MonthDuration>30</MonthDuration>
+				<MonthLeapDuration>30</MonthLeapDuration>
+			</Month>
+			<Month Index="9">
+				<MonthName>October</MonthName>
+				<MonthShortName>Oct</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+			<Month Index="10">
+				<MonthName>November</MonthName>
+				<MonthShortName>Nov</MonthShortName>
+				<MonthDuration>30</MonthDuration>
+				<MonthLeapDuration>30</MonthLeapDuration>
+			</Month>
+			<Month Index="11">
+				<MonthName>December</MonthName>
+				<MonthShortName>Dec</MonthShortName>
+				<MonthDuration>31</MonthDuration>
+				<MonthLeapDuration>31</MonthLeapDuration>
+			</Month>
+		</Months>
+		<Eras>
+			<Era Index="0">
+				<EraName>BC</EraName>
+				<EraShortName>BC</EraShortName>
+				<EraDuration>9223372036854775807</EraDuration>
+				<EraIsBackwards>1</EraIsBackwards>
+				<EraHasLeapYears>0</EraHasLeapYears>
+				<EraFirstDayOfWeekIndex>0</EraFirstDayOfWeekIndex>
+			</Era>
+			<Era Index="1">
+				<EraName>AD</EraName>
+				<EraShortName>AD</EraShortName>
+				<EraDuration>9223372036854775807</EraDuration>
+				<EraIsBackwards>0</EraIsBackwards>
+				<EraHasLeapYears>1</EraHasLeapYears>
+				<EraFirstDayOfWeekIndex>1</EraFirstDayOfWeekIndex>
+			</Era>
+		</Eras>
+		<ZeroDate>1 2006 1 1 00 00 00</ZeroDate>
+		<CalendarType>2</CalendarType>
+		<MaximumPrecision>8</MaximumPrecision>
+	</Calendar>
+	<TimelineStartDate>1 2006 1 1 00 00 00</TimelineStartDate>
+	<TimelineEndDate>1 2006 2 1 00 00 00</TimelineEndDate>
+	<DefaultLabel>Ruby</DefaultLabel>
+	<DefaultEntityType>Person</DefaultEntityType>
+	<EntityTypes>
+		<EntityType Name="Person">
+			<CreateNoun>Birth</CreateNoun>
+			<CreateVerb>born</CreateVerb>
+			<DestroyNoun>Death</DestroyNoun>
+			<DestroyVerb>died</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Organisation">
+			<CreateNoun>Start</CreateNoun>
+			<CreateVerb>founded</CreateVerb>
+			<DestroyNoun>End</DestroyNoun>
+			<DestroyVerb>closed</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Object">
+			<CreateNoun>Create</CreateNoun>
+			<CreateVerb>created</CreateVerb>
+			<DestroyNoun>Destroy</DestroyNoun>
+			<DestroyVerb>destroyed</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Place">
+			<CreateNoun>Create</CreateNoun>
+			<CreateVerb>created</CreateVerb>
+			<DestroyNoun>Destroy</DestroyNoun>
+			<DestroyVerb>destroyed</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Project">
+			<CreateNoun>Start</CreateNoun>
+			<CreateVerb>started</CreateVerb>
+			<DestroyNoun>Finish</DestroyNoun>
+			<DestroyVerb>finished</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Technology">
+			<CreateNoun>Invent</CreateNoun>
+			<CreateVerb>invented</CreateVerb>
+			<DestroyNoun>Abandon</DestroyNoun>
+			<DestroyVerb>abandoned</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Theory">
+			<CreateNoun>Invent</CreateNoun>
+			<CreateVerb>invented</CreateVerb>
+			<DestroyNoun>Abandon</DestroyNoun>
+			<DestroyVerb>abandoned</DestroyVerb>
+		</EntityType>
+		<EntityType Name="Time Span">
+			<CreateNoun>Start</CreateNoun>
+			<CreateVerb>started</CreateVerb>
+			<DestroyNoun>Finish</DestroyNoun>
+			<DestroyVerb>finished</DestroyVerb>
+		</EntityType>
+	</EntityTypes>
+	<Entities>
+		<Entity Name="Player">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.525490 0.525490 0.525490 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Ally">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.000000 0.000000 1.000000 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Rival">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>1.000000 0.000000 0.000000 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Trader">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.835294 0.772549 0.050980 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Mechanic">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.819608 0.407843 0.129412 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Fighter">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.807843 0.129412 0.039216 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Hunter">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.333333 0.666667 0.000000 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Temesh Guildclaw">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.725490 0.603922 0.000000 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Clarence Coppertail">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.709804 0.341176 0.227451 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Marrack Daggermaw">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.529412 0.000000 0.000000 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+		<Entity Name="Shana Bloodrunner">
+			<Notes></Notes>
+			<EntityType>Person</EntityType>
+			<Visible>1</Visible>
+			<Colour>0.000000 0.333333 0.000000 1.000000</Colour>
+			<AgeAtFirstEvent Units="days">-1</AgeAtFirstEvent>
+		</Entity>
+	</Entities>
+	<Arcs>
+		<Arc Name="Global">
+			<Description>Global events applicable across all arcs</Description>
+			<ArcIsGlobal>1</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+		<Arc Name="Player">
+			<Description></Description>
+			<ArcIsGlobal>0</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+		<Arc Name="Coppertails Arc">
+			<Description></Description>
+			<ArcIsGlobal>0</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+		<Arc Name="Gildclaws Arc">
+			<Description></Description>
+			<ArcIsGlobal>0</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+		<Arc Name="Bloodrunners Arc">
+			<Description></Description>
+			<ArcIsGlobal>0</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+		<Arc Name="Daggermaws Arc">
+			<Description></Description>
+			<ArcIsGlobal>0</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+		<Arc Name="Neutral sidequests (none-timeline)">
+			<Description></Description>
+			<ArcIsGlobal>0</ArcIsGlobal>
+			<Visible>1</Visible>
+		</Arc>
+	</Arcs>
+	<Events>
+		<Event ID="53" Locked="0">
+			<EventTitle>Discover mysterious cave</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 1 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Grey</Label>
+			<Arc>Neutral sidequests (none-timeline)</Arc>
+			<Relationships></Relationships>
+			<Tags>
+				<Tag>Cave</Tag>
+			</Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="54" Locked="0">
+			<EventTitle>Missing animals</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 1 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Purple</Label>
+			<Arc>Neutral sidequests (none-timeline)</Arc>
+			<Relationships></Relationships>
+			<Tags>
+				<Tag>Animals</Tag>
+			</Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="13" Locked="0">
+			<EventTitle>Initiation Ceramony</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 1 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Day">1</Duration>
+			<Label>Ruby</Label>
+			<Arc>Player</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Ally</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Rival</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="14" Locked="0">
+			<EventTitle>Meeting Everyone</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 2 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Day">3</Duration>
+			<Label>Ruby</Label>
+			<Arc>Player</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Ally</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Trader</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Rival</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="38" Locked="0">
+			<EventTitle>Clarence announces plans</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 4 00 00 00</StartDate>
+			<Description>Clarence talks about his farming plan with Shana. The player has some chance to ask and answer questions to impress Mechanic. 
+He sends Player to go explore for some Copper</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="39" Locked="0">
+			<EventTitle>Player returns copper</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 5 00 00 00</StartDate>
+			<Description>Actual return date is variable.</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="40" Locked="0">
+			<EventTitle>Process copper to wire</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 6 00 00 00</StartDate>
+			<Description>A special activity that becomes available</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="18" Locked="0">
+			<EventTitle>Unregistered travelers spotted</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 6 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Heather</Label>
+			<Arc>Bloodrunners Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="19" Locked="0">
+			<EventTitle>Attack unregistered cart</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 7 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ruby</Label>
+			<Arc>Daggermaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="41" Locked="0">
+			<EventTitle>Help install water pump and dynamo</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 7 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="23" Locked="0">
+			<EventTitle>Prince captured</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 7 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="24" Locked="0">
+			<EventTitle>Appologies and reasurances</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 8 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Trader</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="35" Locked="0">
+			<EventTitle>Find medicine</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 8 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Heather</Label>
+			<Arc>Bloodrunners Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="20" Locked="0">
+			<EventTitle>Diplomatic incident</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 8 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Day">2</Duration>
+			<Label>Ruby</Label>
+			<Arc>Daggermaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="44" Locked="0">
+			<EventTitle>Help plant seedlings</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 9 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="42" Locked="0">
+			<EventTitle>Install seedlings into irrigated farm plot</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 9 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Heather</Label>
+			<Arc>Bloodrunners Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="25" Locked="0">
+			<EventTitle>Scouting and diplomacy</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 9 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="21" Locked="0">
+			<EventTitle>Escourt ambush</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 10 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ruby</Label>
+			<Arc>Daggermaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="26" Locked="0">
+			<EventTitle>Prince sent on his way</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 10 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="34" Locked="0">
+			<EventTitle>Respond to escourt</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 10 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Heather</Label>
+			<Arc>Bloodrunners Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="43" Locked="0">
+			<EventTitle>Seedlings have been eaten</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 10 00 00 00</StartDate>
+			<Description>The seedlings have been eaten by animals. Clarence thinks up a plan to stop them. He devises an electric fence and sends the player out to get coal.</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="45" Locked="0">
+			<EventTitle>Attatching electric fence- it fails.</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 11 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="49" Locked="0">
+			<EventTitle>Aquire parts for engine</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 12 00 00 00</StartDate>
+			<Description>If the player is a trader in the Gildclaws he may be asked to go buy parts. </Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Trader</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="22" Locked="0">
+			<EventTitle>Escourt aftermath</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 12 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ruby</Label>
+			<Arc>Daggermaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="27" Locked="0">
+			<EventTitle>Prince sends for fresh escourt</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 12 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="46" Locked="0">
+			<EventTitle>Send player to look for iron</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 12 00 00 00</StartDate>
+			<Description>Clarence comes up with a plan on the basic principals of steam. He needs some iron though.</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="50" Locked="0">
+			<EventTitle>Aquire engine parts cont.</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 13 00 00 00</StartDate>
+			<Description>Continuation of seeking parts for Clarence</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships></Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="47" Locked="0">
+			<EventTitle>Construct steam engine</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 13 00 00 00</StartDate>
+			<Description>Player and Mechanic must get anumber of successes between them to help build the steam engine. </Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="48" Locked="0">
+			<EventTitle>Constructing steam engine cont.</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 14 00 00 00</StartDate>
+			<Description>Player, Mechanic and Clarence continue building the engine- continues until successes has been reached.</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="28" Locked="0">
+			<EventTitle>Escourt arrives</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 15 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="51" Locked="0">
+			<EventTitle>Planting seedlings round 2</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 15 00 00 00</StartDate>
+			<Description>The player plants seeds with the Bloodrunners now with an electric fence around them.</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="52" Locked="0">
+			<EventTitle>Present farming plot to Temesh</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 16 00 00 00</StartDate>
+			<Description>The finished farming plot is formally presented to Temesh by Clarence with assistance from Shana. 
+Temesh is both impressed and exasperated by the use of advanced technology of far greater use than to what it is being put to. </Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Sienna</Label>
+			<Arc>Coppertails Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="29" Locked="0">
+			<EventTitle>Prince leaves</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 17 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="37" Locked="0">
+			<EventTitle>Find more herbs or food</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 18 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Heather</Label>
+			<Arc>Bloodrunners Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="15" Locked="0">
+			<EventTitle>Orc Raid</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 18 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Day">1</Duration>
+			<Label>Grey</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Ally</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Trader</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Rival</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="30" Locked="0">
+			<EventTitle>Prince sends culling order</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 19 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Clarence Coppertail</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Marrack Daggermaw</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="16" Locked="0">
+			<EventTitle>Raid Aftermath</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 19 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Grey</Label>
+			<Arc>Player</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Ally</Entity>
+					<ParticipationLevel>3</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Rival</Entity>
+					<ParticipationLevel>3</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="36" Locked="0">
+			<EventTitle>Attend to wounded</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 20 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Heather</Label>
+			<Arc>Bloodrunners Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Shana Bloodrunner</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="31" Locked="0">
+			<EventTitle>Temesh told about culling order</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 21 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="32" Locked="0">
+			<EventTitle>Temesh (and player) go to meet the baron</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 22 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Gildclaws Arc</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="33" Locked="0">
+			<EventTitle>Temesh convinces Baron to spare gnolls</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 23 00 00 00</StartDate>
+			<Description>But they must disperse</Description>
+			<Duration Unit="Second">0</Duration>
+			<Label>Ochre</Label>
+			<Arc>Global</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>1</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Temesh Guildclaw</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event ID="17" Locked="0">
+			<EventTitle>Prom</EventTitle>
+			<Completed>0</Completed>
+			<ShowTime>0</ShowTime>
+			<ShowDay>1</ShowDay>
+			<ShowMonth>1</ShowMonth>
+			<StartDate>1 2006 1 31 00 00 00</StartDate>
+			<Description></Description>
+			<Duration Unit="Day">1</Duration>
+			<Label>Grey</Label>
+			<Arc>Player</Arc>
+			<Relationships>
+				<Relationship>
+					<Entity>Player</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Ally</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Trader</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Rival</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Mechanic</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Fighter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+				<Relationship>
+					<Entity>Hunter</Entity>
+					<ParticipationLevel>2</ParticipationLevel>
+				</Relationship>
+			</Relationships>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+	</Events>
+	<Labels>
+		<Label Name="Ruby">
+			<Color>0.501961 0.000000 0.003922 1.000000</Color>
+		</Label>
+		<Label Name="Heather">
+			<Color>0.000000 0.388235 0.254902 1.000000</Color>
+		</Label>
+		<Label Name="Midnight">
+			<Color>0.070588 0.262745 0.439216 1.000000</Color>
+		</Label>
+		<Label Name="Purple">
+			<Color>0.290196 0.000000 0.215686 1.000000</Color>
+		</Label>
+		<Label Name="Ochre">
+			<Color>0.400000 0.278431 0.000000 1.000000</Color>
+		</Label>
+		<Label Name="Sienna">
+			<Color>0.600000 0.098039 0.031373 1.000000</Color>
+		</Label>
+		<Label Name="Grey">
+			<Color>0.403922 0.403922 0.403922 1.000000</Color>
+		</Label>
+	</Labels>
+	<Tags>
+		<Tag>Animals</Tag>
+		<Tag>Cave</Tag>
+	</Tags>
+	<Narratives></Narratives>
+	<SavedFilters></SavedFilters>
+	<CurrentFilter>
+		<SavedFilter Name="AeonCurrent">
+			<BooleanLogic>AND</BooleanLogic>
+			<RequireAllEntities>1</RequireAllEntities>
+			<RequireAllTags>1</RequireAllTags>
+			<Labels></Labels>
+			<Arcs></Arcs>
+			<Entities></Entities>
+			<Tags></Tags>
+			<Completed>-1</Completed>
+		</SavedFilter>
+	</CurrentFilter>
+	<UIState>
+		<DictionaryItem>
+			<key>AeonAddEventShowDaySelected</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonAddEventShowMonthSelected</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonAddEventShowTimeSelected</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDateFormatPreference</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDateFormatString</key>
+			<value type="string">%d %B %Y</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDateOnlyFormatString</key>
+			<value type="string">%d %B %Y</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDisplayAges</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDisplayFontName</key>
+			<value type="string">Arial</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDisplayFontSize</key>
+			<value type="number">12</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDrawEventLinesRelationshipOff</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDrawEventLinesRelationshipOn</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDrawExternalLinkIcons</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonDrawLongEventsAtTop</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonEventFlow</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonEventLineBoldHighlight</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonExternalLinkIconSize</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonFilterVisible</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonFloatingDayFormatString</key>
+			<value type="string">Day %z, %I:%M%p</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonFloatingDayNoTimeFormatString</key>
+			<value type="string">Day %z</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonFloatingWeekDayFormatString</key>
+			<value type="string">%a %I:%M%p Week %Z</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonFloatingWeekDayNoTimeFormatString</key>
+			<value type="string">%a Week %Z</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonGroupByArcs</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonIndicateEntityLifetime</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonInspectorVisible</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonInspectorWidth</key>
+			<value type="number">200</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonLargeTextSize</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonMainScrollPosition</key>
+			<value type="number">407</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonMainScrollYPosition</key>
+			<value type="number">60</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonMonthBeforeDay</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonMonthOnlyFormatString</key>
+			<value type="string">%B %Y</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonNextEntityColour</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonNextLabelColour</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonRelationshipsHeight</key>
+			<value type="number">288</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonRelationshipsVisible</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonUnitsPerPixel</key>
+			<value type="number">29.570905</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonWindowsMainWindowFrame</key>
+			<value type="rect">0.000000 22.000000 1920.000000 1058.000000</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonWindowsMainWindowMaximized</key>
+			<value type="number">1</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonWordWrap</key>
+			<value type="number">0</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonWordWrapWidth</key>
+			<value type="number">300</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonYearOnlyFormatString</key>
+			<value type="string">%G</value>
+		</DictionaryItem>
+		<DictionaryItem>
+			<key>AeonZeroHourFormatString</key>
+			<value type="string">%x:%v:%u</value>
+		</DictionaryItem>
+	</UIState>
+</AeonTimeline>

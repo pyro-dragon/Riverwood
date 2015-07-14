@@ -1,6 +1,12 @@
 #-------------------------------------------------------------------------------
-# Coppertail lessons
+# Coppertail Missions
 #-------------------------------------------------------------------------------
+
+init:
+    python:
+        coppertailMissions = []
+        
+        coppertailMissions[0] = Mission("Clarence announces his plan", False, True)
 
 label coppertailLesson1:
     scene expression forge.name with fade
