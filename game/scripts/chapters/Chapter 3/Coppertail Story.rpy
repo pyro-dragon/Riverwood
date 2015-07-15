@@ -5,8 +5,11 @@
 init:
     python:
         coppertailMissions = []
-        
+        # missionLabel, overrideAfternoon, condition, conditionPassLabel, conditionFailLabel
         coppertailMissions[0] = Mission("Clarence announces his plan", False, True)
+        coppertailMissions[1] = Mission("Return copper", False, lambda playerHasCopper == True, "", "noCopper")
+        coppertailMissions[2] = Mission("Processing the copper", False, True)
+        
 
 label coppertailLesson1:
     scene expression forge.name with fade
