@@ -2,14 +2,29 @@
 # Coppertail Missions
 #-------------------------------------------------------------------------------
 
-init:
+init 2:
+    $playerHasCopper = False
+    
     python:
         coppertailMissions = []
         # missionLabel, overrideAfternoon, condition, conditionPassLabel, conditionFailLabel
-        coppertailMissions[0] = Mission("Clarence announces his plan", False, True)
-        coppertailMissions[1] = Mission("Return copper", False, lambda playerHasCopper == True, "", "noCopper")
-        coppertailMissions[2] = Mission("Processing the copper", False, True)
+        coppertailMissions.append(Mission("Clarence announces his plan", False, lambda: True, "clarencePlan"))
+        coppertailMissions.append(Mission("Return copper", False, lambda: playerHasCopper, "refineCopper", "noCopper"))
+        coppertailMissions.append(Mission("Processing the copper", False, lambda: True))
         
+# Mission 0
+label clarencePlan:
+    C "You need to get me some copper!!"
+    return
+
+label refineCopper:
+    C "We are going to refine this copper now"
+    return
+    
+label noCopper: 
+    C "I am waiting for you to bring me my copper!"
+    $playerHasCopper = True
+    return
 
 label coppertailLesson1:
     scene expression forge.name with fade

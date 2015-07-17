@@ -2,7 +2,7 @@
 # This defines missions which are the individual units of story
 #-------------------------------------------------------------------------------
 
-init: 
+init 1: 
     python: 
         class Mission: 
             
@@ -12,4 +12,4 @@ init:
                 self.overrideAfternoon = overrideAfternoon      # Whether or not the mission will allow afternoon activities
                 self.condition = condition                      # An optional conditional. It is a function and should return true or false
                 self.conditionPassLabel = conditionPassLabel    # The label to a scene to show when the mission is complete
-                self.conditionFailLabe = conditionFailLabe      # The label to a scene to show when the mission is not passed yet
+                self.conditionFailLabel = conditionFailLabel    # The label to a scene to show when the mission is not passed yet
