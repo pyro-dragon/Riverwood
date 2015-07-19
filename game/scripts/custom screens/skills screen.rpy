@@ -4,7 +4,7 @@
 
 screen skills():
     window:
-        text "Relationship progress"
+        text "Player skills"
         vbox xalign 0.5 yalign 0.5 xfill True yfill True:
             side "l r" xalign 0.5 yalign 0.5:
                 frame xalign 0.5 xmaximum 300:

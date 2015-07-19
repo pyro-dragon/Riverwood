@@ -2,7 +2,6 @@
 # 
 #-------------------------------------------------------------------------------
 init:
-    $lessonTarget = ""
     $activityTarget = ""
     
 screen activity():
@@ -12,24 +11,32 @@ screen activity():
             side "l r" xalign 0.5 yalign 0.5:
                 frame xalign 0.5:
                     vbox:
-                        label _("Choose who to learn with:")
-                        $lessonTarget = ""
-                        textbutton ("Bloodrunners") action SetVariable("lessonTarget", "bloodrunnerLesson")
-                        textbutton ("Coppertails") action SetVariable("lessonTarget", "coppertailLesson")
-                        textbutton ("Daggermaws") action SetVariable("lessonTarget", "daggermawLesson")
-                        textbutton ("Gildclaws") action SetVariable("lessonTarget", "gildclawLesson")
-                        
-                frame xalign 0.5:
-                    vbox:
                         label _("Choose your afternoon activity:")
                         textbutton "Go exploring" action SetVariable("activityTarget", "explore")
                         textbutton "Practice skills" action SetVariable("activityTarget", "practice")
                         textbutton "Socialise with clan" action SetVariable("activityTarget", "socialise")
                         textbutton "Hang out with someone" action SetVariable("activityTarget", "hangOut")
                         
+                frame xalign 0.5:
+                    vbox:
+                        label _("Who with?:")
+                        if crt_trader.met == True: 
+                            textbutton crt_trader.trueName + " " + crt_trader.family action SetVariable("playerCompanion", crt_trader.trueName)
+                        if crt_mechanic.met == True: 
+                            textbutton crt_mechanic.trueName + " " + crt_mechanic.family action SetVariable("playerCompanion", crt_mechanic.trueName)
+                        if crt_hunter.met == True: 
+                            textbutton crt_hunter.trueName + " " + crt_hunter.family action SetVariable("playerCompanion", crt_hunter.trueName)
+                        if crt_fighter.met == True: 
+                            textbutton crt_fighter.trueName + " " + crt_fighter.family action SetVariable("playerCompanion", crt_fighter.trueName)
+                        if crt_ally.met == True: 
+                            textbutton crt_ally.trueName + " " + crt_ally.family action SetVariable("playerCompanion", crt_ally.trueName)
+                        if crt_rival.met == True: 
+                            textbutton crt_rival.trueName + " " + crt_rival.family action SetVariable("playerCompanion", crt_rival.trueName)
+                        
             side "l r":
                 hbox:
                     textbutton "Skills" action[Hide("activity"), Show("skills")]
                     textbutton "Relationships" action [Hide("activity"), Show("relationships")]
 
-                textbutton "Head out" action Jump("mainActivityCycle")
+                if activityTarget != "" and playerCompanion != "":
+                    textbutton "Head out" action Jump(activityTarget)

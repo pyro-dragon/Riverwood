@@ -10,7 +10,7 @@ init:
     $player = GameCharacter("Unnamed Player", "Coppertail", crr_mechanic, Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
     define P = player.c
 
-    $playerCompanion = 0
+    $playerCompanion = ""
     $playerOpponent = 0
     $playerHealth = 100
     $opponentHealth = 100

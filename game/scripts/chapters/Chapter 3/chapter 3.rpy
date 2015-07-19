@@ -1,7 +1,11 @@
 #-------------------------------------------------------------------------------
-# 
+# This is the start of chapter three and the place where the main game cycle 
+# begins.
 #-------------------------------------------------------------------------------
 
+#---------------------------------------
+# Set up the initial variables
+#---------------------------------------
 init:
     $lessons = {"bloodrunnerLesson" : 1,"coppertailLesson" : 1, "daggermawLesson" : 1, "gildclawLesson" : 1}
     #$[bloodrunnerLesson = 1
@@ -13,7 +17,11 @@ init:
     $missionTree = 0
     $missionNumber = 0
 
+#---------------------------------------
+# The Chapter 3 start point
+#---------------------------------------
 label chapter3:
+    # Set the mission tree based on the player family
     if player.family == "Bloodrunner": 
         $missionTree = bloodrunnerMissions
     elif player.family == "Coppertail":
@@ -25,7 +33,7 @@ label chapter3:
     
     #call screen activity
 
-    # Pre-invasion story
+    # Pre-invasion story- Cycle throug the days, advancing the missions when needed
     while currentDay < 15:
         $allowAfternoon = True
         
@@ -49,21 +57,3 @@ label chapter3:
         $currentDay += 1
         
     return
-        
-label mainActivityCycle:
-    # Call the appropriate lesson
-    call expression (lessonTarget + str(lessons[lessonTarget]))
-    
-    # Advance the lesson count
-    $lessons[lessonTarget] += 1
-    
-    # Perform todays activity
-    call expression activityTarget
-    
-    # Check to see if we can make any quests active
-    $game.checkForActiveQuests()
-    
-    # Perform quest updates
-    $game.updateActiveQuests()
-    
-    jump chapter3
