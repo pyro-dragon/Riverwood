@@ -9,7 +9,7 @@
 # cycle system.
 #-----------------------------
 label activityCycle:  
-    if playerCompanion == "none": 
+    if playerCompanion == "": 
         P "Hmm, what should I do?"
     else: 
         P "Hmm, what should we do?"
@@ -43,28 +43,29 @@ label explore:
         #"There is nothing left to explore"
         jump activityCycle
             
-    if playerCompanion != "none":
+    if playerCompanion != "":
         P "Lets go for a walk. We can explore the surrounding area!"
     else: 
         P "I'll go for a bit of an explore"
     
-    if playerCompanion != "none": 
+    if playerCompanion != "": 
         if playerCompanion.loves("exploring"):
             $playerCompanion.c(playerCompanion.preferences["exploring"].reaction)
-            $playerCompanion.addRp(3)
+            $playerCompanion.addRP(3)
         elif playerCompanion.hates("exploring"):
             $playerCompanion.c(playerCompanion.preferences["exploring"].reaction)
-            $playerCompanion.addRp(-3)
-            
-    # Roll dice and get score
-    $score = renpy.random.randint(1, 100) + player.getSkill("exploring")
+            $playerCompanion.addRP(-3)
         
     # Compare score against remaining places to explore
     # Grab a random place
     $place = discoverableAreas[renpy.random.randint(0, len(discoverableAreas) - 1)]
+    
+    # Add the companion skill as a bonus
+    $findPlaceResult = player.skillTest("exploring", place.discoveryScore, playerCompanion.getSkillTotal("exploring"))
+    #$score = renpy.random.randint(1, 100) + player.getSkill("exploring")
             
     # If there are still unexplored places and the score is higher than the easiest hidden space then reveal a space
-    if score > place.discoveryScore:
+    if findPlaceResult == True:
         # Make place visitable
         $place.discover()
         "You have found the [place.name]!"
@@ -81,9 +82,9 @@ label explore:
         python: 
             # Check if the place has any matching keywords- if so, add even more rp
             for word in place.keyWords: 
-                if playerCompanion != "none" and playerCompanion.loves(word): 
+                if playerCompanion != "" and playerCompanion.loves(word): 
                     playerCompanion.c(word + " : " + playerCompanion.preferences[word].reaction)
-                    playerCompanion.addRp(1)
+                    playerCompanion.addRP(1)
                     break
     else:
         "You have failed to find anywhere interesting"
@@ -93,7 +94,7 @@ label explore:
     return
     
 label practice: 
-    if playerCompanion != "none":
+    if playerCompanion != "":
         "You spend some time practicing your [player.career.name] skills with [playerCompanion.name]."
         
         # Boosts for primary skills
@@ -183,23 +184,3 @@ label hangOut:
     # Go back to plot
     return
     
-label seeSomeoneElse: 
-    P "Who should I see?"
-    menu: 
-        "[ally.name]":
-            pass
-        "[rival.name]":
-            pass
-        "[hunter.name]" if hunter.met == True:
-            pass
-        "[mechanic.name]" if mechanic.met == True:
-            pass
-        "[fighter.name]" if fighter.met == True:
-            pass
-        "[trader.name]" if trader.met == True:
-            pass
-        
-    # Menu of all known contacts
-    # Lose relationship points for ditching a partner if you currently have one. 
-    # Check if character is available
-    # Offer activity list

@@ -67,7 +67,9 @@ init:
                 "performance" : "dex"
             }
             
-            # Constructor
+            #-------------#
+            # Constructor #
+            #-------------#
             def __init__(self, name, family, career, renpyCharacter, imageName, met, hideName, thumbnail):
                 self.family = family            # The character family
                 self.career = career            # The character career
@@ -113,31 +115,45 @@ init:
                     "performance" : 0
                 }
                 
+            #-------------------#
+            # Return the career #
+            #-------------------#
             def getCareer(self):
                 return self.career
-                    
-            # Reveal the character name
+            
+            #---------------------------#
+            # Reveal the character name #
+            #---------------------------#
             def showName(self):
                 self.name = self.trueName
-   
-            # Return the total skill result
-            # Skill bonus + attribute
+            
+            #-------------------------------#
+            # Return the total skill result #
+            #-------------------------------#
+            # Skill bonus + attribute       #
+            #-------------------------------#
             def getSkillTotal(self, skill): 
                 return self.skillBonus[skill] + self.attr[self.skillIndex[skill]]
             
-            # Add to the skill bonus
+            #------------------------#
+            # Add to the skill bonus #
+            #------------------------#
             def changeSkillBonus(self, skill, change): 
                 if self.skillBonus.has_key(skill): 
                     self.skillBonus[skill] += change
                     renpy.show_screen("skillShowBox", skill, change)
-                    
-            # Add to the attributes
+            
+            #-----------------------#
+            # Add to the attributes #
+            #-----------------------#
             def changeAttr(self, attr, change):
                 if self.attr.has_key(attr):
                     self.attr[attr] += change
                     renpy.show_screen("skillShowBox", attr, change)
                     
-            # Test against a skill
+            #----------------------#
+            # Test against a skill #
+            #----------------------#
             def skillTest(self, skill, goal, bonus = 0):
                 total = bonus + self.getSkillTotal(skill) + renpy.random.randint(1, 20)       # Get the total to check the skill against
                 
@@ -149,29 +165,40 @@ init:
                 renpy.show_screen("challenegeShowBox", skill, result)
                 return result
 
-            # Add a preference
+            #------------------#
+            # Add a preference #
+            #------------------#
             def addPreference(self, preference):
                 self.preferences.update({preference.name : preference})
                 
-            # Check to see if the preference is loved
+            #-----------------------------------------#
+            # Check to see if the preference is loved #
+            #-----------------------------------------#
             def loves(self, preference): 
                 if self.preferences.has_key(preference):
                     return self.preferences[preference].love
                 else:
                     return False
                     
-            # Check to see if the preference is hated
+            #-----------------------------------------#
+            # Check to see if the preference is hated #
+            #-----------------------------------------#
             def hates(self, preference): 
                 if self.preferences.has_key(preference):
                     return not self.preferences[preference].love
                 else:
                     return False
 
-            # Add relationship points
+            #-------------------------#
+            # Add relationship points #
+            #-------------------------#
             def addRP(self, points): 
                 self.rp += points
                 renpy.show_screen("skillShowBox", self.name + " relationship", points)
 
+            #------------------------------------------------#
+            # Return a string representation of the RP level #
+            #------------------------------------------------#
             def getRpStatement(self):
                 if(self.rp <= 0):               # Zero or less
                     return "Sworn Enemy"
