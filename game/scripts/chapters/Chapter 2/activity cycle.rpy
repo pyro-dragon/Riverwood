@@ -168,7 +168,7 @@ label practice:
     return
     
 label socialise: 
-    "Unavailable"
+    call chat_orcsSighted
     # Gain a bonus to social skills
     # Chance to learn a rumour or random info about random person.
     # Random chance at meeting a new datable
