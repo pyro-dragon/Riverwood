@@ -11,24 +11,31 @@ init 1:
                 self.segments = []
                 self.segCount = 0
                 
-            # Add segment
+            # Add a chat segment
             def AddSegment(self, segment):
                 self.segments.append(segment)
                 self.segCount += 1
                 
             # Create a conversation
+            # Return a map containing the "conversation" array, the "participants" array and the conversation "length"
             def generateConversation(self, length = 3):
                 conversationFragments = []
                 for i in range(length):
+                    # Generate a random index
                     index = renpy.random.randint(0, self.segCount-1)
+                    # Append the segment to the fragment array
                     conversationFragments.append(self.segments[index])
+                    # Pop the segment from the list
                     self.segments.pop(index)
+                    # Decrease the count
+                    self.segCount -= 1
                     
                 # Get all the participants
                 participants = []
-                for i in range(length - 1):
-                    for j in conversationFragments[i].participants:
+                for i in conversationFragments: 
+                    for j in i.participants:
                         participants.append(j)
+                # Convert to a set (to eliminate duplicates)
                 participants = set(participants)
                 
                 return {"conversation":conversationFragments, "participants": participants, "length": length}
@@ -54,7 +61,9 @@ label conversation:
     $tmpp = testcon["length"]
     "Length: [tmpp]"
     $names = testcon["conversation"][0].name + testcon["conversation"][1].name + testcon["conversation"][2].name
+    $pants = testcon["participants"]
     "Names: [names]"
+    "Pants: [pants]"
     while testcon["length"] > 0:
     #for i in range(testcon.conversation.length):
         call expression testcon["conversation"][0].label
