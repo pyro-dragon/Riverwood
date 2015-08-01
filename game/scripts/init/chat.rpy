@@ -10,6 +10,21 @@
 
 init 1: 
     python: 
+        
+        # Headshot class for a supply of headshots to use
+        class Headshot:
+             def __init__(self, image, type, male):
+                self.image = image
+                self.type = type
+                self.male = male
+                
+        # Names
+        class Name:
+            def __init__(self, name, family, male):
+                self.name = name
+                self.family = family
+                self.male = male
+                
         class ConversationManager:
             
             # Constructor
@@ -17,6 +32,86 @@ init 1:
                 self.segments = []
                 self.segCount = 0
                 self.participants = {}
+                self.headshots = []
+                self.headshotCount = 0
+                self.names = []
+                self.nameCount = 0
+                
+                self.AddHeadshot(Headshot("headshots/angry1", "angry", True))
+                self.AddHeadshot(Headshot("headshots/angry2", "angry", True))
+                self.AddHeadshot(Headshot("headshots/angry3", "angry", False))
+                self.AddHeadshot(Headshot("headshots/angry4", "angry", True))
+                self.AddHeadshot(Headshot("headshots/angry5", "angry", True))
+                
+                self.AddHeadshot(Headshot("headshots/bragger1", "bragger", False))
+                self.AddHeadshot(Headshot("headshots/bragger2", "bragger", True))
+                self.AddHeadshot(Headshot("headshots/bragger3", "bragger", True))
+                self.AddHeadshot(Headshot("headshots/bragger4", "bragger", False))
+                self.AddHeadshot(Headshot("headshots/bragger5", "bragger", False))
+                self.AddHeadshot(Headshot("headshots/bragger6", "bragger", False))
+                self.AddHeadshot(Headshot("headshots/bragger7", "bragger", False))
+                
+                self.AddHeadshot(Headshot("headshots/enthusiastic1", "enthusiastic", True))
+                self.AddHeadshot(Headshot("headshots/enthusiastic2", "enthusiastic", True))
+                self.AddHeadshot(Headshot("headshots/enthusiastic3", "enthusiastic", False))
+                self.AddHeadshot(Headshot("headshots/enthusiastic4", "enthusiastic", False))
+                self.AddHeadshot(Headshot("headshots/enthusiastic5", "enthusiastic", True))
+                
+                self.AddHeadshot(Headshot("headshots/happy1", "happy", False))
+                
+                self.AddHeadshot(Headshot("headshots/skeptic1", "skeptic", True))
+                self.AddHeadshot(Headshot("headshots/skeptic2", "skeptic", False))
+                self.AddHeadshot(Headshot("headshots/skeptic3", "skeptic", True))
+                self.AddHeadshot(Headshot("headshots/skeptic4", "skeptic", False))
+                self.AddHeadshot(Headshot("headshots/skeptic5", "skeptic", False))
+                self.AddHeadshot(Headshot("headshots/skeptic6", "skeptic", False))
+                self.AddHeadshot(Headshot("headshots/skeptic7", "skeptic", True))
+                self.AddHeadshot(Headshot("headshots/skeptic8", "skeptic", False))
+                
+                self.AddHeadshot(Headshot("headshots/upset1", "upset", True))
+                self.AddHeadshot(Headshot("headshots/upset2", "upset", True))
+                self.AddHeadshot(Headshot("headshots/upset3", "upset", True))
+                self.AddHeadshot(Headshot("headshots/upset4", "upset", False))
+                self.AddHeadshot(Headshot("headshots/upset5", "upset", False))
+                self.AddHeadshot(Headshot("headshots/upset6", "upset", True))
+                self.AddHeadshot(Headshot("headshots/upset7", "upset", True))
+                self.AddHeadshot(Headshot("headshots/upset8", "upset", False))
+                
+                self.AddName(Name("Nightwind", "Bloodrunner", True))
+                self.AddName(Name("Featherstorm", "Bloodrunner", True))
+                self.AddName(Name("Moonrise", "Bloodrunner", True))
+                self.AddName(Name("Summer", "Bloodrunner", False))
+                self.AddName(Name("Rain", "Bloodrunner", False))
+                self.AddName(Name("Flow", "Bloodrunner", False))
+                
+                self.AddName(Name("Cogward", "Coppertail", True))
+                self.AddName(Name("Marcus", "Coppertail", True))
+                self.AddName(Name("Edward", "Coppertail", True))
+                self.AddName(Name("Wendy", "Coppertail", False))
+                self.AddName(Name("Ermintrude", "Coppertail", False))
+                self.AddName(Name("Casey", "Coppertail", False))
+                
+                self.AddName(Name("Hammer", "Daggermaw", True))
+                self.AddName(Name("Slam", "Daggermaw", True))
+                self.AddName(Name("Pusher", "Daggermaw", True))
+                self.AddName(Name("Slicer", "Daggermaw", False))
+                self.AddName(Name("Fracture", "Daggermaw", False))
+                self.AddName(Name("Scar", "Daggermaw", False))
+                
+                self.AddName(Name("Meridian", "Gildclaw", True))
+                self.AddName(Name("Ledger", "Gildclaw", True))
+                self.AddName(Name("Grant", "Gildclaw", True))
+                self.AddName(Name("Saphire", "Gildclaw", False))
+                self.AddName(Name("Jade", "Gildclaw", False))
+                self.AddName(Name("Ruby", "Gildclaw", False))
+                
+            def AddHeadshot(self, headshot):
+                self.headshots.append(headshot)
+                self.headshotCount += 1
+                
+            def AddName(self, name):
+                self.names.append(name)
+                self.nameCount += 1
                 
             # Add a chat segment
             def AddSegment(self, segment):
@@ -48,13 +143,33 @@ init 1:
                 return {"conversation":conversationFragments, "participants": participants, "length": length}
                
             # Generate a conversation particiapnt (or supply a ready made one)
-            def generateParticipant(self, type): 
+            def getParticipant(self, type): 
                 # Check to see if the participant already exists
                 if type in self.participants: 
                     return self.participants[type]
                 else
-                    # TODO: Generate enough character for conversations
-                    # Add to self.participants
+                    return generateParticipant(type)
+            
+            # Generate a participant
+            def generateParticipant(self, type):
+                # Pick a headshot
+                pic = {}
+                while pic.type != type:
+                    pic = renpy.random.randint(0, self.headshotCount-1)
+                
+                # Pick a name
+                name = {}
+                while name.male != pic.male:
+                    name = renpy.random.randint(0, self.nameCount-1)
+                    
+                # Pick a colour
+                colour = game.generateColour()
+                
+                tmpPart = {name: name.name, family: name.family, thumbnail: pic.image, male: name.male, colour: colour}
+                
+                self.participants[type] = tmpPart
+                
+                return tmpPart
         
         class ChatSegment: 
             
@@ -95,7 +210,7 @@ label conversation:
             elif playerComapnion.family == "Gildclaw" and part = "upset":
                 $peopleMap.update({part, playerCompanion})
             else: 
-                $peopleMap.update({part, conman.generateParticipant(part)})
+                $peopleMap.update({part, conman.getParticipant(part)})
             
             # Create a map of all participant types. 
             # Check the player companion and slot them into a place in the map. 
