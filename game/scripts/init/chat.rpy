@@ -2,6 +2,12 @@
 # This defines missions which are the individual units of story
 #-------------------------------------------------------------------------------
 
+# Participant types
+# Enthusiastic
+# Skeptic
+# Upset
+# Bragger
+
 init 1: 
     python: 
         class ConversationManager:
@@ -10,6 +16,7 @@ init 1:
             def __init__(self):
                 self.segments = []
                 self.segCount = 0
+                self.participants = {}
                 
             # Add a chat segment
             def AddSegment(self, segment):
@@ -39,6 +46,15 @@ init 1:
                 participants = set(participants)
                 
                 return {"conversation":conversationFragments, "participants": participants, "length": length}
+               
+            # Generate a conversation particiapnt (or supply a ready made one)
+            def generateParticipant(self, type): 
+                # Check to see if the participant already exists
+                if type in self.participants: 
+                    return self.participants[type]
+                else
+                    # TODO: Generate enough character for conversations
+                    # Add to self.participants
         
         class ChatSegment: 
             
@@ -64,11 +80,33 @@ label conversation:
     $pants = testcon["participants"]
     "Names: [names]"
     "Pants: [pants]"
+    
+    # Cycle through all conversation segments
     while testcon["length"] > 0:
-    #for i in range(testcon.conversation.length):
+        # Asign character to participant
+        $peopleMap = {}
+        for part in testcon["participants"]:
+            if playerComapnion.family == "Bloodrunner" and part = "Skeptic": 
+                $peopleMap.update({part, playerCompanion})
+            elif playerComapnion.family == "Coppertail" and part = "enthusiastic": 
+                $peopleMap.update({part, playerCompanion})
+            elif playerComapnion.family == "Daggermaw" and part = "bragger": 
+                $peopleMap.update({part, playerCompanion})
+            elif playerComapnion.family == "Gildclaw" and part = "upset":
+                $peopleMap.update({part, playerCompanion})
+            else: 
+                $peopleMap.update({part, conman.generateParticipant(part)})
+            
+            # Create a map of all participant types. 
+            # Check the player companion and slot them into a place in the map. 
+            # Fill out the rest of the map with randomly chosen extras.
+            # Pass the map to each conversation segment to pick out whoever they want to use. 
+        
+        # Call the conversation segment label
         call expression testcon["conversation"][0].label
-        #$testcon["conversation"][0].told = True
+        # Pop the segment from the conversation
         $testcon["conversation"].pop(0)
+        # Reduce the count
         $testcon["length"] -= 1
         $tmpp = testcon["length"]
         "Length now: [tmpp]"
