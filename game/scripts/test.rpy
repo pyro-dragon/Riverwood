@@ -4,5 +4,6 @@ label test:
     $crt_mechanic.met = True
     $crt_fighter.met = True
     $crt_hunter.met = True
+    $playerCompanion = crt_mechanic
     #call screen activity()
     call conversation

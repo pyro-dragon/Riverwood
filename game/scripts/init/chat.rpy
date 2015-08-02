@@ -147,25 +147,29 @@ init 1:
                 # Check to see if the participant already exists
                 if type in self.participants: 
                     return self.participants[type]
-                else
-                    return generateParticipant(type)
+                else:
+                    return self.generateParticipant(type)
             
             # Generate a participant
             def generateParticipant(self, type):
                 # Pick a headshot
                 pic = {}
-                while pic.type != type:
-                    pic = renpy.random.randint(0, self.headshotCount-1)
+                while True: 
+                    pic = self.headshots[renpy.random.randint(0, self.headshotCount-1)]
+                    if pic.type == type: 
+                        break
                 
                 # Pick a name
                 name = {}
-                while name.male != pic.male:
-                    name = renpy.random.randint(0, self.nameCount-1)
+                while True:
+                    name = self.names[renpy.random.randint(0, self.nameCount-1)]
+                    if name.male == pic.male:
+                        break
                     
                 # Pick a colour
                 colour = game.generateColour()
                 
-                tmpPart = {name: name.name, family: name.family, thumbnail: pic.image, male: name.male, colour: colour}
+                tmpPart = {"name": name.name, "family": name.family, "thumbnail": pic.image, "male": name.male, "colour": colour}
                 
                 self.participants[type] = tmpPart
                 
@@ -200,17 +204,18 @@ label conversation:
     while testcon["length"] > 0:
         # Asign character to participant
         $peopleMap = {}
-        for part in testcon["participants"]:
-            if playerComapnion.family == "Bloodrunner" and part = "Skeptic": 
-                $peopleMap.update({part, playerCompanion})
-            elif playerComapnion.family == "Coppertail" and part = "enthusiastic": 
-                $peopleMap.update({part, playerCompanion})
-            elif playerComapnion.family == "Daggermaw" and part = "bragger": 
-                $peopleMap.update({part, playerCompanion})
-            elif playerComapnion.family == "Gildclaw" and part = "upset":
-                $peopleMap.update({part, playerCompanion})
-            else: 
-                $peopleMap.update({part, conman.getParticipant(part)})
+        python:
+            for part in testcon["participants"]:
+                if playerCompanion.family == "Bloodrunner" and part == "Skeptic": 
+                    peopleMap.update({part: playerCompanion.__dict__})
+                elif playerCompanion.family == "Coppertail" and part == "enthusiastic": 
+                    peopleMap.update({part: playerCompanion.__dict__})
+                elif playerCompanion.family == "Daggermaw" and part == "bragger": 
+                    peopleMap.update({part: playerCompanion.__dict__})
+                elif playerCompanion.family == "Gildclaw" and part == "upset":
+                    peopleMap.update({part: playerCompanion.__dict__})
+                else: 
+                    peopleMap.update({part: conman.getParticipant(part)})
             
             # Create a map of all participant types. 
             # Check the player companion and slot them into a place in the map. 
@@ -218,7 +223,7 @@ label conversation:
             # Pass the map to each conversation segment to pick out whoever they want to use. 
         
         # Call the conversation segment label
-        call expression testcon["conversation"][0].label
+        call expression testcon["conversation"][0].label pass(participants=peopleMap)
         # Pop the segment from the conversation
         $testcon["conversation"].pop(0)
         # Reduce the count
@@ -227,39 +232,39 @@ label conversation:
         "Length now: [tmpp]"
     return
         
-label testchat1(enthusiastic = "e", skeptic = "s"): 
+label testchat1(participants): 
     "testchat1"
-    enthusiastic "enthusiastic"
-    skeptic "skeptic"
+    participants["enthusiastic"]["name"] "enthusiastic"
+    participants["skeptic"]["name"] "skeptic"
     "over"
     return
     
-label testchat2(upset = "u", skeptic = "s"): 
+label testchat2(participants): 
     "testchat2"
-    upset "upset"
-    skeptic "skeptic"
+    participants["upset"]["name"] "upset"
+    participants["skeptic"]["name"] "skeptic"
     "over"
     return
     
-label testchat3(enthusiastic = "e", skeptic = "s", bragger = "b"): 
+label testchat3(participants): 
     "testchat3"
-    enthusiastic "enthusiastic"
-    skeptic "skeptic"
-    bragger "bragger"
+    participants["enthusiastic"]["name"] "enthusiastic"
+    participants["skeptic"]["name"] "skeptic"
+    participants["bragger"]["name"] "bragger"
     "over"
     return
     
-label testchat4(bragger = "b", skeptic = "s"): 
+label testchat4(participants): 
     "testchat4"
-    bragger "bragger"
-    skeptic "skeptic"
+    participants["bragger"]["name"] "bragger"
+    participants["skeptic"]["name"] "skeptic"
     "over"
     return
     
-label testchat5(enthusiastic = "e", upset = "u"): 
+label testchat5(participants): 
     "testchat5"
-    enthusiastic "enthusiastic"
-    upset "upset"
+    participants["enthusiastic"]["name"] "enthusiastic"
+    participants["upset"]["name"] "upset"
     "over"
     return
     

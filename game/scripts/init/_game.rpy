@@ -19,7 +19,7 @@ init:
                
             # Generate a random colour hex value
             def generateColour(self):
-                r = lambda: random.randint(0,255)
+                r = lambda: renpy.random.randint(0,255)
                 return '#%02X%02X%02X' % (r(),r(),r())
                 
     $game = Game()
