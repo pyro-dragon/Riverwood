@@ -128,21 +128,26 @@ screen nvl(dialogue, items=None):
     window:
         style "nvl_window"
 
-        has vbox:
-            style "nvl_vbox"
+        
+        viewport:
+            mousewheel True
+            scrollbars "vertical"
 
-        # Display dialogue.
-        for who, what, who_id, what_id, window_id in dialogue:
-            window:
-                id window_id
+            has vbox box_reverse True:
+                style "nvl_vbox"
 
-                has hbox:
-                    spacing 10
+            # Display dialogue.
+            for who, what, who_id, what_id, window_id in dialogue:
+                window:
+                    id window_id
 
-                if who is not None:
-                    text who id who_id
+                    has hbox:
+                        spacing 10
 
-                text what id what_id
+                    if who is not None:
+                        text who id who_id
+
+                    text what id what_id
 
         # Display a menu, if given.
         if items:
