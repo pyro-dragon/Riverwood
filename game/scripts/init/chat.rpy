@@ -169,7 +169,9 @@ init 1:
                 # Pick a colour
                 colour = game.generateColour()
                 
-                tmpPart = {"name": name.name, "family": name.family, "thumbnail": pic.image, "male": name.male, "colour": colour}
+                #                       name,    family, career, renpyCharacter,                                                 imageName,             met, hideName, thumbnail
+                tmpPart = GameCharacter(name.name, "none", "none", Character("{image=pic.image}name.name", kind=nvl, window_background=Solid(colour)), pic.image, True, False, "")
+                #tmpPart = {"name": name.name, "family": name.family, "thumbnail": pic.image, "male": name.male, "colour": colour}
                 
                 self.participants[type] = tmpPart
                 
@@ -207,13 +209,17 @@ label conversation:
         python:
             for part in testcon["participants"]:
                 if playerCompanion.family == "Bloodrunner" and part == "Skeptic": 
-                    peopleMap.update({part: playerCompanion.__dict__})
+                    playerCompanion.c.kind = nvl
+                    peopleMap.update({part: playerCompanion})
                 elif playerCompanion.family == "Coppertail" and part == "enthusiastic": 
-                    peopleMap.update({part: playerCompanion.__dict__})
+                    playerCompanion.c.kind = nvl
+                    peopleMap.update({part: playerCompanion})
                 elif playerCompanion.family == "Daggermaw" and part == "bragger": 
-                    peopleMap.update({part: playerCompanion.__dict__})
+                    playerCompanion.c.kind = nvl
+                    peopleMap.update({part: playerCompanion})
                 elif playerCompanion.family == "Gildclaw" and part == "upset":
-                    peopleMap.update({part: playerCompanion.__dict__})
+                    playerCompanion.c.kind = nvl
+                    peopleMap.update({part: playerCompanion})
                 else: 
                     peopleMap.update({part: conman.getParticipant(part)})
             
@@ -234,37 +240,37 @@ label conversation:
         
 label testchat1(participants): 
     "testchat1"
-    participants["enthusiastic"]["name"] "enthusiastic"
-    participants["skeptic"]["name"] "skeptic"
+    participants["enthusiastic"].name "enthusiastic"
+    participants["skeptic"].name "skeptic"
     "over"
     return
     
 label testchat2(participants): 
     "testchat2"
-    participants["upset"]["name"] "upset"
-    participants["skeptic"]["name"] "skeptic"
+    participants["upset"].name "upset"
+    participants["skeptic"].name "skeptic"
     "over"
     return
     
 label testchat3(participants): 
     "testchat3"
-    participants["enthusiastic"]["name"] "enthusiastic"
-    participants["skeptic"]["name"] "skeptic"
-    participants["bragger"]["name"] "bragger"
+    participants["enthusiastic"].name "enthusiastic"
+    participants["skeptic"].name "skeptic"
+    participants["bragger"].name "bragger"
     "over"
     return
     
 label testchat4(participants): 
     "testchat4"
-    participants["bragger"]["name"] "bragger"
-    participants["skeptic"]["name"] "skeptic"
+    participants["bragger"].name "bragger"
+    participants["skeptic"].name "skeptic"
     "over"
     return
     
 label testchat5(participants): 
     "testchat5"
-    participants["enthusiastic"]["name"] "enthusiastic"
-    participants["upset"]["name"] "upset"
+    participants["enthusiastic"].name "enthusiastic"
+    participants["upset"].name "upset"
     "over"
     return
     

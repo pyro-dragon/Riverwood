@@ -7,6 +7,10 @@ define Y = Character('{image=Y}Trish', kind=nvl, window_background=Solid("#0f0")
 define Z = Character('{image=Z}Alex', kind=nvl, window_background=Solid("#00f"), window_xfill=True)
 
 label test:
+    $crt_mechanic.met = True
+    #$playerCompanion = crt_mechanic
+    call conversation
+    
     X "You've created a new Ren'Py game."
     Y "You've created a new Ren'Py game."
 
