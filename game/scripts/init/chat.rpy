@@ -37,45 +37,45 @@ init 1:
                 self.names = []
                 self.nameCount = 0
                 
-                self.AddHeadshot(Headshot("headshots/angry1", "angry", True))
-                self.AddHeadshot(Headshot("headshots/angry2", "angry", True))
-                self.AddHeadshot(Headshot("headshots/angry3", "angry", False))
-                self.AddHeadshot(Headshot("headshots/angry4", "angry", True))
-                self.AddHeadshot(Headshot("headshots/angry5", "angry", True))
+                self.AddHeadshot(Headshot("characters/headshots/angry1.png", "angry", True))
+                self.AddHeadshot(Headshot("characters/headshots/angry2.png", "angry", True))
+                self.AddHeadshot(Headshot("characters/headshots/angry3.png", "angry", False))
+                self.AddHeadshot(Headshot("characters/headshots/angry4.png", "angry", True))
+                self.AddHeadshot(Headshot("characters/headshots/angry5.png", "angry", True))
                 
-                self.AddHeadshot(Headshot("headshots/bragger1", "bragger", False))
-                self.AddHeadshot(Headshot("headshots/bragger2", "bragger", True))
-                self.AddHeadshot(Headshot("headshots/bragger3", "bragger", True))
-                self.AddHeadshot(Headshot("headshots/bragger4", "bragger", False))
-                self.AddHeadshot(Headshot("headshots/bragger5", "bragger", False))
-                self.AddHeadshot(Headshot("headshots/bragger6", "bragger", False))
-                self.AddHeadshot(Headshot("headshots/bragger7", "bragger", False))
+                self.AddHeadshot(Headshot("characters/headshots/bragger1.png", "bragger", False))
+                self.AddHeadshot(Headshot("characters/headshots/bragger2.png", "bragger", True))
+                self.AddHeadshot(Headshot("characters/headshots/bragger3.png", "bragger", True))
+                self.AddHeadshot(Headshot("characters/headshots/bragger4.png", "bragger", False))
+                self.AddHeadshot(Headshot("characters/headshots/bragger5.png", "bragger", False))
+                self.AddHeadshot(Headshot("characters/headshots/bragger6.png", "bragger", False))
+                self.AddHeadshot(Headshot("characters/headshots/bragger7.png", "bragger", False))
                 
-                self.AddHeadshot(Headshot("headshots/enthusiastic1", "enthusiastic", True))
-                self.AddHeadshot(Headshot("headshots/enthusiastic2", "enthusiastic", True))
-                self.AddHeadshot(Headshot("headshots/enthusiastic3", "enthusiastic", False))
-                self.AddHeadshot(Headshot("headshots/enthusiastic4", "enthusiastic", False))
-                self.AddHeadshot(Headshot("headshots/enthusiastic5", "enthusiastic", True))
+                self.AddHeadshot(Headshot("characters/headshots/enthusiastic1.png", "enthusiastic", True))
+                self.AddHeadshot(Headshot("characters/headshots/enthusiastic2.png", "enthusiastic", True))
+                self.AddHeadshot(Headshot("characters/headshots/enthusiastic3.png", "enthusiastic", False))
+                self.AddHeadshot(Headshot("characters/headshots/enthusiastic4.png", "enthusiastic", False))
+                self.AddHeadshot(Headshot("characters/headshots/enthusiastic5.png", "enthusiastic", True))
                 
-                self.AddHeadshot(Headshot("headshots/happy1", "happy", False))
+                self.AddHeadshot(Headshot("characters/headshots/happy1.png", "happy", False))
                 
-                self.AddHeadshot(Headshot("headshots/skeptic1", "skeptic", True))
-                self.AddHeadshot(Headshot("headshots/skeptic2", "skeptic", False))
-                self.AddHeadshot(Headshot("headshots/skeptic3", "skeptic", True))
-                self.AddHeadshot(Headshot("headshots/skeptic4", "skeptic", False))
-                self.AddHeadshot(Headshot("headshots/skeptic5", "skeptic", False))
-                self.AddHeadshot(Headshot("headshots/skeptic6", "skeptic", False))
-                self.AddHeadshot(Headshot("headshots/skeptic7", "skeptic", True))
-                self.AddHeadshot(Headshot("headshots/skeptic8", "skeptic", False))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic1.png", "skeptic", True))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic2.png", "skeptic", False))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic3.png", "skeptic", True))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic4.png", "skeptic", False))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic5.png", "skeptic", False))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic6.png", "skeptic", False))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic7.png", "skeptic", True))
+                self.AddHeadshot(Headshot("characters/headshots/skeptic8.png", "skeptic", False))
                 
-                self.AddHeadshot(Headshot("headshots/upset1", "upset", True))
-                self.AddHeadshot(Headshot("headshots/upset2", "upset", True))
-                self.AddHeadshot(Headshot("headshots/upset3", "upset", True))
-                self.AddHeadshot(Headshot("headshots/upset4", "upset", False))
-                self.AddHeadshot(Headshot("headshots/upset5", "upset", False))
-                self.AddHeadshot(Headshot("headshots/upset6", "upset", True))
-                self.AddHeadshot(Headshot("headshots/upset7", "upset", True))
-                self.AddHeadshot(Headshot("headshots/upset8", "upset", False))
+                self.AddHeadshot(Headshot("characters/headshots/upset1.png", "upset", True))
+                self.AddHeadshot(Headshot("characters/headshots/upset2.png", "upset", True))
+                self.AddHeadshot(Headshot("characters/headshots/upset3.png", "upset", True))
+                self.AddHeadshot(Headshot("characters/headshots/upset4.png", "upset", False))
+                self.AddHeadshot(Headshot("characters/headshots/upset5.png", "upset", False))
+                self.AddHeadshot(Headshot("characters/headshots/upset6.png", "upset", True))
+                self.AddHeadshot(Headshot("characters/headshots/upset7.png", "upset", True))
+                self.AddHeadshot(Headshot("characters/headshots/upset8.png", "upset", False))
                 
                 self.AddName(Name("Nightwind", "Bloodrunner", True))
                 self.AddName(Name("Featherstorm", "Bloodrunner", True))
@@ -170,7 +170,7 @@ init 1:
                 colour = game.generateColour()
                 
                 #                       name,    family, career, renpyCharacter,                                                 imageName,             met, hideName, thumbnail
-                tmpPart = GameCharacter(name.name, "none", "none", Character("{image=pic.image}name.name", kind=nvl, window_background=Solid(colour)), pic.image, True, False, "")
+                tmpPart = GameCharacter(name.name, "none", "none", Character("{image=" + pic.image + "}" + name.name, kind=nvl, window_background=Solid(colour), window_xfill=True), pic.image, True, False, "")
                 #tmpPart = {"name": name.name, "family": name.family, "thumbnail": pic.image, "male": name.male, "colour": colour}
                 
                 self.participants[type] = tmpPart
@@ -209,17 +209,17 @@ label conversation:
         python:
             for part in testcon["participants"]:
                 if playerCompanion.family == "Bloodrunner" and part == "Skeptic": 
-                    playerCompanion.c.kind = nvl
-                    peopleMap.update({part: playerCompanion})
-                elif playerCompanion.family == "Coppertail" and part == "enthusiastic": 
-                    playerCompanion.c.kind = nvl
-                    peopleMap.update({part: playerCompanion})
+                    peopleMap.update({part: conman.getParticipant(part)})
+                    #peopleMap.update({part: playerCompanion})
+                elif playerCompanion.family == "Coppertail" and part == "enthusiastic":
+                    peopleMap.update({part: conman.getParticipant(part)})
+                    #peopleMap.update({part: playerCompanion})
                 elif playerCompanion.family == "Daggermaw" and part == "bragger": 
-                    playerCompanion.c.kind = nvl
-                    peopleMap.update({part: playerCompanion})
+                    peopleMap.update({part: conman.getParticipant(part)})
+                    #peopleMap.update({part: playerCompanion})
                 elif playerCompanion.family == "Gildclaw" and part == "upset":
-                    playerCompanion.c.kind = nvl
-                    peopleMap.update({part: playerCompanion})
+                    peopleMap.update({part: conman.getParticipant(part)})
+                    #peopleMap.update({part: playerCompanion})
                 else: 
                     peopleMap.update({part: conman.getParticipant(part)})
             
@@ -236,41 +236,43 @@ label conversation:
         $testcon["length"] -= 1
         $tmpp = testcon["length"]
         "Length now: [tmpp]"
+        
+        nvl clear
     return
         
 label testchat1(participants): 
     "testchat1"
-    participants["enthusiastic"].name "enthusiastic"
-    participants["skeptic"].name "skeptic"
+    participants["enthusiastic"].c "enthusiastic"
+    participants["skeptic"].c "skeptic"
     "over"
     return
     
 label testchat2(participants): 
     "testchat2"
-    participants["upset"].name "upset"
-    participants["skeptic"].name "skeptic"
+    participants["upset"].c "upset"
+    participants["skeptic"].c "skeptic"
     "over"
     return
     
 label testchat3(participants): 
     "testchat3"
     participants["enthusiastic"].name "enthusiastic"
-    participants["skeptic"].name "skeptic"
-    participants["bragger"].name "bragger"
+    participants["skeptic"].c "skeptic"
+    participants["bragger"].c "bragger"
     "over"
     return
     
 label testchat4(participants): 
     "testchat4"
-    participants["bragger"].name "bragger"
-    participants["skeptic"].name "skeptic"
+    participants["bragger"].c "bragger"
+    participants["skeptic"].c "skeptic"
     "over"
     return
     
 label testchat5(participants): 
     "testchat5"
-    participants["enthusiastic"].name "enthusiastic"
-    participants["upset"].name "upset"
+    participants["enthusiastic"].c "enthusiastic"
+    participants["upset"].c "upset"
     "over"
     return
     

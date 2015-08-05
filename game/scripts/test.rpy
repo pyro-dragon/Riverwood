@@ -8,9 +8,9 @@ define Z = Character('{image=Z}Alex', kind=nvl, window_background=Solid("#00f"),
 
 label test:
     $crt_mechanic.met = True
-    #$playerCompanion = crt_mechanic
+    $playerCompanion = crt_mechanic
     call conversation
-    
+    "Hi"
     X "You've created a new Ren'Py game."
     Y "You've created a new Ren'Py game."
 
