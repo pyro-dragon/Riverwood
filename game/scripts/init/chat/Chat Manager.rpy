@@ -234,45 +234,46 @@ label conversation:
         $testcon["conversation"].pop(0)
         # Reduce the count
         $testcon["length"] -= 1
-        $tmpp = testcon["length"]
-        "Length now: [tmpp]"
+        #$tmpp = testcon["length"]
+        #"Length now: [tmpp]"
         
-        nvl clear
+    nvl clear
+    
     return
         
 label testchat1(participants): 
-    "testchat1"
+    #"testchat1"
     participants["enthusiastic"].c "enthusiastic"
     participants["skeptic"].c "skeptic"
-    "over"
+    #"over"
     return
     
 label testchat2(participants): 
-    "testchat2"
+    #"testchat2"
     participants["upset"].c "upset"
     participants["skeptic"].c "skeptic"
-    "over"
+    #"over"
     return
     
 label testchat3(participants): 
-    "testchat3"
-    participants["enthusiastic"].name "enthusiastic"
+    #"testchat3"
+    participants["enthusiastic"].c "enthusiastic"
     participants["skeptic"].c "skeptic"
     participants["bragger"].c "bragger"
-    "over"
+    #"over"
     return
     
 label testchat4(participants): 
-    "testchat4"
+    #"testchat4"
     participants["bragger"].c "bragger"
     participants["skeptic"].c "skeptic"
-    "over"
+    #"over"
     return
     
 label testchat5(participants): 
-    "testchat5"
+    #"testchat5"
     participants["enthusiastic"].c "enthusiastic"
     participants["upset"].c "upset"
-    "over"
+    #"over"
     return
     
