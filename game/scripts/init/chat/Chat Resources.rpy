@@ -43,8 +43,8 @@ init 1:
             def __init__(self):
                 self.headshots = []
                 self.names = []
-                self.chatSegments = []
-                self.priorityChatSegments = []
+                self.chatSegments = []          # Standard chat segments
+                self.priorityChatSegments = []  # Special segments that should be discussed first
                 
                 self.AddHeadshot(Headshot("characters/headshots/angry1.png", True, ["angry"]))
                 self.AddHeadshot(Headshot("characters/headshots/angry2.png", True, ["angry"]))
@@ -121,10 +121,84 @@ init 1:
                 self.headshots.append(headshot)
                 
             ##
+            # Get a random headshot
+            # @param male (boolean) If the headshot should be male or not
+            # @param role (string) A role that the headshot can play
+            # @param family (string) The headshot family
+            def GetRandomHeadshot(self, male, role, family):
+                
+                # Create a temporary array
+                tmpArr = self.headshots
+                
+                # Check if we have the gender filter
+                if male:
+                    # Cycle through the temp array and remove those that don't match
+                    for i in tmpArr:
+                        if i.male != male:
+                            tmpArr.pop(i)
+                            
+                # Check if we have the role filter
+                if role != None:
+                    # Cycle through the temp array
+                    for i in tmpArr:
+                        
+                        # Cycle through the headshot roles
+                        for j in i.roles:
+                            matched = False
+                            # Compare and check for matches
+                            if j.roles[j] == role:
+                                matched = True
+                        
+                        # Check if there was any matches
+                        if matched == False:
+                            # No matches, get rid of this headshot
+                            tmpArr.pop(i)
+                        
+                # Check if we have a family filter
+                if family != None: 
+                    # Cycle through the temp array and remove those that don't match
+                    for i in tmpArr: 
+                        if i.family != family:
+                        tmpArr.pop(i)
+                
+            ##
             # Add a name to the resource manager
             # @param name (object) The name object to add
             def AddName(self, name):
                 self.names.append(name)
+                
+            ##
+            # Get a random name
+            # @param male (boolean) Filter the selection by gender
+            # @param family (string) Filter the selection by family
+            def GetRandomName(self, male, family):
+                
+                # Create a temporary array
+                tmpArr = self.names
+                
+                # Check if we have the gender filter
+                if male:
+                    # Cycle through the temp array and remove those that don't match
+                    for i in tmpArr:
+                        if i.male != male:
+                            tmpArr.pop(i)
+                        
+                # Check if we have a family filter
+                if family: 
+                    # Cycle through the temp array and remove those that don't match
+                    for i in tmpArr: 
+                        if i.family != family:
+                        `tmpArr.pop(i)
+                         
+                # Check if there are any names
+                if not tmpArr: 
+                        
+                        # There are no names left. 
+                        return ""
+                        
+                    else: 
+                        # Get a random chat name
+                        return tmpArr[renpy.random.randint(0, len(tmpArr))]
                 
             ##
             # Add a chat segment
@@ -135,3 +209,24 @@ init 1:
                     self.priorityChatSegments.append(segment)
                 else: 
                     self.chatSegments.append(segment)
+                    
+            ##
+            # Get a random chat segment
+            def GetRandomSegment(self): 
+                
+                # Check if there is anything in the priority list
+                if not self.priorityChatSegments:
+                    
+                    # List is empty. Check if there is any in the regulat list
+                    if not self.chatSegments: 
+                        
+                        # There are no segments left. 
+                        return {}
+                        
+                    else: 
+                        # Get a random chat segment
+                        return self.chatSegments[renpy.random.randint(0, len(self.chatSegments))]
+                        
+                else:
+                    # Get the top priotity chat segment
+                    return self.priorityChatSegments[]
