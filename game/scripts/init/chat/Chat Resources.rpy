@@ -16,7 +16,7 @@ init 1:
             # @param roles (array)(string) An array of strings that describe the roles thi subject can fill
              def __init__(self, image, male, roles):
                 self.image = image
-                self.type = type
+                self.roles = roles
                 self.male = male
                 
         ##
