@@ -34,6 +34,18 @@ init 1:
                 self.male = male
                 
         ##
+        # Chat segment class
+        class ChatSegment:
+            
+            ##
+            # Constructor
+            # @param label (string) The label for the chat segment
+            # @param roles (array) And array of strings for the roles that participate in this chat segment
+            def __init__(self, label, roles):
+                self.label = name
+                self.roles = roles
+                
+        ##
         # The chat resouce manager
         class ChatResourceManager:
             
@@ -114,6 +126,12 @@ init 1:
                 self.AddName(Name("Jade", "Gildclaw", False))
                 self.AddName(Name("Ruby", "Gildclaw", False))
                 
+                self.AddSegment(ChatSegment("testchat1", ["enthusiastic", "skeptic"]))
+                self.AddSegment(ChatSegment("testchat2", ["upset", "skeptic"]))
+                self.AddSegment(ChatSegment("testchat3", ["enthusiastic", "skeptic", "bragger"]))
+                self.AddSegment(ChatSegment("testchat4", ["bragger", "skeptic"]))
+                self.AddSegment(ChatSegment("testchat5", ["enthusiastic", "upset"]))
+                
             ##
             # Add a headshot to the resource manager
             # @param headshot (object) The headshot object to add
@@ -160,6 +178,16 @@ init 1:
                     for i in tmpArr: 
                         if i.family != family:
                         tmpArr.pop(i)
+                         
+                # Check if there are any names
+                if not tmpArr: 
+                        
+                        # There are no names left. 
+                        return None
+                        
+                    else: 
+                        # Get a random chat name
+                        return tmpArr[renpy.random.randint(0, len(tmpArr))]
                 
             ##
             # Add a name to the resource manager
@@ -194,7 +222,7 @@ init 1:
                 if not tmpArr: 
                         
                         # There are no names left. 
-                        return ""
+                        return None
                         
                     else: 
                         # Get a random chat name
@@ -221,7 +249,7 @@ init 1:
                     if not self.chatSegments: 
                         
                         # There are no segments left. 
-                        return {}
+                        return None
                         
                     else: 
                         # Get a random chat segment

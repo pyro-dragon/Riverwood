@@ -11,10 +11,12 @@ init 1:
             
             ##
             # Constructor
-             def __init__(self):
+            # @param (object) The chat resource manager
+             def __init__(self, resourceManager):
                  
                  # Create the participant manager
-                self.chatRecMan = ChatResourceManager
+                #self.chatRecMan = ChatResourceManager
+                self.chatRecMan = resourceManager
                 self.participants = [][]          # An array of Roles that contains arrays of Participants
                 
             ##
@@ -50,4 +52,20 @@ init 1:
             # @param noNew (boolean) (default=False) Controles whether we can generate a new participant or not
             def getParticipant(self, role, noNew=False): 
                 
+                # Check if there is even a character to pick from
+                if not self.participants[role]:
+                    # We need to generate a character
+                    return self.generateParticipant(role)
                 
+                if noNew == True: 
+                    # Choose a random participant
+                    return self.participants[role][renpy.random.randint(0, len(self.participants[role] - 1))]
+                else: # Create a new character if the random number is larger than the array size- likelihood of new character creation falls off with the number of existing characters
+                    # Choose a random participant index
+                    index = renpy.random.randint(0, len(self.participants[role])
+                        
+                    # Check if this index is off the array
+                    if not self.participants[role][index]: 
+                        return self.generateParticipant(role)
+                    else: 
+                        return self.participants[role][index]: 
