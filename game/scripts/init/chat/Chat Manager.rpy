@@ -8,14 +8,14 @@
 # Upset
 # Bragger
 
-init 1: 
+init 2: 
     python: 
         class ChatManager:
             
             # Constructor
             def __init__(self):
                 self.recMan = ChatResourceManager()
-                self.partMan = ParticipantManager(recMan);
+                self.partMan = ParticipantManager(self.recMan)
                 
             # Create a chat
             # Return a map containing the "chat" array, the "participants" array and the conversation "length"
@@ -23,7 +23,7 @@ init 1:
                 chatSegments = []
                 for i in range(length):
                     # Append the segment to the fragment array
-                    conversationFragments.append(self.recMan.GetRandomSegment())
+                    chatSegments.append(self.recMan.GetRandomSegment())
                     
                 # Get all the roles
                 roles = []
@@ -41,34 +41,39 @@ label chat:
     scene expression camp.name with fade
     
     $testcon = chatMan.generateChat()
-    $tmpp = testcon["length"]
-    "Length: [tmpp]"
-    $names = testcon["chat"][0].label + testcon["chat"][1].label + testcon["chat"][2].label
+    #$tmpp = testcon["length"]
+    #"Length: [tmpp]"
+    #$names = testcon["chatSegments"][0].label
+    $names = testcon["chatSegments"][0].label + testcon["chatSegments"][1].label + testcon["chatSegments"][2].label
     $roles = testcon["roles"]
     "Names: [names]"
     "Roles: [roles]"
     
     # Cycle through all chat segments
     
-    for segment in testcon.chatSegments
-        # Asign character to participant
-        $peopleMap = {}
-        python:
+    python:
+        for segment in testcon["chatSegments"]:
+            # Asign character to participant
+            peopleMap = {}
             for role in testcon["roles"]:
                 if playerCompanion.family == "Bloodrunner" and role == "Skeptic" : 
-                    peopleMap.update({participant: chatMan.partMan.getParticipant(role)})
+                    peopleMap.update({"participant": chatMan.partMan.getParticipant(role)})
                 elif playerCompanion.family == "Coppertail" and role == "enthusiastic":
-                    peopleMap.update({participant: chatMan.partMan.getParticipant(role)})
+                    peopleMap.update({"participant": chatMan.partMan.getParticipant(role)})
                 elif playerCompanion.family == "Daggermaw" and role == "bragger": 
-                    peopleMap.update({participant: chatMan.partMan.getParticipant(role)})
+                    peopleMap.update({"participant": chatMan.partMan.getParticipant(role)})
                 elif playerCompanion.family == "Gildclaw" and role == "upset":
-                    peopleMap.update({participant: chatMan.partMan.getParticipant(role)})
+                    peopleMap.update({"participant": chatMan.partMan.getParticipant(role)})
                 else: 
-                    peopleMap.update({participant: chatMan.partMan.getParticipant(role)})
+                    peopleMap.update({"participant": chatMan.partMan.getParticipant(role)})
         
-        # Call the conversation segment label
-        call expression segment.label pass(participants=peopleMap)
+            # Call the conversation segment label
+            renpy.call(segment.label, participants=peopleMap)
+            #call expression segment.label pass(participants=peopleMap)
+
+            renpy.nvl.clear()
+            renpy.return_statement()
         
-    nvl clear
+    #nvl clear
     
-    return
+    #return
