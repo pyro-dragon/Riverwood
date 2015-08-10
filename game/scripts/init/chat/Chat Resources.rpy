@@ -20,6 +20,7 @@ init 1:
                 self.male = male
                 self.family = family
                 self.roles = roles
+                self.used = False
                 
         ##
         # Name class for possible names for chat characters
@@ -34,6 +35,7 @@ init 1:
                 self.name = name
                 self.family = family
                 self.male = male
+                self.used = False
                 
         ##
         # Chat segment class
@@ -46,6 +48,7 @@ init 1:
             def __init__(self, label, roles):
                 self.label = label
                 self.roles = roles
+                self.used = False
                 
         ##
         # The chat resouce manager
@@ -148,47 +151,37 @@ init 1:
             def GetRandomHeadshot(self, male=None, role=None, family=None):
                 
                 # Create a temporary array
-                tmpArr = self.headshots
+                tmpArr = filter(lambda item: item.used == False , self.headshots)
                 
                 # Check if we have the gender filter
-                if male:
-                    # Cycle through the temp array and remove those that don't match
-                    for i in tmpArr:
-                        if i.male != male:
-                            tmpArr.pop(i)
-                            
-                # Check if we have the role filter
-                if role != None:
-                    # Cycle through the temp array
-                    for i in tmpArr:
-                        
-                        # Cycle through the headshot roles
-                        for j in i.roles:
-                            matched = False
-                            # Compare and check for matches
-                            if j == role:
-                                matched = True
-                        
-                        # Check if there was any matches
-                        if matched == False:
-                            # No matches, get rid of this headshot
-                            tmpArr.remove(i)
+                if male != None:
+                    # Filter by gender
+                    tmpArr = filter(lambda item: item.male == male , tmpArr)
                         
                 # Check if we have a family filter
                 if family != None: 
-                    # Cycle through the temp array and remove those that don't match
-                    for i in tmpArr: 
-                        if i.family != family:
-                            tmpArr.remove(i)
-                         
-                # Check if there are any names
+                    # Filter by family
+                    tmpArr = filter(lambda item: item.family == family , tmpArr)
+                            
+                # Check if we have the role filter
+                if role != None:
+                    # Filter by role (filter each role list and only add headshots where at least one role matches
+                    tmpArr = filter(lambda item: len(filter(lambda itemRole: itemRole == role , item.roles)) > 0 , tmpArr)
+                
+                # Check if there are any headshots
                 if not tmpArr: 
                         
                     # There are no names left. 
                     return None
                 else: 
                     # Get a random chat name
-                    return tmpArr[renpy.random.randint(0, len(tmpArr) -1)]
+                    tmpHeadshot = tmpArr[renpy.random.randint(0, len(tmpArr) -1)]
+                    
+                    # Mark it as used
+                    self.headshots[self.headshots.index(tmpHeadshot)].used = True
+                    
+                    # Return the name object
+                    return tmpHeadshot
                 
             ##
             # Add a name to the resource manager
@@ -203,33 +196,33 @@ init 1:
             def GetRandomName(self, male=None, family=None):
                 
                 # Create a temporary array
-                tmpArr = self.names
+                tmpArr = filter(lambda item: item.used == False , self.names)
                 
                 # Check if we have the gender filter
                 if male != None:
-                    #return "male"
-                    # Cycle through the temp array and remove those that don't match
-                    for i in tmpArr:
-                        if i.male != male:
-                            tmpArr.remove(i)
+                    # Filter by gender
+                    tmpArr = filter(lambda item: item.male == male , tmpArr)
                         
                 # Check if we have a family filter
                 if family != None: 
-                    return "family"
-                    # Cycle through the temp array and remove those that don't match
-                    for i in tmpArr: 
-                        if i.family != family:
-                            tmpArr.remove(i)
+                    # Filter by family
+                    tmpArr = filter(lambda item: item.family == family , tmpArr)
                          
                 # Check if there are any names
                 if not tmpArr: 
                         
                     # There are no names left. 
+                    renpy.say(None, "No names matched!")
                     return None
                         
                 else: 
                     # Get a random chat name
-                    return tmpArr[renpy.random.randint(0, len(tmpArr) -1)]
+                    tmpName = tmpArr[renpy.random.randint(0, len(tmpArr) -1)]
+                    
+                    # Mark it as used
+                    self.names[self.names.index(tmpName)].used = True
+                    
+                    return tmpName
                 
             ##
             # Add a chat segment
@@ -256,8 +249,21 @@ init 1:
                         
                     else: 
                         # Get a random chat segment
-                        return self.chatSegments[renpy.random.randint(0, len(self.chatSegments) - 1)]
+                        tmpArr = filter(lambda item: item.used == False , self.chatSegments)
                         
+                        tmpSeg = tmpArr[renpy.random.randint(0, len(tmpArr) - 1)]
+                    
+                        # Mark it as used
+                        self.chatSegments[self.chatSegments.index(tmpSeg)].used = True
+                        
+                        # Return the segment
+                        return tmpSeg
                 else:
                     # Get the top priotity chat segment
-                    return self.priorityChatSegments[0]
+                    tmpSeg = self.priorityChatSegments[0]
+                    
+                    # Remove the segment
+                    self.priorityChatSegments.pop[0]
+                    
+                    # Return the segment
+                    return tmpSeg
