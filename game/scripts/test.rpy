@@ -1,5 +1,5 @@
 label test:
     $playerCompanion = crt_mechanic
-    call chat
+    call conversation
     
     "END OF TEST"
