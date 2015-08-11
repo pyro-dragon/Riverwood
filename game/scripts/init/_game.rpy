@@ -13,6 +13,8 @@ init:
             activeQuests = []
             completedQuests = []
             headshots = []
+            currentLocation = None
+            
             
             def __init__(self):
                True

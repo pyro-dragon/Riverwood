@@ -3,11 +3,33 @@
 #-------------------------------------------------------------------------------
 init: 
     python:
-        conversationTopics = [{"title": "starting", "label": "starting"}, {"title": "finishing", "label": "finishing"}]
+        ##
+        # Class describing a conversation topic
+        class Topic:
+            
+            ##
+            # Constructor
+            # @param title (string) The title of the topic. It will appear in the conversation menu
+            # @param label (string) The label to execute for this topic
+            # @param hidden (boolean) (default=True) If the topic should be hidden from the menu or not
+            # @param condition (function) A lambda function to reveal the topic when update() is run
+            def __init__(self, title, label, hidden=True, condition=False):
+                self.title = title
+                self.label = label
+                self.hidden = hidden
+                self.condition = condition
+                self.read = False
+                
+            ##
+            # Update the topic by running the lambda and revealing the topic
+            def update(self):
+                if condition: 
+                    self.hidden = False
+        
+        #conversationTopics = [{"title": "starting", "label": "starting"}, {"title": "finishing", "label": "finishing"}]
         conversationTopic = ""
 
 screen conversation(partner):
-    modal True
     
     # Display conversation topics
     window: 
@@ -16,28 +38,9 @@ screen conversation(partner):
         vbox:
             xalign 1
             yalign 0
-            for topic in conversationTopics: 
-                textbutton topic["title"] action [SetVariable("conversationTopic", topic['label']), Jump("conversationWrapper")]
-
-screen speak(who, what, side_image=None, two_window=False):
-
-    # Decide if we want to use the one-window or two-window variant.
-    if not two_window:
-
-        # The one window variant.
-        window:
-            id "window"
-
-            has vbox:
-                style "say_vbox"
-
-            if who:
-                text who id "who"
-
-            text what id "what"
-
-    # Use the quick menu.
-    use quick_menu
+            for topic in playerCompanion.topics: 
+                #text playerCompanion.topics[topic].label
+                textbutton playerCompanion.topics[topic].title action [SetVariable("conversationTopic", playerCompanion.topics[topic].label), Jump("conversationWrapper")]
     
 label conversationWrapper():
     call expression conversationTopic

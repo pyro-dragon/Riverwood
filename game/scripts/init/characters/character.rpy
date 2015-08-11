@@ -79,6 +79,7 @@ init:
                 self.preferences = {}           # A list of character preferences
                 self.rp = 35                    # Relationship points
                 self.thumbnail = "characters/thumbnails/" + thumbnail
+                self.topics = {}                # The conversation topics that can be discussed with the character
                 
                 # If the character name needs to be obscured
                 self.trueName = name
@@ -170,6 +171,12 @@ init:
             #------------------#
             def addPreference(self, preference):
                 self.preferences.update({preference.name : preference})
+                
+            ##
+            # Add a conversation topic
+            # @param topic (object) The conversation topic
+            def addTopic(self, topic):
+                self.topics.update({topic.label: topic})
                 
             #-----------------------------------------#
             # Check to see if the preference is loved #
