@@ -1,5 +1,5 @@
 label test:
     $playerCompanion = crt_mechanic
-    call conversation
+    call screen conversation(playerCompanion)
     
     "END OF TEST"
