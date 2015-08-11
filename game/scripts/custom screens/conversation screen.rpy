@@ -4,6 +4,7 @@
 init: 
     python:
         conversationTopics = [{"title": "starting", "label": "starting"}, {"title": "finishing", "label": "finishing"}]
+        conversationTopic = ""
 
 screen conversation(partner):
     modal True
@@ -16,7 +17,7 @@ screen conversation(partner):
             xalign 1
             yalign 0
             for topic in conversationTopics: 
-                textbutton topic["title"] action Show(say(partner.name, topic["label"]))
+                textbutton topic["title"] action [SetVariable("conversationTopic", topic['label']), Jump("conversationWrapper")]
 
 screen speak(who, what, side_image=None, two_window=False):
 
@@ -38,8 +39,14 @@ screen speak(who, what, side_image=None, two_window=False):
     # Use the quick menu.
     use quick_menu
     
+label conversationWrapper():
+    call expression conversationTopic
+    call screen conversation(playerCompanion)
+    
 label starting:
     "This conversation is starting"
+    return
     
 label finishing:
     "This conversation is finishing"
+    return
