@@ -44,6 +44,24 @@ screen conversation(partner):
                 if playerCompanion.topics[topic].hidden == False:
                     textbutton playerCompanion.topics[topic].title action [SetVariable("conversationTopic", playerCompanion.topics[topic]), Jump("conversationWrapper")]
     
+# Conversation entry label
+label conversation:
+    $placeCount = len(game.locations)
+
+    menu:
+        while placeCount > 0:
+
+            if game.locations[placeCount].discovered == True:
+                game.locations[placeCount].name: 
+                    game.currentLocation = game.locations[placeCount]
+
+            $placeCount -= 1
+            
+    
+    scene expression game.currentLocation.name with fade
+    show expression playerCompanion.image with dissolve
+    call screen conversation(playerCompanion)
+
 # Pre-process conversations before calling them, then go back to the topic screen
 label conversationWrapper():
 
@@ -67,12 +85,4 @@ label conversationWrapper():
     else:
         call expression playerCompanion.topics["late"].label
         
-    return
-    
-label starting:
-    "This conversation is starting"
-    return
-    
-label finishing:
-    "This conversation is finishing"
     return

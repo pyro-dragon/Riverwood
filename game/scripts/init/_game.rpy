@@ -13,11 +13,15 @@ init:
             activeQuests = []
             completedQuests = []
             headshots = []
-            currentLocation = None
             
+            locations = []
+            currentLocation = None
             
             def __init__(self):
                True
+               
+            def addLocation(self, loaction):
+                locations.append(location})
                
             # Generate a random colour hex value
             def generateColour(self):
