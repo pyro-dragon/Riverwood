@@ -28,6 +28,7 @@ init:
         
         #conversationTopics = [{"title": "starting", "label": "starting"}, {"title": "finishing", "label": "finishing"}]
         conversationTopic = ""
+        talkTurns = 3      # The amount the player gets to talk before home time
 
 screen conversation(partner):
     
@@ -40,11 +41,33 @@ screen conversation(partner):
             yalign 0
             for topic in playerCompanion.topics: 
                 #text playerCompanion.topics[topic].label
-                textbutton playerCompanion.topics[topic].title action [SetVariable("conversationTopic", playerCompanion.topics[topic].label), Jump("conversationWrapper")]
+                if playerCompanion.topics[topic].hidden == False:
+                    textbutton playerCompanion.topics[topic].title action [SetVariable("conversationTopic", playerCompanion.topics[topic]), Jump("conversationWrapper")]
     
+# Pre-process conversations before calling them, then go back to the topic screen
 label conversationWrapper():
-    call expression conversationTopic
-    call screen conversation(playerCompanion)
+
+    # Check if we have talked about this before
+    if conversationTopic.read == True: 
+        call expression playerCompanion.topics["repeat"].label
+        
+    # Call the actual topic label
+    call expression conversationTopic.label
+        
+    # Mark it as read
+    $conversationTopic.read = True
+        
+    # Remove a talk turn
+    $talkTurns = talkTurns - 1
+    
+    # Check if we should return to the menu or get away
+    if talkTurns > 0:
+        # Head back to the conversation screen
+        call screen conversation(playerCompanion)
+    else:
+        call expression playerCompanion.topics["late"].label
+        
+    return
     
 label starting:
     "This conversation is starting"

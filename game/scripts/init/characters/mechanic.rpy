@@ -2,7 +2,7 @@
 # Mechanic
 #-----------------------------
 init: 
-    $crt_mechanic = GameCharacter("Maria", "Coppertail", crr_mechanic, Character("crt_mechanic.name", dynamic = True, color = "#5ca75c"), "characters/maria.png", False, True, "mariaTN.png")
+    $crt_mechanic = GameCharacter("Maria", "Coppertail", "mechanic", Character("crt_mechanic.name", dynamic = True, color = "#5ca75c"), "characters/maria.png", False, True, "mariaTN.png")
     $crt_mechanic.addPreference(CharacterPreference("making", True, "I love to create stuff."))
     $crt_mechanic.addPreference(CharacterPreference("buildings", True, "Just look at these amazing things!"))
     $crt_mechanic.addPreference(CharacterPreference("shooting", True, "Bang bang! Ha ha ha."))
@@ -11,11 +11,16 @@ init:
     $crt_mechanic.addPreference(CharacterPreference("savage", False, "Wow, jsut look at that. Its shameful!"))
     define m = crt_mechanic.c
     
-    $crt_mechanic.addTopic(Topic("How are you doing?", "mec_howYouDoing", False))
-    $crt_mechanic.addTopic(Topic("Do you like this place?", "mec_thisPlace", False))
-    $crt_mechanic.addTopic(Topic("What are you into?", "mec_whatInto", False))
+    # Special topics
+    $crt_mechanic.addTopic(Topic("repeat", "repeat"))
+    $crt_mechanic.addTopic(Topic("late", "late"))
     
-label mec_howYouDoing: 
+    # Regualr topics
+    $crt_mechanic.addTopic(Topic("How are you doing?", "howYouDoing", False))
+    $crt_mechanic.addTopic(Topic("Do you like this place?", "thisPlace", False))
+    $crt_mechanic.addTopic(Topic("What are you into?", "whatInto", False))
+    
+label mechanic_howYouDoing: 
     m "I'm alright, thanks!"
     m "How about you?"
     
@@ -28,7 +33,7 @@ label mec_howYouDoing:
             
     return
             
-label mec_thisPlace:
+label mechanic_thisPlace:
     
     # Allow the player to talk about the new place
     #$crt_mechanic.topics["mec_" + game.currentLocation.name].hidden = False
@@ -58,10 +63,16 @@ label mec_thisPlace:
     
     return
     
-label mec_whatInto: 
+label mechanic_whatInto: 
     m "Ooooo, thats a hard question."
     m "Building stuff, taking stuff appart."
     m "Bending stuff, welding stuff"
     m "Thats it, I think"
     
     return
+    
+label mechanic_repeat:
+    m "I already told you that, silly."
+    
+label mechanic_late:
+    m "Its getting really late. We should head back now."

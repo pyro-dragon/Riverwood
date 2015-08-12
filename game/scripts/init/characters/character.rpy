@@ -70,9 +70,9 @@ init:
             #-------------#
             # Constructor #
             #-------------#
-            def __init__(self, name, family, career, renpyCharacter, imageName, met, hideName, thumbnail):
+            def __init__(self, name, family, nick, renpyCharacter, imageName, met, hideName, thumbnail):
                 self.family = family            # The character family
-                self.career = career            # The character career
+                self.nick = nick                # The character nick name (short for programming usage)
                 self.c = renpyCharacter         # The renpy character representation
                 self.image = imageName          # The chracter image given by file name
                 self.met = met                  # If the character has been met or not
@@ -116,12 +116,6 @@ init:
                     "performance" : 0
                 }
                 
-            #-------------------#
-            # Return the career #
-            #-------------------#
-            def getCareer(self):
-                return self.career
-            
             #---------------------------#
             # Reveal the character name #
             #---------------------------#
@@ -176,7 +170,10 @@ init:
             # Add a conversation topic
             # @param topic (object) The conversation topic
             def addTopic(self, topic):
-                self.topics.update({topic.label: topic})
+                label = topic.label
+                # modify the label to make it unique
+                topic.label = self.nick + "_" + label
+                self.topics.update({label: topic})
                 
             #-----------------------------------------#
             # Check to see if the preference is loved #
