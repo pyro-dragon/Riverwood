@@ -1,7 +1,7 @@
 #-----------------------------
 # Mechanic
 #-----------------------------
-init: 
+init 1: 
     $crt_mechanic = GameCharacter("Maria", "Coppertail", "mechanic", Character("crt_mechanic.name", dynamic = True, color = "#5ca75c"), "characters/maria.png", False, True, "mariaTN.png")
     $crt_mechanic.addPreference(CharacterPreference("making", True, "I love to create stuff."))
     $crt_mechanic.addPreference(CharacterPreference("buildings", True, "Just look at these amazing things!"))
@@ -36,10 +36,9 @@ label mechanic_howYouDoing:
 label mechanic_thisPlace:
     
     # Allow the player to talk about the new place
-    #$crt_mechanic.topics["mec_" + game.currentLocation.name].hidden = False
     
     # A loved place
-    if game.currentLocation == "Forge": 
+    if game.currentLocation.name == "Forge": 
         m "I think its fantastic!"
         m "Look at all the cool stuff in here!"
         m "Honestly, I can't spend enough time here. I am so happy that our clan has a place like this."
@@ -49,7 +48,7 @@ label mechanic_thisPlace:
         return
         
     # A hated place
-    if game.currentLocation == "Glade":
+    if game.currentLocation.name == "Glade":
         m "Umm, I am not too fond of this place actully."
         m "There is a feeling in the air that I don't like, it feels like... resentment."
         m "It was a bit of a long treck out to here too and there really isn't much to see."

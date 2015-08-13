@@ -20,8 +20,8 @@ init:
             def __init__(self):
                True
                
-            def addLocation(self, loaction):
-                locations.append(location})
+            def addLocation(self, location):
+                self.locations.append(location)
                
             # Generate a random colour hex value
             def generateColour(self):
