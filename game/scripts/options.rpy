@@ -54,13 +54,13 @@ init -1 python hide:
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#ff00ff",
+        widget_selected = "#ffffff",
 
         ## The color of a disabled widget face.
         disabled = "#FFECBF",
 
         ## The color of disabled widget text.
-        disabled_text = "#ff00ff",
+        disabled_text = "#ffffff",
 
         ## The color of informational labels.
         label = "#502F13",
@@ -295,7 +295,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "Riverwood-1.0"
+    build.directory_name = "Riverwood"
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
