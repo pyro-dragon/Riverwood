@@ -191,19 +191,20 @@ screen main_menu():
     # The main menu buttons.
     frame:
         style_group "mm"
-        xalign .98
-        yalign .98
+        xalign 1.02
+        yalign 0.5
+        xminimum  .7
+        yminimum  2.0
 
-        has vbox
+        has vbox xalign 0.5 yalign 0.6
 
-        textbutton _("Start Game") action Start()
+        textbutton _("Start Game") action Start() xminimum 0.6
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=False)
 
 init -2:
-
     # Make all the main menu buttons be the same size.
     style mm_button:
         size_group "mm"
