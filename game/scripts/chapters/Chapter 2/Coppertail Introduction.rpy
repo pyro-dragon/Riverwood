@@ -321,5 +321,21 @@ label closeCoppertailsFirstLesson:
     C "I think the wind mills are certainly going to give us a few more months of service with these repairs."
     C "I’ll let you go now. But I will see you all bright and early tomorrow."
     C "Go and have some fun, you did some great work here today."
+    
+    hide Clarence with dissolve
+    
+    "You see [crt_mechanic.name] packing up her things to head out"
+    menu:
+        "Head over to her.":
+            
+            P "Thanks for helping me out back there. Do you have any plans for after?"
 
+            show expression crt_mechanic.image
+            m "Not particulally. Did you have something in mind?"
+            $playerCompanion = crt_mechanic
+            hide expression crt_mechanic.image
+
+        "Leave her alone.":
+            pass
+    
     return

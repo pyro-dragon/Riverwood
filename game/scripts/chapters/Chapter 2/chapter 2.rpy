@@ -24,11 +24,10 @@ label chapter2:
         call gildclawIntroduction
 
     # What to do after the introduction
-    if playerCompanion:
-        call activityList
+    if playerCompanion != None:
+        call activityCycle
     else:
         # Instroduce the first datable
         if player.family != "Coppertail":
             call mechanicIntroduction
-
     return

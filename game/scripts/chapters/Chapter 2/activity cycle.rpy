@@ -15,14 +15,14 @@ label activityCycle:
         P "Hmm, what should we do?"
         
     menu: 
-        "Explore the surrounding area": 
+        "Explore the surrounding areas": 
             call explore
-        "Practice [player.career.name] skills": 
-            call practice
-        #"Hang out with the other young [player.family]s": 
-        #    call socialise
-        #"Spend time with [playerCompanion.name]" if (playerCompanion != "none"): 
-        #    call hangOut
+        #"Practice [player.career.name] skills": 
+        #    call practice
+        "Hang out with the other young [player.family]s": 
+            call socialise
+        "Spend time with [playerCompanion.name]" if (playerCompanion != "none"): 
+            call hangOut
         #"Spend time with someone else" if (peopleKnown > 1):
         #    call seeSomeoneElse
         
@@ -168,18 +168,22 @@ label practice:
     return
     
 label socialise: 
-    call chat_orcsSighted
+    #call chat_orcsSighted
     # Gain a bonus to social skills
     # Chance to learn a rumour or random info about random person.
     # Random chance at meeting a new datable
+    
+    call chat
     
     # Go back to plot
     return
     
 label hangOut: 
-    "Unavailable"
+    #"Unavailable"
     # Have a small conversation to learn more about them
     # Make some choices to gain/lose favour.
+    
+    call conversation
     
     # Go back to plot
     return

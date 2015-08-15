@@ -126,7 +126,7 @@ label bloodrunnerIntroduction:
             h "what is it?"
             P "do you want to do something together?"
             h "Ok, what did you have in mind?"
-            $playerCompanion == crt_hunter
+            $playerCompanion = crt_hunter
         "Let her go":
             pass
     return

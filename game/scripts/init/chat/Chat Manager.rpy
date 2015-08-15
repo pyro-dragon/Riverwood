@@ -40,14 +40,14 @@ init 2:
 label chat:
     scene expression camp.name with fade
     
-    $testcon = chatMan.generateChat()
+    #$testcon = chatMan.generateChat()
     #$tmpp = testcon["length"]
     #"Length: [tmpp]"
     #$names = testcon["chatSegments"][0].label
-    $names = testcon["chatSegments"][0].label + testcon["chatSegments"][1].label + testcon["chatSegments"][2].label
-    $roles = testcon["roles"]
-    "Names: [names]"
-    "Roles: [roles]"
+    #$names = testcon["chatSegments"][0].label + testcon["chatSegments"][1].label + testcon["chatSegments"][2].label
+    #$roles = testcon["roles"]
+    #"Names: [names]"
+    #"Roles: [roles]"
     
     # Cycle through all chat segments
     
