@@ -1,4 +1,7 @@
 label mechanicIntroduction:
+    
+    $ignoringMechanic = False
+    
     scene black
     "You walk back from your first class, head spinning."
     "There was a lot to take in and you are trying to file it all away in your mind"

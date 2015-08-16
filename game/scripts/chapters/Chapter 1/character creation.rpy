@@ -34,7 +34,6 @@ label chooseFamily:
         "It will be an honour to join the Gildclaws. (Diplomacy, Trade, Economics)":
             $player.family = "Gildclaw"
     
-    "Player family: [player.family]"
     call checkFamily
             
     return
@@ -93,7 +92,6 @@ label setFamilyData:
 label chooseName:
     T "Excellent. I am sure you will be an asset to the [player.family]s."
     T "Now, you must take a name for yourself. You can either choose one yourself of have your new family suggest a name. Which would you like?"
-    "Player name: [player.name]"
     menu:
         "I'll choose my own name.":
             call makeName

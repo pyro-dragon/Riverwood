@@ -7,6 +7,7 @@ label test:
     #show expression playerCompanion.image with dissolve
     #$game.currentLocation = place.name
     #call screen conversation(playerCompanion)
-    call conversation
+    #call conversation
+    call chat
     
     "END OF TEST"

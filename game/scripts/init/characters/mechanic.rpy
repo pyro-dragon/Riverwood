@@ -29,7 +29,7 @@ label mechanic_howYouDoing:
             m "Thats great to hear!"
             
         "Not so good really.": 
-            "Awr! Thats not good!"
+            m "Awr! Thats not good!"
             
     return
             
