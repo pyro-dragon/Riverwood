@@ -5,3 +5,4 @@ tmp/navigation.json
 *.rpyc
 game/saves/persistent
 *.odt#
+*.bak
