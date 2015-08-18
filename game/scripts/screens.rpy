@@ -204,6 +204,16 @@ screen main_menu():
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit(confirm=False)
 
+    # Update box
+    $updateAvailable = updater.UpdateVersion("http://dragonscancode.com/riverwood/updates.json")
+    #$updateAvailable = "test"
+    if updateAvailable != None:
+        frame:
+            xalign 0.5
+            yalign 0.5
+            
+            textbutton "Update available! " + updateAvailable action updater.Update("http://dragonscancode.com/riverwood/updates.json")
+
 init -2:
     # Make all the main menu buttons be the same size.
     style mm_button:
