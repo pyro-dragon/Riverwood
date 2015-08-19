@@ -205,8 +205,16 @@ screen main_menu():
         textbutton _("Quit") action Quit(confirm=False)
 
     # Update box
+    $possible = updater.can_update()
     $updateAvailable = updater.UpdateVersion("http://dragonscancode.com/riverwood/updates.json")
-    #$updateAvailable = "test"
+        
+    vbox:
+        text "Possible: " + str(possible)
+        text "Version: " + str(updateAvailable)
+        text "Test version 1.0"
+    
+    #$updateAvailable = updater.UpdateVersion("http://dragonscancode.com/riverwood/updates.json")
+    
     if updateAvailable != None:
         frame:
             xalign 0.5
