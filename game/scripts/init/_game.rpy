@@ -18,10 +18,10 @@ init:
             currentLocation = None
             
             def __init__(self):
-                initialiseCharacters()
-                initialiseLocations()
-                initialiseHeadshots()
-               True
+                self.initialiseCharacters()
+                self.initialiseLocations()
+                self.initialiseHeadshots()
+                True
                
             def addLocation(self, location):
                 self.locations.append(location)
@@ -32,10 +32,13 @@ init:
                 return '#%02X%02X%02X' % (r(),r(),r())
                 
             def initialiseHeadshots(self): 
+                True
                 
             def initialiseCharacters(self):
+                True
                 
             def initialiseLocations(self):
+                True
                 
                 
     $game = Game()

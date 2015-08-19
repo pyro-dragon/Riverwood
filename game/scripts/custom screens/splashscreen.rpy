@@ -3,6 +3,8 @@
 #-------------------------------------------------------------------------------
 
 label splashscreen:
+    
+    $updater.update("http://dragonscancode.com/riverwood/updates.json")
     scene black
     with Pause(1)
 
