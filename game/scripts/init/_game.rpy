@@ -18,6 +18,9 @@ init:
             currentLocation = None
             
             def __init__(self):
+                initialiseCharacters()
+                initialiseLocations()
+                initialiseHeadshots()
                True
                
             def addLocation(self, location):
@@ -27,6 +30,13 @@ init:
             def generateColour(self):
                 r = lambda: renpy.random.randint(0,255)
                 return '#%02X%02X%02X' % (r(),r(),r())
+                
+            def initialiseHeadshots(self): 
+                
+            def initialiseCharacters(self):
+                
+            def initialiseLocations(self):
+                
                 
     $game = Game()
     

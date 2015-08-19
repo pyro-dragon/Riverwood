@@ -1,6 +1,25 @@
 label test:
     
     $fileContents = "Nothing"
+
+    # Auto file reading
+    python:
+        import os
+        for fname in os.listdir(config.gamedir + '/resources'):
+            #say(None, "File: " + fname);
+            #if fname.endswith(('.txt', '.xml', 'json')):
+
+            if fname.endswith("txt"):
+                #say(None, "Open " + "resources/" + fname);
+                f = open(renpy.loader.transfn("resources/" + fname),"r")
+                for line in f:
+                    fileContents = line
+                f.close()
+                #tag = fname[:-4]
+                #fname =  'gfx/' + fname
+            #renpy.image(tag, fname)
+
+    "Flat file: [fileContents]"
     
     # Flat file
     python:
@@ -13,7 +32,7 @@ label test:
         # when finished, close the file
         f.close()
         
-    "Flat file: [fileContents]"
+    #"Flat file: [fileContents]"
 
     # XML file
     python:
@@ -24,7 +43,7 @@ label test:
         root = tree.getroot()
         fileContents = root.text
         
-    "XML file: [fileContents]"
+    #"XML file: [fileContents]"
 
     # Load JSON file?
     python:
@@ -33,7 +52,7 @@ label test:
         data = json.loads(json_data)
         fileContents = data["missions"]
             
-    "JSON file: [fileContents]"
+    #"JSON file: [fileContents]"
     
     "END OF TEST"
  

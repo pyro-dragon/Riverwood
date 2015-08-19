@@ -1,0 +1,43 @@
+{
+    "name": "Maria"
+    "image": "maria.png", 
+    "sex": "female", 
+    "family": "Bloodrunner", 
+    "nick": "mechnanic",
+    "textcolour": "#5ca75c",
+    "met": false, 
+    "hidename": true, 
+    "imagetn": "mariaTN.png"
+    "preferences": [
+        {
+            "keyword": "making", 
+            "type": "like", 
+            "response": "I love to create stuff."
+        },
+        {
+            "keyword": "buildings", 
+            "type": "like", 
+            "response": "Just look at these amazing things!"
+        },
+        {
+            "keyword": "shooting", 
+            "type": "like", 
+            "response": "Bang bang! Ha ha ha."
+        },
+        {
+            "keyword": "destruction", 
+            "type": "dislike", 
+            "response": "Its all broken. What a shame."
+        },
+        {
+            "keyword": "dull", 
+            "type": "dislike", 
+            "response": "I am so bored now."
+        },
+        {
+            "keyword": "savage", 
+            "type": "dislike", 
+            "response": "Wow, jsut look at that. Its shameful!"
+        }
+    ]
+}
