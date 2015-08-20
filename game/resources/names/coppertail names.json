@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Cogward", 
+		"sex": "male", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Marcus", 
+		"sex": "male", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Edward", 
+		"sex": "male", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Wendy", 
+		"sex": "female", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Ermintrude", 
+		"sex": "female", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Casey", 
+		"sex": "female", 
+		"family": "Coppertail"
+	}
+]
