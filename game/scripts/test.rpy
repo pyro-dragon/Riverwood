@@ -1,7 +1,19 @@
 label test:
     
     $fileContents = "Nothing"
-
+    
+    $fileContents = game.getFolderData("resources")
+    
+    $typeobj = type(fileContents[0]).__name__
+    "Type: [typeobj]"
+    
+    if type(fileContents[0]).__name__ == "list": 
+        "This is an array"
+    elif type(fileContents[0]).__name__ == "dict":
+        "This is an object"
+    else:
+        "I have no idea"
+    
     # Auto file reading
     python:
         import os
@@ -19,7 +31,7 @@ label test:
                 #fname =  'gfx/' + fname
             #renpy.image(tag, fname)
 
-    "Flat file: [fileContents]"
+    #"Flat file: [fileContents]"
     
     # Flat file
     python:
