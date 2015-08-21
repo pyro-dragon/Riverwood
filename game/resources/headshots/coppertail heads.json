@@ -1,0 +1,50 @@
+[
+    {
+        "image": "angry2.png", 
+        "sex": "male", 
+        "family": "Coppertail", 
+        "roles": ["angry"]
+    }, 
+    {
+        "image": "bragger2.png", 
+        "sex": "male", 
+        "family": "Coppertail", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "bragger6.png", 
+        "sex": "female", 
+        "family": "Coppertail", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "enthusiastic2.png", 
+        "sex": "male", 
+        "family": "Coppertail", 
+        "roles": ["enthusiastic"]
+    }, 
+    {
+        "image": "skeptic2.png", 
+        "sex": "female", 
+        "family": "Coppertail", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "skeptic6.png", 
+        "sex": "female", 
+        "family": "Coppertail", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "upset2.png", 
+        "sex": "male", 
+        "family": "Coppertail", 
+        "roles": ["upset"]
+    }, 
+    {
+        "image": "upset6.png", 
+        "sex": "male", 
+        "family": "Coppertail", 
+        "roles": ["upset"]
+    }
+]

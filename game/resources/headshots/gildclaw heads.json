@@ -1,0 +1,44 @@
+[
+    {
+        "image": "angry4.png", 
+        "sex": "male", 
+        "family": "Gildclaw", 
+        "roles": ["angry"]
+    }, 
+    {
+        "image": "bragger4.png", 
+        "sex": "female", 
+        "family": "Gildclaw", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "enthusiastic4.png", 
+        "sex": "female", 
+        "family": "Gildclaw", 
+        "roles": ["enthusiastic"]
+    }, 
+    {
+        "image": "skeptic4.png", 
+        "sex": "female", 
+        "family": "Gildclaw", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "skeptic8.png", 
+        "sex": "female", 
+        "family": "Gildclaw", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "upset4.png", 
+        "sex": "female", 
+        "family": "Gildclaw", 
+        "roles": ["upset"]
+    }, 
+    {
+        "image": "upset8.png", 
+        "sex": "female", 
+        "family": "Gildclaw", 
+        "roles": ["upset"]
+    }
+]

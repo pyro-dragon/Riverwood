@@ -1,0 +1,68 @@
+[
+    {
+        "image": "angry1.png", 
+        "sex": "male", 
+        "family": "Bloodrunner", 
+        "roles": ["angry"]
+    }, 
+    {
+        "image": "angry5.png", 
+        "sex": "male", 
+        "family": "Bloodrunner", 
+        "roles": ["angry"]
+    }, 
+    {
+        "image": "bragger1.png", 
+        "sex": "female", 
+        "family": "Bloodrunner", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "bragger5.png", 
+        "sex": "female", 
+        "family": "Bloodrunner", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "enthusiastic1.png", 
+        "sex": "male", 
+        "family": "Bloodrunner", 
+        "roles": ["enthusiastic"]
+    }, 
+    {
+        "image": "enthusiastic5.png", 
+        "sex": "male", 
+        "family": "Bloodrunner", 
+        "roles": ["enthusiastic"]
+    }, 
+    {
+        "image": "happy1.png", 
+        "sex": "female", 
+        "family": "Bloodrunner", 
+        "roles": ["happy"]
+    }, 
+    {
+        "image": "skeptic1.png", 
+        "sex": "male", 
+        "family": "Bloodrunner", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "skeptic5.png", 
+        "sex": "female", 
+        "family": "Bloodrunner", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "upset1.png", 
+        "sex": "male", 
+        "family": "Bloodrunner", 
+        "roles": ["upset"]
+    }, 
+    {
+        "image": "upset5.png", 
+        "sex": "female", 
+        "family": "Bloodrunner", 
+        "roles": ["upset"]
+    }
+]

@@ -65,46 +65,6 @@ init 1:
                 
                 self.getFileData()
                 
-                self.AddHeadshot(Headshot("characters/headshots/angry1.png", True, "Bloodrunner", ["angry"]))
-                self.AddHeadshot(Headshot("characters/headshots/angry2.png", True, "Coppertail", ["angry"]))
-                self.AddHeadshot(Headshot("characters/headshots/angry3.png", False, "Daggermaw", ["angry"]))
-                self.AddHeadshot(Headshot("characters/headshots/angry4.png", True, "Gildclaw", ["angry"]))
-                self.AddHeadshot(Headshot("characters/headshots/angry5.png", True, "Bloodrunner", ["angry"]))
-                
-                self.AddHeadshot(Headshot("characters/headshots/bragger1.png", False, "Bloodrunner", ["bragger"]))
-                self.AddHeadshot(Headshot("characters/headshots/bragger2.png", True, "Coppertail", ["bragger"]))
-                self.AddHeadshot(Headshot("characters/headshots/bragger3.png", True, "Daggermaw", ["bragger"]))
-                self.AddHeadshot(Headshot("characters/headshots/bragger4.png", False, "Gildclaw", ["bragger"]))
-                self.AddHeadshot(Headshot("characters/headshots/bragger5.png", False, "Bloodrunner", ["bragger"]))
-                self.AddHeadshot(Headshot("characters/headshots/bragger6.png", False, "Coppertail", ["bragger"]))
-                self.AddHeadshot(Headshot("characters/headshots/bragger7.png", False, "Daggermaw", ["bragger"]))
-                
-                self.AddHeadshot(Headshot("characters/headshots/enthusiastic1.png", True, "Bloodrunner", ["enthusiastic"]))
-                self.AddHeadshot(Headshot("characters/headshots/enthusiastic2.png", True, "Coppertail", ["enthusiastic"]))
-                self.AddHeadshot(Headshot("characters/headshots/enthusiastic3.png", False, "Daggermaw", ["enthusiastic"]))
-                self.AddHeadshot(Headshot("characters/headshots/enthusiastic4.png", False, "Gildclaw", ["enthusiastic"]))
-                self.AddHeadshot(Headshot("characters/headshots/enthusiastic5.png", True, "Bloodrunner", ["enthusiastic"]))
-                
-                self.AddHeadshot(Headshot("characters/headshots/happy1.png",False, "Bloodrunner", ["happy"]))
-                
-                self.AddHeadshot(Headshot("characters/headshots/skeptic1.png", True, "Bloodrunner", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic2.png", False, "Coppertail", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic3.png", True, "Daggermaw", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic4.png", False, "Gildclaw", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic5.png", False, "Bloodrunner", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic6.png", False, "Coppertail", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic7.png", True, "Daggermaw", ["skeptic"]))
-                self.AddHeadshot(Headshot("characters/headshots/skeptic8.png", False, "Gildclaw", ["skeptic"]))
-                
-                self.AddHeadshot(Headshot("characters/headshots/upset1.png", True, "Bloodrunner", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset2.png", True, "Coppertail", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset3.png", True, "Daggermaw", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset4.png", False, "Gildclaw", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset5.png", False, "Bloodrunner", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset6.png", True, "Coppertail", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset7.png", True, "Daggermaw", ["upset"]))
-                self.AddHeadshot(Headshot("characters/headshots/upset8.png", False, "Gildclaw", ["upset"]))
-                
                 self.AddSegment(ChatSegment("testchat1", ["enthusiastic", "skeptic"]))
                 self.AddSegment(ChatSegment("testchat2", ["upset", "skeptic"]))
                 self.AddSegment(ChatSegment("testchat3", ["enthusiastic", "skeptic", "bragger"]))
@@ -115,6 +75,7 @@ init 1:
             # Get the file data and fill out the storage arrays
             def getFileData(self): 
                 self.getNameData()
+                self.getHeadshotData()
                 
             ##
             # Get name data from files and return it as an array
@@ -123,6 +84,16 @@ init 1:
                 
                 for name in names:
                     self.AddName(Name(name["name"], name["family"], True if name["sex"] == "male" else False))
+            
+            ##
+            # Get headshot data from files and return it
+            def getHeadshotData(self): 
+                headshots = game.getFolderData("resources/headshots")
+
+                for headshot in headshots:
+                    #say(None, "Name: " + headshot["image"] + "\nSex: " + headshot["sex"] + "\nFamily: " + headshot["family"])
+                    #self.AddHeadshot(Headshot("characters/headshots/" + headshot["image"], headshot["sex"] == "male" else False, headshot["family"], headshot["roles"]))
+                    self.AddHeadshot(Headshot("characters/headshots/" + headshot["image"], True if headshot["sex"] == "male" else False, headshot["family"], headshot["roles"]))
                 
             ##
             # Add a headshot to the resource manager

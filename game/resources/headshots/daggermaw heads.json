@@ -1,0 +1,50 @@
+[
+    {
+        "image": "angry3.png", 
+        "sex": "female", 
+        "family": "Daggermaw", 
+        "roles": ["angry"]
+    }, 
+    {
+        "image": "bragger3.png", 
+        "sex": "male", 
+        "family": "Daggermaw", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "bragger7.png", 
+        "sex": "female", 
+        "family": "Daggermaw", 
+        "roles": ["bragger"]
+    }, 
+    {
+        "image": "enthusiastic3.png", 
+        "sex": "female", 
+        "family": "Daggermaw", 
+        "roles": ["enthusiastic"]
+    }, 
+    {
+        "image": "skeptic3.png", 
+        "sex": "male", 
+        "family": "Daggermaw", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "skeptic7.png", 
+        "sex": "male", 
+        "family": "Daggermaw", 
+        "roles": ["skeptic"]
+    }, 
+    {
+        "image": "upset3.png", 
+        "sex": "male", 
+        "family": "Daggermaw", 
+        "roles": ["upset"]
+    }, 
+    {
+        "image": "upset7.png", 
+        "sex": "male", 
+        "family": "Daggermaw", 
+        "roles": ["upset"]
+    }
+]
