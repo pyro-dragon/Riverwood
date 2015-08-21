@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Nightwind", 
+		"sex": "male", 
+		"family": "Bloodrunner"
+	}, 
+	{
+		"name": "Featherstorm", 
+		"sex": "male", 
+		"family": "Bloodrunner"
+	}, 
+	{
+		"name": "Moonrise", 
+		"sex": "male", 
+		"family": "Bloodrunner"
+	}, 
+	{
+		"name": "Summer", 
+		"sex": "female", 
+		"family": "Bloodrunner"
+	}, 
+	{
+		"name": "Rain", 
+		"sex": "female", 
+		"family": "Bloodrunner"
+	}, 
+	{
+		"name": "Flow", 
+		"sex": "female", 
+		"family": "Bloodrunner"
+	}
+]

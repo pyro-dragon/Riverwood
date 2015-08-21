@@ -63,6 +63,8 @@ init 1:
                 self.chatSegments = []          # Standard chat segments
                 self.priorityChatSegments = []  # Special segments that should be discussed first
                 
+                self.getFileData()
+                
                 self.AddHeadshot(Headshot("characters/headshots/angry1.png", True, "Bloodrunner", ["angry"]))
                 self.AddHeadshot(Headshot("characters/headshots/angry2.png", True, "Coppertail", ["angry"]))
                 self.AddHeadshot(Headshot("characters/headshots/angry3.png", False, "Daggermaw", ["angry"]))
@@ -103,39 +105,24 @@ init 1:
                 self.AddHeadshot(Headshot("characters/headshots/upset7.png", True, "Daggermaw", ["upset"]))
                 self.AddHeadshot(Headshot("characters/headshots/upset8.png", False, "Gildclaw", ["upset"]))
                 
-                self.AddName(Name("Nightwind", "Bloodrunner", True))
-                self.AddName(Name("Featherstorm", "Bloodrunner", True))
-                self.AddName(Name("Moonrise", "Bloodrunner", True))
-                self.AddName(Name("Summer", "Bloodrunner", False))
-                self.AddName(Name("Rain", "Bloodrunner", False))
-                self.AddName(Name("Flow", "Bloodrunner", False))
-                
-                self.AddName(Name("Cogward", "Coppertail", True))
-                self.AddName(Name("Marcus", "Coppertail", True))
-                self.AddName(Name("Edward", "Coppertail", True))
-                self.AddName(Name("Wendy", "Coppertail", False))
-                self.AddName(Name("Ermintrude", "Coppertail", False))
-                self.AddName(Name("Casey", "Coppertail", False))
-                
-                self.AddName(Name("Hammer", "Daggermaw", True))
-                self.AddName(Name("Slam", "Daggermaw", True))
-                self.AddName(Name("Pusher", "Daggermaw", True))
-                self.AddName(Name("Slicer", "Daggermaw", False))
-                self.AddName(Name("Fracture", "Daggermaw", False))
-                self.AddName(Name("Scar", "Daggermaw", False))
-                
-                self.AddName(Name("Meridian", "Gildclaw", True))
-                self.AddName(Name("Ledger", "Gildclaw", True))
-                self.AddName(Name("Grant", "Gildclaw", True))
-                self.AddName(Name("Saphire", "Gildclaw", False))
-                self.AddName(Name("Jade", "Gildclaw", False))
-                self.AddName(Name("Ruby", "Gildclaw", False))
-                
                 self.AddSegment(ChatSegment("testchat1", ["enthusiastic", "skeptic"]))
                 self.AddSegment(ChatSegment("testchat2", ["upset", "skeptic"]))
                 self.AddSegment(ChatSegment("testchat3", ["enthusiastic", "skeptic", "bragger"]))
                 self.AddSegment(ChatSegment("testchat4", ["bragger", "skeptic"]))
                 self.AddSegment(ChatSegment("testchat5", ["enthusiastic", "upset"]))
+                
+            ##
+            # Get the file data and fill out the storage arrays
+            def getFileData(self): 
+                self.getNameData()
+                
+            ##
+            # Get name data from files and return it as an array
+            def getNameData(self):
+                names = game.getFolderData("resources/names")
+                
+                for name in names:
+                    self.AddName(Name(name["name"], name["family"], True if name["sex"] == "male" else False))
                 
             ##
             # Add a headshot to the resource manager

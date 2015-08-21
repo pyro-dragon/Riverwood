@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Hammer", 
+		"sex": "male", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Slam", 
+		"sex": "male", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Pusher", 
+		"sex": "male", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Slicer", 
+		"sex": "female", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Fracture", 
+		"sex": "female", 
+		"family": "Coppertail"
+	}, 
+	{
+		"name": "Scar", 
+		"sex": "female", 
+		"family": "Coppertail"
+	}
+]

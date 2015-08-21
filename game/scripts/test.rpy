@@ -1,18 +1,25 @@
 label test:
     
+    $harf = ChatResourceManager()
+    
     $fileContents = "Nothing"
     
-    $fileContents = game.getFolderData("resources")
+    $fileContents = game.getFolderData("resources/names")
     
-    $typeobj = type(fileContents[0]).__name__
-    "Type: [typeobj]"
+    $testname = harf.names[10].name
+    $testsex = harf.names[10].male
     
-    if type(fileContents[0]).__name__ == "list": 
-        "This is an array"
-    elif type(fileContents[0]).__name__ == "dict":
-        "This is an object"
-    else:
-        "I have no idea"
+    "Name: [testname]\nSex: [testsex]"
+    
+    #$typeobj = type(fileContents[0]).__name__
+    #"Type: [typeobj]"
+    
+    #if type(fileContents[0]).__name__ == "list": 
+    #    "This is an array"
+    #elif type(fileContents[0]).__name__ == "dict":
+    #    "This is an object"
+    #else:
+    #    "I have no idea"
     
     # Auto file reading
     python:
