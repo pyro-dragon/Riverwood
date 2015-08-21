@@ -211,7 +211,7 @@ screen main_menu():
     vbox:
         text "Possible: " + str(possible)
         text "Version: " + str(updateAvailable)
-        text "Test version 0.1"
+        text "Test version 0.11"
     
     if updateAvailable != None:
         frame:
