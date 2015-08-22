@@ -70,6 +70,7 @@ init 1:
                 self.AddSegment(ChatSegment("testchat3", ["enthusiastic", "skeptic", "bragger"]))
                 self.AddSegment(ChatSegment("testchat4", ["bragger", "skeptic"]))
                 self.AddSegment(ChatSegment("testchat5", ["enthusiastic", "upset"]))
+                self.AddSegment(ChatSegment("testchat6", ["enthusiastic", "upset"]))
                 
             ##
             # Get the file data and fill out the storage arrays

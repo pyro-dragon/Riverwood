@@ -73,3 +73,27 @@ label testchat5(participants):
     #"over"
     return
     
+        
+label testchat6(participants): 
+    #"testchat6"
+    participants["upset"].c "I lost my pet rock!"
+    participants["enthusiastic"].c "Oh no! When did you last have it?"
+    participants["upset"].c "Her! Her name is Gretta and I just had her a moment ago. Oh seven hells, this is terrible!"
+    participants["enthusiastic"].c "Calm down, we will find her. Everything is going to be ok!"
+    participants["upset"].c "It won't be. All is lost. How can I go on without Gretta! We did so many things together and now she is gone!"
+    participants["enthusiastic"].c "Are you sure you looked everywhere? Have you checked all your pockets?"
+    participants["upset"].c "Of course, of course! That was the first thing I did!"
+    participants["upset"].c "Wait. Hold on a moment."
+    participants["enthusiastic"].c "..."
+    participants["upset"].c "..."
+    participants["upset"].c "Here she is! She was hiding in my other pocket the whole time! Oh I am so glad to have you back. Never worry me like that again. I don't think I will be able to cope with another big scare like that."
+    participants["enthusiastic"].c "Its safe then?"
+    participants["upset"].c "SHE!"
+    participants["enthusiastic"].c "She is safe then?"
+    participants["upset"].c "Yes, I am sorry for getting all worked up."
+    participants["enthusiastic"].c "Its ok"
+    participants["enthusiastic"].c "Though its just a fracking rock."
+    participants["upset"].c "What was that?"
+    participants["enthusiastic"].c "Nothing."
+    #"over"
+    return
