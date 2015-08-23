@@ -1,6 +1,6 @@
 {
-	"name": "Camp",
-    "image": "environments/camp.jpg", 
+	"name": "Silent Grove",
+    "image": "environments/grove.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 

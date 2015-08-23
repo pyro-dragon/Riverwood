@@ -1,6 +1,6 @@
 {
-	"name": "Camp",
-    "image": "environments/camp.jpg", 
+	"name": "Forge",
+    "image": "environments/forge.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 

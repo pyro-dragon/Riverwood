@@ -1,0 +1,106 @@
+[
+	{
+		"name": "Forest Road",
+		"image": "environments/forestRoad.jpg", 
+		"concealment": 0, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": []
+	},
+	{
+		"name": "Forest",
+		"image": "environments/forest.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["nature", "peace"]
+	},
+	{
+		"name": "River",
+		"image": "environments/river.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["nature", "peace", "water"]
+	},
+	{
+		"name": "Village",
+		"image": "environments/village.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["buildings"]
+	},
+	{
+		"name": "Cave",
+		"image": "environments/cave.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["dirt", "dark", "scary"]
+	},
+	{
+		"name": "Lake",
+		"image": "environments/lake.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["nature", "peace", "water"]
+	},
+	{
+		"name": "Waterfall",
+		"image": "environments/waterfall.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["water", "nature", ]
+	},
+	{
+		"name": "Overlook",
+		"image": "environments/overlook.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["nature", "views"]
+	},
+	{
+		"name": "Fields",
+		"image": "environments/fields.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["peace"]
+	},
+	{
+		"name": "Windmill",
+		"image": "environments/windmill.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["buildings", "action"]
+	},
+	{
+		"name": "Monument",
+		"image": "environments/monument.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["buildings", "art", "peace"]
+	},
+	{
+		"name": "Ruins",
+		"image": "environments/ruins.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["buildings", "scary"]
+	},
+	{
+		"name": "Junkyard",
+		"image": "environments/junkyard.jpg", 
+		"concealment": 50, 
+		"discovered": false, 
+		"visitable": true, 
+		"keywords": ["buildings" "scary"]
+	}
+]

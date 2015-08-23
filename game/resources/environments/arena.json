@@ -1,6 +1,6 @@
 {
-	"name": "Camp",
-    "image": "environments/camp.jpg", 
+	"name": "Arena",
+    "image": "environments/arena.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 
