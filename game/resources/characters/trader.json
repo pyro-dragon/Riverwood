@@ -1,0 +1,43 @@
+{
+    "name": "Denmar",
+    "image": "characters/trader.png", 
+    "sex": "male", 
+    "family": "Gildclaw", 
+    "nick": "trader",
+    "textcolour": "#5ca75c",
+    "met": false, 
+    "hidename": true, 
+    "imagetn": "characters/thumbnails/traderTN.png",
+    "preferences": [
+        {
+            "keyword": "art", 
+            "type": "like", 
+            "response": "This is truely delightful!"
+        },
+        {
+            "keyword": "gold", 
+            "type": "like", 
+            "response": "Oh my, my, my. Yes, yes, gold... "
+        },
+        {
+            "keyword": "peace", 
+            "type": "like", 
+            "response": "Ah, this is so nice."
+        },
+        {
+            "keyword": "dirt", 
+            "type": "dislike", 
+            "response": "This is a bit too grimy..."
+        },
+        {
+            "keyword": "action", 
+            "type": "dislike", 
+            "response": "Thats too much for me I'm afrade."
+        },
+        {
+            "keyword": "scary", 
+            "type": "dislike", 
+            "response": "That is too scary, I don't like it!"
+        }
+    ]
+}

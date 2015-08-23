@@ -30,8 +30,21 @@ init:
                 r = lambda: renpy.random.randint(0,255)
                 return '#%02X%02X%02X' % (r(),r(),r())
                 
+            ##
+            # Return the data in a single file
+            # @param filename (string) The name of the file to read, including its file path.
             def getFileData(self, filename):
-                True
+                
+                # Get the full path
+                fileLocation = renpy.loader.transfn(filename)
+                
+                # Pull out the data and convert it
+                extractedData = {}
+                if fileLocation.endswith("json"):
+                    extractedData = json.loads(open(fileLocation).read())
+                
+                # Return the data
+                return extractedData
                 
             ##
             # Return all objects taken from a given folder location

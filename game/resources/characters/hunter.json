@@ -1,0 +1,48 @@
+{
+    "name": "Kacela",
+    "image": "characters/hunter.png", 
+    "sex": "female", 
+    "family": "Bloodrunner", 
+    "nick": "hunter",
+    "textcolour": "#5ca75c",
+    "met": false, 
+    "hidename": true, 
+    "imagetn": "characters/thumbnails/hunterTN.png",
+    "preferences": [
+        {
+            "keyword": "exploring", 
+            "type": "like", 
+            "response": "I love to explore!"
+        },
+        {
+            "keyword": "hunting", 
+            "type": "like", 
+            "response": "I love hunting!"
+        },
+        {
+            "keyword": "meat", 
+            "type": "like", 
+            "response": "Nom! Lets eat meat!"
+        },
+        {
+            "keyword": "peace", 
+            "type": "dislike", 
+            "response": "Ugh, this is so boring."
+        },
+        {
+            "keyword": "buildings", 
+            "type": "dislike", 
+            "response": "I hate how they have ruined the natural landscape."
+        },
+        {
+            "keyword": "vegetables", 
+            "type": "dislike", 
+            "response": "Blegh! Meat is the only thing!"
+        },
+        {
+            "keyword": "dull", 
+            "type": "dislike", 
+            "response": "Ugh, this is so boring."
+        }
+    ]
+}

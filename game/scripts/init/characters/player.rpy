@@ -2,12 +2,26 @@
 # Player
 #-----------------------------
 init:
+    python: 
+        # Read in player data
+        playerData = game.getFileData("resources/characters/player.json")
+        
+        # Create the player
+        player = GameCharacter(playerData["name"], 
+                                    playerData["family"], 
+                                    playerData["nick"], 
+                                    Character("player.name", dynamic = True, color = playerData["textcolour"]), 
+                                    playerData["image"], 
+                                    playerData["met"], 
+                                    playerData["hidename"], 
+                                    playerData["imagetn"])
+        # Add preference data
+        for preference in playerData["preferences"]:
+            player.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
+            
     $playerCompanion = "none"
     $peopleKnown = 2
     $discoveredPlaces = 0
-    #$crt_mechanic = GameCharacter("Maria", "Coppertail", crr_mechanic, Character("crt_mechanic.name", dynamic = True, color = "#5ca75c"), "characters/maria.png", False, True, "mariaTN.png")
-    #$player = GameCharacter("Unnamed Player", "", "", Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
-    $player = GameCharacter("Unnamed Player", "Coppertail", crr_mechanic, Character("player.name", dynamic = True, color = "#848484"), "", True, False, "")
     define P = player.c
 
     $playerCompanion = None

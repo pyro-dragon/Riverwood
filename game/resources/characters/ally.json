@@ -1,0 +1,43 @@
+{
+    "name": "Ellie",
+    "image": "characters/ellie.png", 
+    "sex": "female", 
+    "family": "", 
+    "nick": "ally",
+    "textcolour": "#848484",
+    "met": true, 
+    "hidename": true, 
+    "imagetn": "characters/thumbnails/ellieTN.png",
+    "preferences": [
+        {
+            "keyword": "exploring", 
+            "type": "like", 
+            "response": "I love looking around interesting places."
+        },
+        {
+            "keyword": "animals", 
+            "type": "like", 
+            "response": "Aww, I just love cute animals."
+        },
+        {
+            "keyword": "peace", 
+            "type": "like", 
+            "response": "This is really lovely."
+        },
+        {
+            "keyword": "destruction", 
+            "type": "dislike", 
+            "response": "Thats terrible! Such a waste."
+        },
+        {
+            "keyword": "making", 
+            "type": "dislike", 
+            "response": "I am really not very good at making things."
+        },
+        {
+            "keyword": "danger", 
+            "type": "dislike", 
+            "response": "That is way too scary for me"
+        }
+    ]
+}

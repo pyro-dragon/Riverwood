@@ -1,0 +1,43 @@
+{
+    "name": "Charrd",
+    "image": "characters/charrd.png", 
+    "sex": "male", 
+    "family": "", 
+    "nick": "rival",
+    "textcolour": "#9999e6",
+    "met": true, 
+    "hidename": true, 
+    "imagetn": "characters/thumbnails/charrdTN.png",
+    "preferences": [
+        {
+            "keyword": "action", 
+            "type": "like", 
+            "response": "Yeah! That looks fun."
+        },
+        {
+            "keyword": "danger", 
+            "type": "like", 
+            "response": "Sounds like great fun!"
+        },
+        {
+            "keyword": "exploring", 
+            "type": "like", 
+            "response": "Lets go looking for trouble."
+        },
+        {
+            "keyword": "peace", 
+            "type": "dislike", 
+            "response": "So damn quiet!"
+        },
+        {
+            "keyword": "dull", 
+            "type": "dislike", 
+            "response": "That is really dull!"
+        },
+        {
+            "keyword": "savage", 
+            "type": "dislike", 
+            "response": "I like a bit of action but that is just crazy!"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Crasher",
+    "image": "characters/fighter.png", 
+    "sex": "male", 
+    "family": "Daggermaw", 
+    "nick": "fighter",
+    "textcolour": "#5ca75c",
+    "met": false, 
+    "hidename": true, 
+    "imagetn": "characters/thumbnails/fighterTN.png",
+    "preferences": [
+        {
+            "keyword": "savage", 
+            "type": "like", 
+            "response": "Ha ha, it would be better if there was more blood!"
+        },
+        {
+            "keyword": "running", 
+            "type": "like", 
+            "response": "I'll race you!"
+        },
+        {
+            "keyword": "combat", 
+            "type": "like", 
+            "response": "This is what I like! Bring on the challenegers!"
+        },
+        {
+            "keyword": "intelligence", 
+            "type": "dislike", 
+            "response": "Pfft, that's for those with weak muscles."
+        },
+        {
+            "keyword": "dull", 
+            "type": "dislike", 
+            "response": "Ughhhhh, that is so boring."
+        },
+        {
+            "keyword": "art", 
+            "type": "dislike", 
+            "response": "Its a thing. Can I eat it? Can I smash it? No? Its useless."
+        }
+    ]
+}

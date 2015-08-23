@@ -1,13 +1,13 @@
 {
-    "name": "Maria"
-    "image": "maria.png", 
+    "name": "Maria",
+    "image": "characters/maria.png", 
     "sex": "female", 
-    "family": "Bloodrunner", 
+    "family": "Coppertail", 
     "nick": "mechnanic",
     "textcolour": "#5ca75c",
     "met": false, 
     "hidename": true, 
-    "imagetn": "mariaTN.png"
+    "imagetn": "characters/thumbnails/mariaTN.png",
     "preferences": [
         {
             "keyword": "making", 

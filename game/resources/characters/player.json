@@ -1,0 +1,12 @@
+{
+    "name": "Unnamed Player",
+    "image": "", 
+    "sex": "female", 
+    "family": "Coppertail", 
+    "nick": "player",
+    "textcolour": "#848484",
+    "met": true, 
+    "hidename": false, 
+    "imagetn": "",
+    "preferences": []
+}
