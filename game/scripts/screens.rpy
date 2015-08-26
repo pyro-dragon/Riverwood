@@ -187,6 +187,8 @@ screen main_menu():
     # The background of the main menu.
     window:
         style "mm_root"
+        
+    add "shiftingBackground"
 
     # The main menu buttons.
     frame:
@@ -226,6 +228,13 @@ init -2:
         size_group "mm"
 
 
+
+image shiftingBackground:
+    "environments/camplong.jpg"
+    xpos 0
+    ease 40.0 xpos -817
+    ease 40.0 xpos 0
+    repeat
 
 ##############################################################################
 # Navigation
@@ -580,4 +589,3 @@ init -2:
         selected_idle_color "#cc08"
         selected_hover_color "#cc0"
         insensitive_color "#4448"
-
