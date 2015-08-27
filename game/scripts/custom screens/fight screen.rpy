@@ -20,12 +20,12 @@ screen fight():
             
             if fightScreenMode == "intro": 
                 text "An oponent arives!" yalign 0.5
-                timer 3.0 action SetVariable("fightScreenMode", "choice")
+                timer 1.5 action SetVariable("fightScreenMode", "choice")
                 
             elif fightScreenMode == "choice":
                 vbox at screenSlide: 
+                    textbutton "Attack" xminimum 0.9 action SetVariable("fightScreenMode", "target")
                     textbutton "Wait" xminimum 0.9
-                    textbutton "Attack" xminimum 0.9
             elif fightScreenMode == "target": 
                 vbox:
                     textbutton "Head" xminimum 0.9 #action Jump("testAttack", 10)
@@ -38,13 +38,8 @@ image enterEnemy:
     "characters/enemy.png"
     xpos -490
     ease 0.45 xpos -50
-    #ease 40.0 xpos 0
-    #repeat
-    
-transform hideFight:
-    on hide:
-        easein 0.4 xpos 900
 
+# Slide meny, etc from the right
 transform screenSlide:
     on start:
         xpos 900
