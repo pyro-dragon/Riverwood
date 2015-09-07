@@ -1,6 +1,7 @@
 {
 	"name": "Silent Grove",
-    "image": "environments/grove.jpg", 
+    "day": "environments/grove.jpg", 
+    "night": "environments/grove.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 

@@ -1,6 +1,7 @@
 {
 	"name": "Camp",
-    "image": "environments/camp.jpg", 
+    "day": "environments/camp-day.jpg", 
+	"night" : "environments/camp-night.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 

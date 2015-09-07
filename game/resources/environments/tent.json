@@ -1,6 +1,7 @@
 {
 	"name": "Tent",
-    "image": "environments/tent.jpg", 
+    "day": "environments/tent.jpg", 
+    "night": "environments/tent.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 

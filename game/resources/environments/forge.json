@@ -1,6 +1,7 @@
 {
 	"name": "Forge",
-    "image": "environments/forge.jpg", 
+    "day": "environments/forge.jpg", 
+    "night": "environments/forge.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 

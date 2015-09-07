@@ -1,6 +1,7 @@
 {
 	"name": "Arena",
-    "image": "environments/arena.jpg", 
+    "day": "environments/arena.jpg", 
+    "night": "environments/arena.jpg", 
     "concealment": 0, 
     "discovered": true, 
     "visitable": true, 
