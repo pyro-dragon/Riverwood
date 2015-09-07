@@ -6,26 +6,35 @@ init:
     python: 
         import os                        
         import json
-                
+        
+        ## 
+        # This is the master game class. It cointains all the ikmportant control variables for the game
         class Game: 
-            dateableCharacters = []
-            leaderCharacters = []
-            playerCharacter = []
-            questList = []
-            activeQuests = []
-            completedQuests = []
-            headshots = []
+            dateableCharacters = []     # An array of all datable characters
+            leaderCharacters = []       # An array of all leader characters
+            playerCharacter = {}        # The player character
+            headshots = []              # All of the background character portraits
+            locations = []              # All of the locations in the game
+            hiddenLocations = []        # All of the hidden locations
+            currentLocation = None      # The current location
+            daytime = False             # Is it day or night.
             
-            locations = []
-            currentLocation = None
-            
+            ##
+            # The game object constructor
             def __init__(self):
                 True
                
+            ## 
+            # Add a location to the game
+            # @param location (object) The location object
             def addLocation(self, location):
                 self.locations.append(location)
-               
+                if location.discovered = False: 
+                    hiddenLocations.append(location)
+            
+            ##
             # Generate a random colour hex value
+            # @return (string) The colour code
             def generateColour(self):
                 r = lambda: renpy.random.randint(0,255)
                 return '#%02X%02X%02X' % (r(),r(),r())
@@ -33,6 +42,7 @@ init:
             ##
             # Return the data in a single file
             # @param filename (string) The name of the file to read, including its file path.
+            # @return (object) The data from a single file
             def getFileData(self, filename):
                 
                 # Get the full path
@@ -50,6 +60,7 @@ init:
             # Return all objects taken from a given folder location
             # @param foldername (string) The name of the folder and its path
             # @param joinData (boolean) If any of the files contain arrays, these should be joined with any individual item into one big array
+            # @return (object) The folder content
             def getFolderData(self, foldername, joinData = True): 
                 
                 # Get the path to the files
@@ -76,7 +87,7 @@ init:
                             extractedData.append(json_data)
                         
                 return extractedData
-                
-                
+    
+    # Create the game object
     $game = Game()
     

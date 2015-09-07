@@ -1,50 +1,63 @@
 #-------------------------------------------------------------------------------
-# This is where all the environment settings are defines
+# This is where all the location settings are defines
 #-------------------------------------------------------------------------------
 
 init: 
     python: 
-        class Environment: 
-            def __init__(self, name, background, discoveryScore, discovered, visitable, keyWords):
-                self.name = name                        # The name of the environment
-                self.background = background            # A path to the background image
-                self.discoveryScore = discoveryScore    # The score needed to discover the land
-                self.discovered = discovered            # Wether the land has been discovered or not
-                self.visitable = visitable              # If the land can be visited or not
-                self.keyWords = keyWords                # A list of environment keywords
+        ##
+        # The class used to describe locations
+        # @param name (string) The name of the location
+        # @param dayImagePath (string) The path to the daytime image
+        # @param nightImagePath (string) The path to the night time image
+        # @param discoveryScore (int) The score needed to find the location
+        # @param discovered (boolean) If the location starts off discovered or not
+        # @param visitable (boolean) If the location is visitable or not
+        # @param keyWords (array) An array of keywords associated with the location
+        class Location: 
+            def __init__(self, name, dayImagePath, nightImagePath, discoveryScore, discovered, visitable, keyWords):
+                self.name = name                                        # The name of the environment
+                self.dayImage = renpy.image(self.name, dayImagePath)    # The path to the daytime image
+                self.nightImage = renpy.image(self.name, nightImagePath)# The path to the nighttime image
+                self.discoveryScore = discoveryScore                    # The score needed to discover the land
+                self.discovered = discovered                            # Wether the land has been discovered or not
+                self.visitable = visitable                              # If the land can be visited or not
+                self.keyWords = keyWords                                # A list of environment keywords
                 
-                # Generate background image
-                self.image = renpy.image(self.name, background)
-                    
+                # Create ren'py background image
+                #self.image = renpy.image(self.name, background)
+            
+            ##
             # Discover the environment
             def discover(self):
                 self.discovered = True
-                
+                game.hiddenLocations.remove(self)
+        
         # Create the camp
         landData = game.getFileData("resources/environments/camp.json")
-        camp = Environment(landData["name"], landData["image"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
+        camp = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(camp)
         
         # Family rooms
         landData = game.getFileData("resources/environments/grove.json")
-        glade = Environment(landData["name"], landData["image"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
+        glade = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(glade)
         landData = game.getFileData("resources/environments/forge.json")
-        forge = Environment(landData["name"], landData["image"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
+        forge = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(forge)
         landData = game.getFileData("resources/environments/arena.json")
-        arena = Environment(landData["name"], landData["image"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
+        arena = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(arena)
         landData = game.getFileData("resources/environments/tent.json")
-        tent = Environment(landData["name"], landData["image"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
+        tent = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(tent)
         
         # Explorable areas
         landData = game.getFolderData("resources/environments/explorable")
         
         for land in landData: 
-            game.addLocation(Environment(land["name"], 
-                                         land["image"], 
+            game.addLocation(Location(land["name"], 
+                                         land["day"], 
+                                         land["night"]
                                          land["concealment"], 
                                          land["discovered"], 
                                          land["visitable"], 
