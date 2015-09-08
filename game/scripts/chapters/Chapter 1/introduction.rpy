@@ -8,7 +8,10 @@
 #-----------------------------
 label introduction:
     
-    scene expression camp.name with fade
+    # Pass time along into evening.
+    $game.advanceTime()
+    
+    scene expression camp.getBacgroundImage() with fade
     
     "The celebrations had been been going on from the early evening."
     "You, among others have been marking the passing into adulthood. The fire roars and voices rise in song about it."
@@ -126,7 +129,7 @@ label introduction:
     "..."
     "... ..."
 
-    scene expression camp.name with fade
+    scene expression camp.getBacgroundImage() with fade
     show Temesh with dissolve
     "Temesh looks directly at you and summons you forward."
     "You take a nervous look around and step forward, aware of many eyes upon you."

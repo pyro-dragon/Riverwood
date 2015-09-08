@@ -46,7 +46,7 @@ label conversation:
         # Set the current location
         game.currentLocation = result
     
-    scene expression game.currentLocation.name with fade
+    scene expression game.currentLocation.getBacgroundImage() with fade
     show expression playerCompanion.image with dissolve
     call screen conversation(playerCompanion)
 

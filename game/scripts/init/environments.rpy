@@ -15,16 +15,13 @@ init:
         # @param keyWords (array) An array of keywords associated with the location
         class Location: 
             def __init__(self, name, dayImagePath, nightImagePath, discoveryScore, discovered, visitable, keyWords):
-                self.name = name                                        # The name of the environment
-                self.dayImage = renpy.image(self.name, dayImagePath)    # The path to the daytime image
-                self.nightImage = renpy.image(self.name, nightImagePath)# The path to the nighttime image
-                self.discoveryScore = discoveryScore                    # The score needed to discover the land
-                self.discovered = discovered                            # Wether the land has been discovered or not
-                self.visitable = visitable                              # If the land can be visited or not
-                self.keyWords = keyWords                                # A list of environment keywords
-                
-                # Create ren'py background image
-                #self.image = renpy.image(self.name, background)
+                self.name = name                        # The name of the environment
+                self.dayImage = dayImagePath            # The path to the daytime image
+                self.nightImage = nightImagePath        # The path to the nighttime image
+                self.discoveryScore = discoveryScore    # The score needed to discover the land
+                self.discovered = discovered            # Wether the land has been discovered or not
+                self.visitable = visitable              # If the land can be visited or not
+                self.keyWords = keyWords                # A list of environment keywords
             
             ##
             # Discover the environment
@@ -34,7 +31,7 @@ init:
                 
             def getBacgroundImage(self, time=None):
                 if time == None:
-                    if game.daytime == True: 
+                    if game.daytime == True:
                         return self.dayImage
                     else: 
                         return self.nightImage

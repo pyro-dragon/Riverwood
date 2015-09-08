@@ -98,7 +98,7 @@ init:
             # @param maintainTime (boolean) If the time is advanced by a number of days, this controls if we should stay on the same day/night stage as we left
             def advanceTime(self, days = 0, maintainTime = False): 
                 if days == 0:
-                    self.daytime = not daytime
+                    self.daytime = not self.daytime
                     
                     # Check to see if we should advance the day counter
                     if self.daytime == True: 

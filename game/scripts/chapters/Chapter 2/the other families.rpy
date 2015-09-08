@@ -4,7 +4,7 @@
 
 label theOtherFamilies:
     if player.family == "Coppertail": 
-        scene expression forge.name with fade
+        scene expression forge.getBacgroundImage() with fade
         show clarance with dissolve
         C "Ah, good morning young Coppertails."
         C "It is time to begin your second day as Coppertails and you will do that by going to a completely different family!"
@@ -14,7 +14,7 @@ label theOtherFamilies:
         
         call visitingTheGildclaws
         
-        scene expression forge.name with fade
+        scene expression forge.getBacgroundImage() with fade
         show clarance with dissolve
         C "Morning Coppertails. Today I will be packing you off to see the fearsome Daggermaws."
         C "Try to take them seriously otherwise Marrack will come and have a word with me and she can be really scary."
@@ -23,7 +23,7 @@ label theOtherFamilies:
         
         call visitingTheDaggermaws
         
-        scene expression forge.name with fade
+        scene expression forge.getBacgroundImage() with fade
         show clarance with dissolve
         C "Well hello again, sorry to wake you so early but Shana does love dawn."
         C "She seems to think there is a 'magical vibe' to it."
@@ -32,7 +32,7 @@ label theOtherFamilies:
         
         call visitingTheBloodrunners
 
-        scene expression forge.name with fade
+        scene expression forge.getBacgroundImage() with fade
         show clarance with dissolve
         C "Greetings there chappies!"
         C "I hope you found your time with the other families enlightening!"
@@ -47,7 +47,7 @@ label theOtherFamilies:
         "..."
         
     elif player.family == "Daggermaw": 
-        scene expression arena.name with fade
+        scene expression arena.getBacgroundImage() with fade
         show marrack with dissolve
         M "Wake up maggots! It is your seccond day as Daggermaws but alas you won't have me breathing down your neck today."
         M "No. Today you will have to head over to the Bloodrunner's sacred grove thing to learn some mumbo jumbo."
@@ -57,7 +57,7 @@ label theOtherFamilies:
         
         call visitingTheBloodrunners
         
-        scene expression arena.name with fade
+        scene expression arena.getBacgroundImage() with fade
         show marrack with dissolve
         M "Its light, you shouldn't still be asleep!"
         M "This time you are being sent packing to see what that Coppertail guy wants to show you."
@@ -66,7 +66,7 @@ label theOtherFamilies:
         
         call visitingTheCoppertails
         
-        scene expression arena.name with fade
+        scene expression arena.getBacgroundImage() with fade
         show marrack with dissolve
         M "It is a fine morning to be a Daggermaw."
         M "Which is why you are being sent to the Gildclaws."
@@ -76,7 +76,7 @@ label theOtherFamilies:
         
         call visitingTheGildclaws
         
-        scene expression arena.name with fade
+        scene expression arena.getBacgroundImage() with fade
         show marrack with dissolve
         M "Did you all like your little holiday with the other families?"
         M "Good, because now the real work begins!"
@@ -91,7 +91,7 @@ label theOtherFamilies:
         "..."
         
     elif player.family == "Bloodrunner": 
-        scene expression grove.name with fade
+        scene expression grove.getBacgroundImage() with fade
         show shana with dissolve
         S "Greetings my young charges."
         S "The stars have deamed this an optimal time for learning and as such you will acompany Clarance and his Coppertails."
@@ -100,7 +100,7 @@ label theOtherFamilies:
         
         call visitingTheCoppertails
         
-        scene expression grove.name with fade
+        scene expression grove.getBacgroundImage() with fade
         show shana with dissolve
         S "It is another fine morning, blessed by the suns warm embrase."
         S "Today you will be seeing our great leader Temesh and listen to her teachings with her Gildclaws."
@@ -109,7 +109,7 @@ label theOtherFamilies:
         
         call visitingTheGildclaws
         
-        scene expression grove.name with fade
+        scene expression grove.getBacgroundImage() with fade
         show shana with dissolve
         S "Favourable moon phases shine tollerance upon us this day and this is well."
         S "For today you must visit Marrack's arena."
@@ -120,7 +120,7 @@ label theOtherFamilies:
         
         call visitingTheDaggermaws
         
-        scene expression grove.name with fade
+        scene expression grove.getBacgroundImage() with fade
         show shana with dissolve
         S "My young ones, welcome back once more."
         S "You time with the other families was of edication was it not?"

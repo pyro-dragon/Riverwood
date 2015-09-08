@@ -19,7 +19,7 @@ label coppertailIntroduction:
     "He takes you through the den grounds and towards a large, rickerty structure built up against the cliff side."
     "He pushes the door open and beckons everyone inside."
 
-    scene expression forge.name with fade
+    scene expression forge.getBacgroundImage() with fade
     show Clarence with dissolve
     C "Welcome to the [player.family]’s forge!"
     C "This is the greatest concentration of gnollish ingenuity this side of the Hebridian mountains."
@@ -315,7 +315,7 @@ label takeTongs:
     return
 
 label closeCoppertailsFirstLesson: 
-    scene expression forge.name with fade
+    scene expression forge.getBacgroundImage() with fade
     show Clarence with dissolve
     C "Alright guys, these are looking really good now!"
     C "I think the wind mills are certainly going to give us a few more months of service with these repairs."

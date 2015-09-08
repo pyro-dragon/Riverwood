@@ -9,6 +9,9 @@
 # family.
 #-----------------------------
 label meetings:
+    
+    $game.advanceTime()
+    
     scene black
     
     "..."
@@ -35,7 +38,7 @@ label meetings:
 # Meet the Bloodrunners. 
 #-----------------------------
 label meetTheBloodRunners: 
-    scene expression camp.name with fade
+    scene expression camp.getBacgroundImage() with fade
     
     show shana with dissolve
     S "Awaken my childeren, your training as Bloodrunners begins now."
@@ -53,7 +56,7 @@ label meetTheBloodRunners:
     "You wait while the other young gnolls are sorted into their specialisation."
     S "Ok then come along with me to the Silent Grove. I'll give you a bit of an introduction to our family."
 
-    scene expression grove.name with fade
+    scene expression grove.getBacgroundImage() with fade
     show shana with dissolve
     S "We are the second largest family in the clan. We are also, arguably the most important."
     S "As you know, we gnolls are quite adept at hunting. But this is something that our family excells at."
@@ -131,7 +134,7 @@ label greetHunter:
 label meetTheCoppertails: 
     C "Rise and shine you young'uns. Today you wake as Coppertails and I need to start teaching you a thing or two."
 
-    scene expression camp.name with fade
+    scene expression camp.getBacgroundImage() with fade
     
     show clarance with dissolve
     C "Yeah I know its early morning. Its good to get you young'uns in the habbit. You can get so much more done when you start early."
@@ -157,7 +160,7 @@ label meetTheCoppertails:
     "You wait while the other young gnolls are sorted into their specialisation."
     C "Alright then. Lets head on over to the forge where I can talk you guys through what it is to be a Coppertail."
 
-    scene expression forge.name with fade
+    scene expression forge.getBacgroundImage() with fade
     show clarance with dissolve
     C "Ok young'uns, welcome to the forge! Don't touch anything unless I say so. Many a young Coppertail has lost a finger or thumb through careless inattention. And you will need all of yours!"
     C "Using your hands is what being a Coppertail is all about. We make things, take things appart, repair things and see exactly how things work."
@@ -181,7 +184,7 @@ label meetTheCoppertails:
     C "Right, you and you. Go over there, you two, take the bench to the right."
     
     scene black with fade
-    scene expression forge.name with fade
+    scene expression forge.getBacgroundImage() with fade
     
     show clarance with dissolve
     C "And you and you go on that last bench over there."
@@ -200,7 +203,7 @@ label meetTheCoppertails:
     m "Nice! Well then, lets get started!"
     
     scene black with fade
-    scene expression forge.name with fade
+    scene expression forge.getBacgroundImage() with fade
     
     show clarance with dissolve
     C "Well I think everyone did really well there! I am impressed with the variety. It looks like we have a real crafty bunch of young'uns this year!"
@@ -248,7 +251,7 @@ label greetMechanic:
 label meetTheDaggermaws: 
     M "Raaaaaaghhh!"
     
-    scene expression camp.name with hpunch
+    scene expression camp.getBacgroundImage() with hpunch
     
     show marrack
     M "Good, you are awake. Now we can start turning you scrawny wasters into real Daggermaws."
@@ -269,7 +272,7 @@ label meetTheDaggermaws:
     "..."
     "... ..."
     M "Follow me, we are going to the proving grounds."
-    scene expression arena.name with fade
+    scene expression arena.getBacgroundImage() with fade
     
     show marrack
     M "So this is a place that should become very familier to you. Much blood has been spilled on this ground and it has all been in the name of creating the finest warriors in the Barony."
@@ -320,7 +323,7 @@ label meetTheDaggermaws:
     "You spar with [fighter.name] for a few more rounds. Each becomming wise to eachothers moves."
     "..."
     
-    scene expression arena.name with fade
+    scene expression arena.getBacgroundImage() with fade
     
     show marrack
     M "Right. Thats enough."
@@ -379,7 +382,7 @@ label greetFighter:
 # Meet the Gildclaws. 
 #-----------------------------
 label meetTheGildclaws: 
-    scene expression camp.name with fade
+    scene expression camp.getBacgroundImage() with fade
     
     show temesh with dissolve
     T "I hope you all had a pleasant nights sleep. We should start early, there is much you need to learn as newly minted Gildclaws."
@@ -400,7 +403,7 @@ label meetTheGildclaws:
     "..."
     "... ..."
     T "I think that is everyone. Let us head over to my tent."
-    scene expression tent.name
+    scene expression tent.getBacgroundImage()
     
     show temesh
     T "Please, make yourselves comfortable. Would anyone want some tea?"
@@ -446,7 +449,7 @@ label meetTheGildclaws:
     scene black with fade
     "..."
     "... ..."
-    scene expression tent.name with fade
+    scene expression tent.getBacgroundImage() with fade
     
     show temesh
     "Temesh clapped her hands to bring the room to attention"

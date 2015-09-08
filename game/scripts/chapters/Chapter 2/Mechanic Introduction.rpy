@@ -10,7 +10,7 @@ label mechanicIntroduction:
 
     m "Ouch!"
 
-    scene expression camp.name
+    scene expression camp.getBacgroundImage()
     show expression crt_mechanic.image with hpunch
     m "Oh mallets, are you ok?"
     "You rub your leg. You must have had your head so far up in the clouds that you did not see where you were going."
