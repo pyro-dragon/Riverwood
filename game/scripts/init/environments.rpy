@@ -31,6 +31,13 @@ init:
             def discover(self):
                 self.discovered = True
                 game.hiddenLocations.remove(self)
+                
+            def getBacgroundImage(self, time=None):
+                if time == None:
+                    if game.daytime == True: 
+                        return self.dayImage
+                    else: 
+                        return self.nightImage
         
         # Create the camp
         landData = game.getFileData("resources/environments/camp.json")
@@ -57,7 +64,7 @@ init:
         for land in landData: 
             game.addLocation(Location(land["name"], 
                                          land["day"], 
-                                         land["night"]
+                                         land["night"],
                                          land["concealment"], 
                                          land["discovered"], 
                                          land["visitable"], 

@@ -1,7 +1,8 @@
 [
 	{
 		"name": "Forest Road",
-		"image": "environments/forestRoad.jpg", 
+		"day": "environments/forestRoad.jpg", 
+		"night": "environments/forestRoad.jpg", 
 		"concealment": 0, 
 		"discovered": false, 
 		"visitable": true, 
@@ -9,7 +10,8 @@
 	},
 	{
 		"name": "Forest",
-		"image": "environments/forest.jpg", 
+		"day": "environments/forest.jpg", 
+		"night": "environments/forest.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -17,7 +19,8 @@
 	},
 	{
 		"name": "River",
-		"image": "environments/river.jpg", 
+		"day": "environments/river.jpg", 
+		"night": "environments/river.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -25,7 +28,8 @@
 	},
 	{
 		"name": "Village",
-		"image": "environments/village.jpg", 
+		"day": "environments/village.jpg", 
+		"night": "environments/village.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -33,7 +37,8 @@
 	},
 	{
 		"name": "Cave",
-		"image": "environments/cave.jpg", 
+		"day": "environments/cave.jpg", 
+		"night": "environments/cave.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -41,7 +46,8 @@
 	},
 	{
 		"name": "Lake",
-		"image": "environments/lake.jpg", 
+		"day": "environments/lake.jpg", 
+		"night": "environments/lake.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -49,7 +55,8 @@
 	},
 	{
 		"name": "Waterfall",
-		"image": "environments/waterfall.jpg", 
+		"day": "environments/waterfall.jpg", 
+		"night": "environments/waterfall.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -57,7 +64,8 @@
 	},
 	{
 		"name": "Overlook",
-		"image": "environments/overlook.jpg", 
+		"day": "environments/overlook.jpg", 
+		"night": "environments/overlook.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -65,7 +73,8 @@
 	},
 	{
 		"name": "Fields",
-		"image": "environments/fields.jpg", 
+		"day": "environments/fields.jpg", 
+		"night": "environments/fields.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -73,7 +82,8 @@
 	},
 	{
 		"name": "Windmill",
-		"image": "environments/windmill.jpg", 
+		"day": "environments/windmill.jpg", 
+		"night": "environments/windmill.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -81,7 +91,8 @@
 	},
 	{
 		"name": "Monument",
-		"image": "environments/monument.jpg", 
+		"day": "environments/monument.jpg", 
+		"night": "environments/monument.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -89,7 +100,8 @@
 	},
 	{
 		"name": "Ruins",
-		"image": "environments/ruins.jpg", 
+		"day": "environments/ruins.jpg", 
+		"night": "environments/ruins.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 
@@ -97,7 +109,8 @@
 	},
 	{
 		"name": "Junkyard",
-		"image": "environments/junkyard.jpg", 
+		"day": "environments/junkyard.jpg", 
+		"night": "environments/junkyard.jpg", 
 		"concealment": 50, 
 		"discovered": false, 
 		"visitable": true, 

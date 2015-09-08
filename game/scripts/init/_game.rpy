@@ -17,7 +17,11 @@ init:
             locations = []              # All of the locations in the game
             hiddenLocations = []        # All of the hidden locations
             currentLocation = None      # The current location
-            daytime = False             # Is it day or night.
+            daytime = True              # Is it day or night
+            day = 1                     # The current day number
+            
+            # Possibly obsolete #
+            questList = []
             
             ##
             # The game object constructor
@@ -29,8 +33,8 @@ init:
             # @param location (object) The location object
             def addLocation(self, location):
                 self.locations.append(location)
-                if location.discovered = False: 
-                    hiddenLocations.append(location)
+                if location.discovered == False: 
+                    self.hiddenLocations.append(location)
             
             ##
             # Generate a random colour hex value
@@ -87,6 +91,25 @@ init:
                             extractedData.append(json_data)
                         
                 return extractedData
+            
+            ## 
+            # Advance time- if day, set to night. If night, set today and advance the day counter
+            # @param days (int) The number of days to advance by. Zero means to just go from day to night.
+            # @param maintainTime (boolean) If the time is advanced by a number of days, this controls if we should stay on the same day/night stage as we left
+            def advanceTime(self, days = 0, maintainTime = False): 
+                if days == 0:
+                    self.daytime = not daytime
+                    
+                    # Check to see if we should advance the day counter
+                    if self.daytime == True: 
+                        self.day = self.day + 1
+                        
+                else: 
+                    self.day = self.day + days
+                    
+                    # Check if we are maintaining the day time
+                    if maintainTime == False: 
+                        self.daytime = True
     
     # Create the game object
     $game = Game()
