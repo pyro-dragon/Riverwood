@@ -29,7 +29,7 @@ init:
                 self.discovered = True
                 game.hiddenLocations.remove(self)
                 
-            def getBacgroundImage(self, time=None):
+            def getBackgroundImage(self, time=None):
                 if time == None:
                     if game.daytime == True:
                         return self.dayImage

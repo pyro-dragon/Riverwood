@@ -76,7 +76,7 @@ label theOtherFamilies:
         
         call visitingTheGildclaws
         
-        scene expression arena.getBacgroundImage() with fade
+        scene expression arena.getBackgroundImage() with fade
         show marrack with dissolve
         M "Did you all like your little holiday with the other families?"
         M "Good, because now the real work begins!"

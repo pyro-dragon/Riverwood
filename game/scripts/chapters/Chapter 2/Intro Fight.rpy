@@ -1,5 +1,5 @@
 label introFight:
-    scene expression arena.getBacgroundImage() with fade
+    scene expression arena.getBackgroundImage() with fade
     show expression crt_fighter.image with dissolve
     f "Alright there little one. You are about to get creamed!"
     $crt_fighter.showName()

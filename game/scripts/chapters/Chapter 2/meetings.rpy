@@ -449,7 +449,7 @@ label meetTheGildclaws:
     scene black with fade
     "..."
     "... ..."
-    scene expression tent.getBacgroundImage() with fade
+    scene expression tent.getBackgroundImage() with fade
     
     show temesh
     "Temesh clapped her hands to bring the room to attention"

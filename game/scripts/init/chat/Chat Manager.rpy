@@ -38,7 +38,7 @@ init 2:
     $chatMan = ChatManager()
     
 label chat:
-    scene expression camp.getBacgroundImage() with fade
+    scene expression camp.getBackgroundImage() with fade
     
     $testcon = chatMan.generateChat()
     #$tmpp = testcon["length"]

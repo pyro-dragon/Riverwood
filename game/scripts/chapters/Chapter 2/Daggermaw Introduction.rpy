@@ -10,7 +10,7 @@ label daggermawIntroduction:
     "You head out with the other young [player.family]s across the den site grounds and into the ancient ruins of an arena."
     "You gaze around the crumbling and overgrown stone floor and tied seating. The eroded remains of statues line the outer ring of the main grounds."
 
-    scene expression arena.getBacgroundImage() with dissolve
+    scene expression arena.getBackgroundImage() with dissolve
     show Marrack
     M "Get up in line!"
     M "Come on, I don’t have all day!"

@@ -6,7 +6,7 @@
     "nick": "rival",
     "textcolour": "#9999e6",
     "met": true, 
-    "hidename": true, 
+    "hidename": false, 
     "imagetn": "characters/thumbnails/charrdTN.png",
     "preferences": [
         {

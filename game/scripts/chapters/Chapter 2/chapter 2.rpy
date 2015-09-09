@@ -4,6 +4,9 @@
 
 label chapter2:
 
+    # Push time onwards
+    $game.advanceTime
+
     scene black
     "You wake slowly, your head spinning."
     "Last night seems so long ago now."

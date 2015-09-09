@@ -11,7 +11,7 @@ label gildclawIntroduction:
     "The compound consists of an open yard half stocked with trade goods. To one side are the colourful tents where the Gildclaws gather to trade, to negotiate and to relax."
     "Temesh Leads you to one of the larger tents, through a side entrance."
 
-    scene expression tent.getBacgroundImage() with fade
+    scene expression tent.getBackgroundImage() with fade
     "You enter a lushly decorated room. Around the walls are display cabinets showing strange items from exotic lands."
     "The main area is filled with cushions and short tables."
 
@@ -87,7 +87,7 @@ label gildclawIntroduction:
     "…"
     "… …"
 
-    scene expression tent.getBacgroundImage()
+    scene expression tent.getBackgroundImage()
     show Temesh with dissolve
     T "I think we shall draw it to a close there for now."
     T "Please take the guide with you and read them through. There may be a test on them later"

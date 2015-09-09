@@ -6,7 +6,7 @@
     "nick": "ally",
     "textcolour": "#848484",
     "met": true, 
-    "hidename": true, 
+    "hidename": false, 
     "imagetn": "characters/thumbnails/ellieTN.png",
     "preferences": [
         {
