@@ -12,6 +12,7 @@ label gildclawIntroduction:
     "Temesh Leads you to one of the larger tents, through a side entrance."
 
     scene expression tent.getBackgroundImage() with fade
+    $game.setLocation(tent)
     "You enter a lushly decorated room. Around the walls are display cabinets showing strange items from exotic lands."
     "The main area is filled with cushions and short tables."
 
@@ -87,7 +88,7 @@ label gildclawIntroduction:
     "…"
     "… …"
 
-    scene expression tent.getBackgroundImage()
+    $game.showCurrentLocation()
     show Temesh with dissolve
     T "I think we shall draw it to a close there for now."
     T "Please take the guide with you and read them through. There may be a test on them later"

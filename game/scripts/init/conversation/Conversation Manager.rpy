@@ -44,9 +44,8 @@ label conversation:
         result = renpy.display_menu(locationItems)
         
         # Set the current location
-        game.currentLocation = result
+        game.setLocation(result)
     
-    scene expression game.currentLocation.getBackgroundImage() with fade
     show expression playerCompanion.image with dissolve
     call screen conversation(playerCompanion)
 

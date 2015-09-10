@@ -5,7 +5,7 @@
 label chapter2:
 
     # Push time onwards
-    $game.advanceTime
+    $game.advanceTime()
 
     scene black
     "You wake slowly, your head spinning."

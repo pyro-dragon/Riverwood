@@ -9,8 +9,8 @@ label mechanicIntroduction:
     "*CRASH*"
 
     m "Ouch!"
-
-    scene expression camp.getBackgroundImage()
+    
+    $game.setLocation(camp)
     show expression crt_mechanic.image with hpunch
     m "Oh mallets, are you ok?"
     "You rub your leg. You must have had your head so far up in the clouds that you did not see where you were going."

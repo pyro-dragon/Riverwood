@@ -1,5 +1,5 @@
 label introFight:
-    scene expression arena.getBackgroundImage() with fade
+    $game.setLocation(arena)
     show expression crt_fighter.image with dissolve
     f "Alright there little one. You are about to get creamed!"
     $crt_fighter.showName()

@@ -10,7 +10,7 @@ label bloodrunnerIntroduction:
     "You trail after your fellow [player.family]s, heading out of the den site and into the forest."
     "After what seems like twenty minutes you emerge into an open space. The ground is mossy and the sun shines down brightly."
     
-    scene expression glade.getBackgroundImage() with fade
+    $game.setLocation(glade)
     show Shana with dissolve
     S "Welcome to the [player.family] glade."
     S "It is where we come to meditate, discuss with our fellow [player.family]s."
@@ -56,7 +56,7 @@ label bloodrunnerIntroduction:
     "They kick you."
     P "Ouch!"
 
-    scene expression glade.getBackgroundImage() with fade
+    $game.showCurrentLocation()
     show expression crt_hunter.image
     h "Are you coming or what?"
     P "Oh, yeah sorry. I was just trying to sense this natural energy Shana was-"
@@ -101,7 +101,7 @@ label bloodrunnerIntroduction:
     h "Come on then, we should get this back to Shana so she can do whatever nonsense she has in mind for it"
     hide expression crt_hunter.image
     
-    scene expression glade.getBackgroundImage()
+    $game.showCurrentLocation()
     show Shana
     S "Oh my, you two have returned with a mushroom! And so quickly too."
     S "[crt_hunter.name] I knew you would be great at this. The forest spirits constantly smile down on you."
