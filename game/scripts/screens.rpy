@@ -213,8 +213,8 @@ screen main_menu():
     vbox:
         text "Possible: " + str(possible)
         text "Version: " + str(updateAvailable)
-        text "Test version 0.11"
-    
+        text "Pre-alpha version " + versionNum
+        
     if updateAvailable != None:
         frame:
             xalign 0.5

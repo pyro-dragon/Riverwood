@@ -47,15 +47,19 @@ init:
             # Return the data in a single file
             # @param filename (string) The name of the file to read, including its file path.
             # @return (object) The data from a single file
-            def getFileData(self, filename):
+            def getFileData(self, filename, mode = "JSON"):
                 
                 # Get the full path
                 fileLocation = renpy.loader.transfn(filename)
                 
-                # Pull out the data and convert it
-                extractedData = {}
-                if fileLocation.endswith("json"):
-                    extractedData = json.loads(open(fileLocation).read())
+                # For JSON reading
+                if mode == "JSON": 
+                    # Pull out the data and convert it
+                    extractedData = {}
+                    if fileLocation.endswith("json"):
+                        extractedData = json.loads(open(fileLocation).read())
+                elif mode == "flat":
+                    extractedData = open(fileLocation).read()
                 
                 # Return the data
                 return extractedData

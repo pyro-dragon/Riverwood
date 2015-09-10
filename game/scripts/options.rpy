@@ -81,7 +81,7 @@ init -1 python hide:
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
-        rounded_window = False,
+        rounded_window = False
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should
