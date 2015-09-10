@@ -110,6 +110,23 @@ init:
                     # Check if we are maintaining the day time
                     if maintainTime == False: 
                         self.daytime = True
+                        
+            ##
+            # Set the current location and show it
+            # @param location (object) The location to set as current
+            # @param transition (object) The transition
+            def setLocation(self, location, transition = fade):
+                
+                self.currentLocation = location
+                self.showCurrentLocation(transition)
+                
+            ##
+            # Show the current location
+            # @param transition (object) The transition to use
+            def showCurrentLocation(self, transition = fade):
+                renpy.scene()
+                renpy.show("bg", what=Image(self.currentLocation.getBackgroundImage()))
+                renpy.with_statement(transition)
     
     # Create the game object
     $game = Game()
