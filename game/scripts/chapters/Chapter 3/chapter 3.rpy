@@ -13,7 +13,6 @@ init:
     #$daggermawLesson = 1
     #$gildclawLesson = 1
 
-    $currentDay = 1
     $missionTree = 0
     $missionNumber = 0
 
@@ -21,6 +20,9 @@ init:
 # The Chapter 3 start point
 #---------------------------------------
 label chapter3:
+    # Its the next day
+    $game.advanceTime(1)
+    
     # Set the mission tree based on the player family
     if player.family == "Bloodrunner": 
         $missionTree = bloodrunnerMissions
@@ -34,11 +36,11 @@ label chapter3:
     #call screen activity
 
     # Pre-invasion story- Cycle throug the days, advancing the missions when needed
-    while currentDay < 15:
+    while game.day < 16:
         $allowAfternoon = True
         
         # Show mission screen
-        call chapter("Day " + str(currentDay), missionTree[missionNumber].missionLabel)
+        call chapter("Day " + str(game.day -1), missionTree[missionNumber].missionLabel)
         
         # Check if we can proceed with this mission or the player has missed a conditional
         if missionTree[missionNumber].condition() == True: 
@@ -50,10 +52,10 @@ label chapter3:
         
         # Check if the player is allowed an afternoon activity
         if allowAfternoon == True: 
-            #call screen activity
-            "### Activity Screen ###"
+            call screen activity()
+            #"### Activity Screen ###"
         
         # Progress to the next day
-        $currentDay += 1
+        $game.advanceTime(1)
         
     return

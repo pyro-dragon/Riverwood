@@ -19,6 +19,10 @@ init 1:
         for preference in playerData["preferences"]:
             crt_fighter.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
 
+    # Add to datable list
+    game.dateableCharacters.append(crt_fighter)
+    
+    # Create renpy character
     define f = crt_fighter.c
     
     # Special topics

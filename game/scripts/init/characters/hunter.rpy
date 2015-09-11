@@ -19,6 +19,10 @@ init 1:
         for preference in playerData["preferences"]:
             crt_hunter.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
     
+    # Add to datable list
+    game.dateableCharacters.append(crt_hunter)
+    
+    # Create renpy character
     define h = crt_hunter.c
     
     # Special topics

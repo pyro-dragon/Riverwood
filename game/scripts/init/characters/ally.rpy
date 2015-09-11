@@ -19,5 +19,9 @@ init 1:
         for preference in playerData["preferences"]:
             crt_ally.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
     
+    # Add to datable list
+    game.dateableCharacters.append(crt_ally)
+    
+    # Create renpy character
     define a = crt_ally.c
     

@@ -19,6 +19,10 @@ init 1:
         for preference in playerData["preferences"]:
             crt_trader.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
     
+    # Add to datable list
+    game.dateableCharacters.append(crt_trader)
+    
+    # Create renpy character
     define t = crt_trader.c
     
     # Special topics
