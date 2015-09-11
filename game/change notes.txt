@@ -1,4 +1,13 @@
 ##############################
+## 11/09/2015 - v0.12.1
+##############################
+Hot fix to include some files that were missing from from the last update. 
+
+Please report any bugs and issues to rpettefar@dragonscancode.com with screenshots. 
+
+
+
+##############################
 ## 10/09/2015 - v0.12
 ##############################
 

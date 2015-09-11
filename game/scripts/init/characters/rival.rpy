@@ -20,7 +20,7 @@ init 1:
             crt_rival.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
 
     # Add to datable list
-    game.dateableCharacters.append(crt_rival)
+    $game.dateableCharacters.append(crt_rival)
     
     # Create renpy character
     define r = crt_rival.c

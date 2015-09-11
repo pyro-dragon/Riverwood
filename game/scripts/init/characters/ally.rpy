@@ -20,7 +20,7 @@ init 1:
             crt_ally.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
     
     # Add to datable list
-    game.dateableCharacters.append(crt_ally)
+    $game.dateableCharacters.append(crt_ally)
     
     # Create renpy character
     define a = crt_ally.c

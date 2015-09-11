@@ -20,7 +20,7 @@ init 1:
             crt_mechanic.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
 
     # Add to datable list
-    game.dateableCharacters.append(crt_mechanic)
+    $game.dateableCharacters.append(crt_mechanic)
     
     # Create renpy character
     define m = crt_mechanic.c

@@ -20,7 +20,7 @@ init 1:
             crt_trader.addPreference(CharacterPreference(preference["keyword"], preference["type"], preference["response"]))
     
     # Add to datable list
-    game.dateableCharacters.append(crt_trader)
+    $game.dateableCharacters.append(crt_trader)
     
     # Create renpy character
     define t = crt_trader.c
