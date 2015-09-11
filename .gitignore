@@ -1,8 +1,11 @@
 *.rpyb
 *.save
 tmp/navigation.json
-*.txt
 *.rpyc
 game/saves/persistent
 *.odt#
 *.bak
+errors.txt
+tmp/distribute.txt
+traceback.txt
+tmp/script_version.txt

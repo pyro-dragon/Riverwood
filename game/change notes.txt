@@ -1,0 +1,11 @@
+##############################
+## 10/09/2015 - v0.12
+##############################
+
+Most of these updates have been to the underlaying mechanics with very little in functional change. 
+- All character data is now read from files
+- A new system for location tracking and transitioning is in effect
+- Day/Night cycle has been implimented
+- New graphics have been added for the arena and the day version of the camp
+
+Please report any bugs and issues to rpettefar@dragonscancode.com with screenshots. 
