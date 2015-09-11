@@ -6,7 +6,7 @@
 label start:
 
     # Test
-    #call test
+    call test
     
     # Do the introduction
     call chapter("Chapter 1", "Initiation")
