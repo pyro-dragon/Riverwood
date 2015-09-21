@@ -187,24 +187,26 @@ screen main_menu():
     # The background of the main menu.
     window:
         style "mm_root"
-        
+    
     add "shiftingBackground"
+        
+    add "menu title.png" xalign 0.5 yalign 0.2
 
     # The main menu buttons.
     frame:
         style_group "mm"
-        xalign 1.02
-        yalign 0.5
-        xminimum  .7
-        yminimum  2.0
+        xalign 0.5
+        yalign 1.0
+        xminimum 0.3
+        yminimum 0.4
 
         has vbox xalign 0.5 yalign 0.6
 
-        textbutton _("Start Game") action Start() xminimum 0.6
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
+        textbutton _("Start Game") action Start() xminimum 0.6 yminimum 0.1
+        textbutton _("Load Game") action ShowMenu("load") yminimum 0.1
+        textbutton _("Preferences") action ShowMenu("preferences") yminimum 0.1
+        textbutton _("Help") action Help() yminimum 0.1
+        textbutton _("Quit") action Quit(confirm=False) yminimum 0.1
 
     # Update box
     $possible = updater.can_update()
@@ -227,12 +229,10 @@ init -2:
     style mm_button:
         size_group "mm"
 
-
-
 image shiftingBackground:
-    "environments/camplong.jpg"
+    "menu background.jpg"
     xpos 0
-    ease 40.0 xpos -817
+    ease 40.0 xpos -883
     ease 40.0 xpos 0
     repeat
 
