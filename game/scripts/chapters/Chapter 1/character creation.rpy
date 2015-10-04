@@ -162,7 +162,6 @@ label checkName:
     menu: 
         "Yes! I shall be known as [player.name]!":
             pass
-            #call concludeCeremony
         "No, on second thoughts I want to pick again.":
             call chooseName
             
