@@ -39,7 +39,7 @@ label activityCycle:
 label explore: 
     # Check if we are at the edge of the territory (there is nothing more to explore from here)
     # Return to activity menu if there is nothing to do
-    if len(discoverableAreas) <= 0: 
+    if len(game.hiddenLocations) <= 0: 
         #"There is nothing left to explore"
         jump activityCycle
             
@@ -58,7 +58,7 @@ label explore:
         
     # Compare score against remaining places to explore
     # Grab a random place
-    $place = discoverableAreas[renpy.random.randint(0, len(discoverableAreas) - 1)]
+    $place = game.hiddenLocations[renpy.random.randint(0, len(game.hiddenLocations) - 1)]
     
     # Add the companion skill as a bonus
     $findPlaceResult = player.skillTest("exploring", place.discoveryScore, playerCompanion.getSkillTotal("exploring"))
@@ -77,7 +77,7 @@ label explore:
         $playerCompanion.addRp(3)
             
         # Remove place from list
-        $discoverableAreas.remove(place)
+        $place.discover();
             
         python: 
             # Check if the place has any matching keywords- if so, add even more rp
