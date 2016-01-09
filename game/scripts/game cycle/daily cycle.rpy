@@ -85,6 +85,10 @@ init:
                     day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
                 
                 return day
+               
+            # Add an event
+            def addEvent(self, event, day):
+                self.eventList[day].append(event)
         
         # A complete day
         class Day: 
