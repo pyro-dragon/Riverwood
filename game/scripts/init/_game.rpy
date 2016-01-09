@@ -19,6 +19,7 @@ init:
             currentLocation = None      # The current location
             daytime = True              # Is it day or night
             day = 1                     # The current day number
+            gameLoop = None             # The main game activity loop
             
             # Possibly obsolete #
             questList = []
@@ -26,7 +27,7 @@ init:
             ##
             # The game object constructor
             def __init__(self):
-                True
+                self.gameLoop = GameLoop()
                
             ## 
             # Add a location to the game
