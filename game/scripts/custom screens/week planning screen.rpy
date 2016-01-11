@@ -3,32 +3,60 @@
 #-------------------------------------------------------------------------------
 init:
     $activityTarget = ""
+
+    python:
+        activityArray = [[], [], [], [], []]
     
 screen weekPlan():
     window:
-        vbox xalign 0.5 yalign 0.5 xfill True yfill True:
-            text "Today's activities"
-            side "l r" xalign 0.5 yalign 0.5:
-                frame xalign 0.5:
-                    vbox:
-                        label _("Choose your afternoon activity:")
-                        textbutton "Go exploring" action SetVariable("activityTarget", "explore")
-                        #textbutton "Practice skills" action SetVariable("activityTarget", "practice")
-                        textbutton "Socialise with clan" action SetVariable("activityTarget", "socialise")
-                        textbutton "Hang out with someone" action SetVariable("activityTarget", "hangOut")
-                        
-                frame xalign 0.5:
-                    vbox:
-                        label _("Who with?:")
-                        for character in game.dateableCharacters: 
-                            if character.met == True: 
-                                if character.met == True: 
-                                    textbutton character.trueName + " " + character.family action SetVariable("playerCompanion", character)
-                        
-            side "l r":
-                hbox:
-                    textbutton "Skills" action[Hide("activity"), Show("skills")]
-                    textbutton "Relationships" action [Hide("activity"), Show("relationships")]
+        xfill True
+        yfill True
+        has vbox:
+            text "Morning lessons: "
+            hbox xfill True:
+                use selectLesson("Monday", 0)
+                use selectLesson("Tuseday", 1)
+                use selectLesson("Wednesday", 2)
+                use selectLesson("Thursday", 3)
+                use selectLesson("Friday", 4)
 
-                if activityTarget != "" and playerCompanion != "":
-                    textbutton "Head out" action Jump(activityTarget)
+            text "----"
+                
+            text "Afternoon activities: "
+            hbox xfill True:
+                use selectActivities("Monday", 0)
+                use selectActivities("Tuseday", 1)
+                use selectActivities("Wednesday", 2)
+                use selectActivities("Thursday", 3)
+                use selectActivities("Friday", 4)
+                
+screen selectLesson(day, dayNum):
+    default lessonType = ""
+    
+    frame:
+        xsize 155
+        
+        vbox: 
+            label day
+            
+            for lesson in game.lessons: 
+                if lesson["available"]:
+                    textbutton lesson["name"] action SetVariable("activityArray", lesson["lesson"]) xfill True
+                else: 
+                    textbutton "[[Hidden]" action False xfill True
+
+screen selectActivities(day, dayNum):
+    default activityType = ""
+    
+    frame:
+        xsize 155
+        
+        vbox: 
+            label day
+            
+            for activity in game.activities: 
+                if activity["available"]:
+                    textbutton activity["name"] action SetScreenVariable("activityType", activity["activity"]) xfill True
+                else: 
+                    textbutton "[[Hidden]" action False xfill True
+
