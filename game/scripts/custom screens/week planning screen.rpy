@@ -2,6 +2,13 @@
 # A screen used to pick activities and lessons for the week
 #-------------------------------------------------------------------------------
 
+init:
+    python:
+        testCount = 0
+
+        def increaseCount(): 
+            store.testCount += 1
+
 screen weekPlan():
     window:
         xfill True
@@ -24,8 +31,12 @@ screen weekPlan():
                 use selectActivities("Wednesday", 2)
                 use selectActivities("Thursday", 3)
                 use selectActivities("Friday", 4)
-                
-        textbutton "Start the week" action Return()
+
+        text str(testCount)
+        
+        # pseudo validation
+        if testCount >= 5:
+            textbutton "Start the week" action Return()
                 
 screen selectLesson(day, dayNum):
     
@@ -38,7 +49,7 @@ screen selectLesson(day, dayNum):
             for lesson in game.lessons: 
                 if lesson["available"]:
                     # The second action here is purely to allow the correct buttons to show up as selected.
-                    textbutton lesson["name"] action([Function(game.gameLoop.setActivity, lesson["lesson"], dayNum, 0), SetScreenVariable("lessonType" + day, lesson["name"] + day)]) xfill True
+                    textbutton lesson["name"] action([Function(increaseCount), Function(game.gameLoop.setActivity, lesson["lesson"], dayNum, 0), SetScreenVariable("lessonType" + day, lesson["name"] + day)]) xfill True
                 else: 
                     textbutton "[[Hidden]" action False xfill True
 
