@@ -89,6 +89,10 @@ init:
             # Add an event
             def addEvent(self, event, day):
                 self.eventList[day].append(event)
+
+            # Add an activity
+            def setActivity(self, activity, day, period):
+                self.weekdayActivityChoices[day][period] = activity
         
         # A complete day
         class Day: 

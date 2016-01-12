@@ -1,12 +1,7 @@
 #-------------------------------------------------------------------------------
 # A screen used to pick activities and lessons for the week
 #-------------------------------------------------------------------------------
-init:
-    $activityTarget = ""
 
-    python:
-        weekPlanArray = [["", ""], ["", ""], ["", ""], ["", ""], ["", ""]]
-    
 screen weekPlan():
     window:
         xfill True
@@ -30,7 +25,7 @@ screen weekPlan():
                 use selectActivities("Thursday", 3)
                 use selectActivities("Friday", 4)
                 
-        textbutton "Start the week" action Return(weekPlanArray)
+        textbutton "Start the week" action Return()
                 
 screen selectLesson(day, dayNum):
     
@@ -40,12 +35,10 @@ screen selectLesson(day, dayNum):
         vbox: 
             label day
             
-            text weekPlanArray[dayNum][0]
-            
             for lesson in game.lessons: 
                 if lesson["available"]:
                     # The second action here is purely to allow the correct buttons to show up as selected.
-                    textbutton lesson["name"] action([SetDict(weekPlanArray, [dayNum][0], [lesson["lesson"], weekPlanArray[dayNum][1]]),SetScreenVariable("lessonType" + day, lesson["name"] + day)]) xfill True
+                    textbutton lesson["name"] action([Function(game.gameLoop.setActivity, lesson["lesson"], dayNum, 0), SetScreenVariable("lessonType" + day, lesson["name"] + day)]) xfill True
                 else: 
                     textbutton "[[Hidden]" action False xfill True
 
@@ -58,12 +51,10 @@ screen selectActivities(day, dayNum):
         vbox: 
             label day
             
-            text weekPlanArray[dayNum][1]
-            
             for activity in game.activities: 
                 if activity["available"]:
-                    #textbutton activity["name"] action SetDict(weekPlanArray, [dayNum][0], [weekPlanArray[dayNum][0], activity["activity"]]) xfill True
-                    textbutton activity["name"] action([SetDict(weekPlanArray, [dayNum][0], [weekPlanArray[dayNum][0], activity["activity"]]),SetScreenVariable("activityType" + day, activity["name"] + day)]) xfill True
+                    # The second action here is purely to allow the correct buttons to show up as selected.
+                    textbutton activity["name"] action([Function(game.gameLoop.setActivity, activity["activity"], dayNum, 1), SetScreenVariable("activityType" + day, activity["name"] + day)]) xfill True
                 else: 
                     textbutton "[[Hidden]" action False xfill True
 
