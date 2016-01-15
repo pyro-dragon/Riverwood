@@ -29,7 +29,7 @@ init 1:
     $crt_mechanic.addTopic(Topic("repeat", "repeat"))
     $crt_mechanic.addTopic(Topic("late", "late"))
     
-    # Regualr topics
+    # Regular topics
     $crt_mechanic.addTopic(Topic("How are you doing?", "howYouDoing", False))
     $crt_mechanic.addTopic(Topic("Do you like this place?", "thisPlace", False))
     $crt_mechanic.addTopic(Topic("What are you into?", "whatInto", False))
@@ -63,9 +63,9 @@ label mechanic_thisPlace:
         
     # A hated place
     if game.currentLocation.name == "Glade":
-        m "Umm, I am not too fond of this place actully."
+        m "Umm, I am not too fond of this place actually."
         m "There is a feeling in the air that I don't like, it feels like... resentment."
-        m "It was a bit of a long treck out to here too and there really isn't much to see."
+        m "It was a bit of a long trek out to here too and there really isn't much to see."
         m "I'm sorry, I don't want to sound like I'm complaining, but you could have picked a better place."
         $crt_mechanic.addRP(-5)
         
@@ -78,7 +78,7 @@ label mechanic_thisPlace:
     
 label mechanic_whatInto: 
     m "Ooooo, thats a hard question."
-    m "Building stuff, taking stuff appart."
+    m "Building stuff, taking stuff apart."
     m "Bending stuff, welding stuff"
     m "Thats it, I think"
     
