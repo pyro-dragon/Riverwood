@@ -10,3 +10,6 @@ tmp/distribute.txt
 traceback.txt
 tmp/script_version.txt
 log.txt
+.idea
+game/scripts/custom screens/test screen.rpy
+game/scripts/test.rpy
