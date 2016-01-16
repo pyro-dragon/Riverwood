@@ -162,6 +162,7 @@ label yearCycle:
         $weekCount = 0
         while weekCount < game.gameLoop.monthLength: 
             $dayCount = 0
+            call screen weekPlan
             while dayCount < game.gameLoop.weekLength:
                 call day
                 "Day: [dayCount]\nWeek: [weekCount]\nMonth: [monthCount]\n"
