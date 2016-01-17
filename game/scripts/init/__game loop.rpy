@@ -58,8 +58,9 @@ init:
                 if self.eventList[self.currentDay].count > 0:
                     
                     # Add them to the watch list
-                    for self.event in self.eventList[self.currentDay]:
-                        self.eventWatchList.append(self.eventList[self.currentDay][event])
+                    for event in self.eventList[self.currentDay]:
+                        say("", "Adding event: \n" + str(event.label) + "\n" + str(event.timeslot) + "\n" + str(event.expireryDate) + "\n" + str(event.override) + "\n" + str(event.conditions));
+                        self.eventWatchList.append(event)
                 
                 # Cycle through watch list
                 for event in self.eventWatchList: 
@@ -70,8 +71,8 @@ init:
                         break
                     
                     # Check if event criterias are met and add them to the right event slot
-                    if event.criteriaMet(): 
-                        if event.time == "morning": 
+                    if event.conditions(): 
+                        if event.timeslot == "morning": 
                             day.morningEvent = event
                         elif event.time == "afternoon":
                             day.afternoonEvent = event
@@ -130,11 +131,11 @@ init:
         class Event:
 
             # Constructor
-            def __init__(self, label, timeslot, expires, override, conditions):
+            def __init__(self, label, timeslot, expireryDate, override, conditions):
                 self.label = label              # The label where this event happens
                 self.timeslot = timeslot        # The timeslot this event happens in. morning, afternoon, evening
-                self.expires = expires          # The day that this event expires and can no longer be activated
-                self.overrride = override       # Determines if the following activity period does not happen
+                self.expireryDate = expireryDate     # The day that this event expires and can no longer be activated
+                self.override = override       # Determines if the following activity period does not happen
                 self.conditions = conditions    # A lambda function of conditions that must be met before the event can occure
                 
             # Check if the conditions have been met
