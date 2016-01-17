@@ -3,6 +3,8 @@
 #-------------------------------------------------------------------------------
 
 label chapter2:
+    
+    call chapter("Chapter 2", "Meet your family")
 
     # Push time onwards
     $game.advanceTime()

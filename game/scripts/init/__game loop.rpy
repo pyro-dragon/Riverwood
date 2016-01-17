@@ -27,6 +27,8 @@ init:
                 
                 self.eventList = [[]] * ((self.monthLength * self.weekLength) * self.yearLength)      # A list of events that may occur on any specific day. There may be multiple events here.
                 self.eventWatchList = []                   # An array/list of events that may occure right now if their criteria are met
+                
+                self.suppressMenu = False       # Do not display the week planning menu (one time only)
 
             # A function to advance the day counters
             def advanceDayCounter(self):
@@ -74,7 +76,7 @@ init:
                     if event.conditions(): 
                         if event.timeslot == "morning": 
                             day.morningEvent = event
-                        elif event.time == "afternoon":
+                        elif event.timeslot == "afternoon":
                             day.afternoonEvent = event
                         else: 
                             day.afternoonEvent = event
@@ -160,13 +162,23 @@ init:
 label yearCycle:    
     $monthCount = 0
     while monthCount < game.gameLoop.yearLength: 
+
         $weekCount = 0
         while weekCount < game.gameLoop.monthLength: 
+            
             $dayCount = 0
-            call screen weekPlan
+            
+            # Check if we need to suppress the menu
+            if game.gameLoop.suppressMenu:
+                $game.gameLoop.suppressMenu = False
+            else: 
+                call screen weekPlan
+                    
             while dayCount < game.gameLoop.weekLength:
+                
                 call day
                 "Day: [dayCount]\nWeek: [weekCount]\nMonth: [monthCount]\n"
+                    
                 $dayCount += 1
             $weekCount += 1
         $monthCount += 1
