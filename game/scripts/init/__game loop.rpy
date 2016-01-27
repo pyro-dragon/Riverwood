@@ -25,8 +25,9 @@ init:
                 self.weekdayActivityChoices = [["engineering", "slacking"], ["engineering", "chatting"], ["hunting", "strengthTraining"], ["diplomacy", "chatting"], ["engineering", "slacking"]]
                 self.weekendActivityChoices = [["shopping", "converstion"], ["intelligenceTraining", "intelligenceTraining"]]
                 
-                self.eventList = [[]] * ((self.monthLength * self.weekLength) * self.yearLength)      # A list of events that may occur on any specific day. There may be multiple events here.
+                self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
                 self.eventWatchList = []                   # An array/list of events that may occure right now if their criteria are met
+                self.callCount = 0
                 
                 self.suppressMenu = False       # Do not display the week planning menu (one time only)
 
@@ -55,9 +56,12 @@ init:
                 
                 # Create a new day
                 day = Day()
+
+                say("", "Today is day: " + str(self.currentDay))
+                say("", "Todays event list size: " + str(len(self.eventList[self.currentDay])))
                 
                 # Check for events that may start occuring on this day
-                if self.eventList[self.currentDay].count > 0:
+                if len(self.eventList[self.currentDay]) > 0:
                     
                     # Add them to the watch list
                     for event in self.eventList[self.currentDay]:
@@ -65,21 +69,31 @@ init:
                         self.eventWatchList.append(event)
                 
                 # Cycle through watch list
+                # Note: Can't remove while mid cycle- It messes up the order of things (there is no next one to go onto
+                say("", "Watchlist size: " + str(len(self.eventWatchList)))
                 for event in self.eventWatchList: 
+                    say("", "Event: " + str(event.label))
 
                     # Check for out-of-date events and remove them
                     if event.expireryDate < self.currentDay:
-                        self.eventWatchList.remove(event)
-                        break
+                        say("", "Event expired")
+                        #self.eventWatchList.remove(event)
+                        pass
                     
                     # Check if event criterias are met and add them to the right event slot
                     if event.conditions(): 
                         if event.timeslot == "morning": 
                             day.morningEvent = event
+                            say("", "Morning event added: " + str(day.morningEvent))
                         elif event.timeslot == "afternoon":
                             day.afternoonEvent = event
+                            say("", "Afternoon event added: " + str(day.afternoonEvent))
                         else: 
                             day.afternoonEvent = event
+                            
+                        # Remove the event from the list
+                        #self.eventWatchList.remove(event)
+                        #say("", "Event still there?: " + str(day.afternoonEvent))
                 
                 # Add the activities
                 if day.morningEvent != None and not day.morningEvent.override:
@@ -92,6 +106,7 @@ init:
             # Add an event
             def addEvent(self, event, day):
                 self.eventList[day].append(event)
+                self.callCount += 1;
 
             # Add an activity
             def setActivity(self, activity, day, period):
@@ -110,16 +125,22 @@ init:
                 
             def callMorningEvent(self):
                 if(self.morningEvent != None):
-                    renpy.say("", "Morning event time")
+                    renpy.say("", "Morning event time: " + self.morningEvent.label)
                     renpy.call(self.morningEvent.label)
+                    #self.morningEvent = None
                 
             def callAfternoonEvent(self):
+                say("", "Afternoon event: " + str(self.afternoonEvent))
                 if(self.afternoonEvent != None):
+                    renpy.say("", "Afternoon event time: " + self.afternoonEvent.label)
                     renpy.call(self.afternoonEvent.label)
+                    #self.afternoonEvent = None
 
             def callEveningEvent(self):
                 if(self.eveningEvent != None):
+                    renpy.say("", "Evening event time")
                     renpy.call(self.eveningEvent.label)
+                    #self.eveningEvent = None
 
             def callMorningActivity(self):
                 if(self.morningActivity != None):
@@ -134,11 +155,11 @@ init:
 
             # Constructor
             def __init__(self, label, timeslot, expireryDate, override, conditions):
-                self.label = label              # The label where this event happens
-                self.timeslot = timeslot        # The timeslot this event happens in. morning, afternoon, evening
-                self.expireryDate = expireryDate     # The day that this event expires and can no longer be activated
-                self.override = override       # Determines if the following activity period does not happen
-                self.conditions = conditions    # A lambda function of conditions that must be met before the event can occure
+                self.label = label                      # The label where this event happens
+                self.timeslot = timeslot                # The timeslot this event happens in. morning, afternoon, evening
+                self.expireryDate = expireryDate        # The day that this event expires and can no longer be activated
+                self.override = override                # Determines if the following activity period does not happen
+                self.conditions = conditions            # A lambda function of conditions that must be met before the event can occure
                 
             # Check if the conditions have been met
             def checkValidity():
@@ -192,9 +213,10 @@ label day:
     
     $day.callMorningActivity()
     
+    "Calling afternoon event"
     $day.callAfternoonEvent()
     
-    $day.callAfternoonEvent()
+    $day.callAfternoonActivity()
     
     $day.callEveningEvent()
     
