@@ -68,16 +68,19 @@ init:
                         say("", "Adding event: \n" + str(event.label) + "\n" + str(event.timeslot) + "\n" + str(event.expireryDate) + "\n" + str(event.override) + "\n" + str(event.conditions));
                         self.eventWatchList.append(event)
                 
+                # Duplicate the list for removal purposes
+                dupList = list(self.eventWatchList) 
+                
                 # Cycle through watch list
                 # Note: Can't remove while mid cycle- It messes up the order of things (there is no next one to go onto
                 say("", "Watchlist size: " + str(len(self.eventWatchList)))
-                for event in self.eventWatchList: 
+                for event in dupList: 
                     say("", "Event: " + str(event.label))
 
                     # Check for out-of-date events and remove them
                     if event.expireryDate < self.currentDay:
                         say("", "Event expired")
-                        #self.eventWatchList.remove(event)
+                        self.eventWatchList.remove(event)
                         pass
                     
                     # Check if event criterias are met and add them to the right event slot
@@ -92,7 +95,7 @@ init:
                             day.afternoonEvent = event
                             
                         # Remove the event from the list
-                        #self.eventWatchList.remove(event)
+                        self.eventWatchList.remove(event)
                         #say("", "Event still there?: " + str(day.afternoonEvent))
                 
                 # Add the activities
