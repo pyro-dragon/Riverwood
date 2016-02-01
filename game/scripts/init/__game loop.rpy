@@ -57,15 +57,15 @@ init:
                 # Create a new day
                 day = Day()
 
-                say("", "Today is day: " + str(self.currentDay))
-                say("", "Todays event list size: " + str(len(self.eventList[self.currentDay])))
+                #say("", "Today is day: " + str(self.currentDay))
+                #say("", "Todays event list size: " + str(len(self.eventList[self.currentDay])))
                 
                 # Check for events that may start occuring on this day
                 if len(self.eventList[self.currentDay]) > 0:
                     
                     # Add them to the watch list
                     for event in self.eventList[self.currentDay]:
-                        say("", "Adding event: \n" + str(event.label) + "\n" + str(event.timeslot) + "\n" + str(event.expireryDate) + "\n" + str(event.override) + "\n" + str(event.conditions));
+                        #say("", "Adding event: \n" + str(event.label) + "\n" + str(event.timeslot) + "\n" + str(event.expireryDate) + "\n" + str(event.override) + "\n" + str(event.conditions));
                         self.eventWatchList.append(event)
                 
                 # Duplicate the list for removal purposes
@@ -73,13 +73,13 @@ init:
                 
                 # Cycle through watch list
                 # Note: Can't remove while mid cycle- It messes up the order of things (there is no next one to go onto
-                say("", "Watchlist size: " + str(len(self.eventWatchList)))
+                #say("", "Watchlist size: " + str(len(self.eventWatchList)))
                 for event in dupList: 
-                    say("", "Event: " + str(event.label))
+                    #say("", "Event: " + str(event.label))
 
                     # Check for out-of-date events and remove them
                     if event.expireryDate < self.currentDay:
-                        say("", "Event expired")
+                        #say("", "Event expired")
                         self.eventWatchList.remove(event)
                         pass
                     
@@ -87,10 +87,10 @@ init:
                     if event.conditions(): 
                         if event.timeslot == "morning": 
                             day.morningEvent = event
-                            say("", "Morning event added: " + str(day.morningEvent))
+                            #say("", "Morning event added: " + str(day.morningEvent))
                         elif event.timeslot == "afternoon":
                             day.afternoonEvent = event
-                            say("", "Afternoon event added: " + str(day.afternoonEvent))
+                            #say("", "Afternoon event added: " + str(day.afternoonEvent))
                         else: 
                             day.afternoonEvent = event
                             
@@ -128,20 +128,20 @@ init:
                 
             def callMorningEvent(self):
                 if(self.morningEvent != None):
-                    renpy.say("", "Morning event time: " + self.morningEvent.label)
+                    #renpy.say("", "Morning event time: " + self.morningEvent.label)
                     renpy.call(self.morningEvent.label)
                     #self.morningEvent = None
                 
             def callAfternoonEvent(self):
-                say("", "Afternoon event: " + str(self.afternoonEvent))
+                #say("", "Afternoon event: " + str(self.afternoonEvent))
                 if(self.afternoonEvent != None):
-                    renpy.say("", "Afternoon event time: " + self.afternoonEvent.label)
+                    #renpy.say("", "Afternoon event time: " + self.afternoonEvent.label)
                     renpy.call(self.afternoonEvent.label)
                     #self.afternoonEvent = None
 
             def callEveningEvent(self):
                 if(self.eveningEvent != None):
-                    renpy.say("", "Evening event time")
+                    #renpy.say("", "Evening event time")
                     renpy.call(self.eveningEvent.label)
                     #self.eveningEvent = None
 
@@ -201,7 +201,7 @@ label yearCycle:
             while dayCount < game.gameLoop.weekLength:
                 
                 call day
-                "Day: [dayCount]\nWeek: [weekCount]\nMonth: [monthCount]\n"
+                #"Day: [dayCount]\nWeek: [weekCount]\nMonth: [monthCount]\n"
                     
                 $dayCount += 1
             $weekCount += 1
@@ -216,7 +216,7 @@ label day:
     
     $day.callMorningActivity()
     
-    "Calling afternoon event"
+    #"Calling afternoon event"
     $day.callAfternoonEvent()
     
     $day.callAfternoonActivity()
