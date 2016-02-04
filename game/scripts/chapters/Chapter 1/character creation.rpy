@@ -64,24 +64,28 @@ label setFamilyData:
         $crt_ally.trueName = "Scarah"
         $crt_rival.family = "Coppertail"
         $crt_rival.trueName= "Scorch"
+        $game.gameLoop.weekdayActivityChoices = [["hunting", "slacking"], ["hunting", "slacking"], ["hunting", "slacking"], ["hunting", "slacking"], ["hunting", "slacking"]]
     
     elif player.family == "Coppertail":
         $crt_ally.family = "Gildclaw"
         $crt_ally.trueName = "Deft"
         $crt_rival.family = "Daggermaw"
         $crt_rival.trueName = "Dirge"
+        $game.gameLoop.weekdayActivityChoices = [["engineering", "slacking"], ["engineering", "slacking"], ["engineering", "slacking"], ["engineering", "slacking"], ["engineering", "slacking"]]
     
     elif player.family == "Daggermaw":
         $crt_ally.family = "Bloodrunner"
         $crt_ally.trueName = "Swift"
         $crt_rival.family = "Gildclaw"
         $crt_rival.trueName = "Silver"
+        $game.gameLoop.weekdayActivityChoices = [["training", "slacking"], ["training", "slacking"], ["training", "slacking"], ["training", "slacking"], ["training", "slacking"]]
 
     elif player.family == "Gildclaw":
         $crt_ally.family = "Coppertail"
         $crt_ally.trueName = "Spark"
         $crt_rival.family = "Bloodrunner"
         $crt_rival.trueName = "Shade"
+        $game.gameLoop.weekdayActivityChoices = [["reading", "slacking"], ["reading", "slacking"], ["reading", "slacking"], ["reading", "slacking"], ["reading", "slacking"]]
 
     return
             

@@ -8,17 +8,20 @@ init 0:
         
         # Chapter 1: Intro and character creation
         game.gameLoop.addEvent(Event("null", "morning", 2, True, lambda: True), 1)      # Skip the morning
-        game.gameLoop.addEvent(Event("testEvent1", "afternoon", 1, True, lambda: True), 1)
+        game.gameLoop.addEvent(Event("Chapter1", "afternoon", 1, True, lambda: True), 1)
 
         # Chapter 2: First day in the chose family
-        game.gameLoop.addEvent(Event("testEvent2", "morning", 3, True, lambda: True), 2)
+        game.gameLoop.addEvent(Event("Chapter2", "morning", 3, True, lambda: True), 2)
         game.gameLoop.addEvent(Event("null", "afternoon", 3, True, lambda: True), 2)      # Skip the afternoon
 
-        #game.gameLoop.addEvent(Event("testEvent1", "morning", 2, True, lambda: True), 1)
+        game.gameLoop.addEvent(Event("testEvent1", "morning", 2, True, lambda: True), 3)
+        game.gameLoop.addEvent(Event("testEvent1", "afternoon", 2, True, lambda: True), 3)
 
-        #game.gameLoop.addEvent(Event("testEvent2", "afternoon", 5, True, lambda: True), 4)
+        game.gameLoop.addEvent(Event("testEvent2", "morning", 5, True, lambda: True), 4)
+        game.gameLoop.addEvent(Event("testEvent2", "afternoon", 5, True, lambda: True), 4)
 
-        #game.gameLoop.addEvent(Event("testEvent3", "morning", 3, True, lambda: True), 2)
+        game.gameLoop.addEvent(Event("testEvent3", "morning", 3, True, lambda: True), 5)
+        game.gameLoop.addEvent(Event("testEvent3", "afternoon", 3, True, lambda: True), 5)
 
         #game.gameLoop.addEvent(Event("testEvent4", "morning", 4, True, lambda: True), 3)
 
