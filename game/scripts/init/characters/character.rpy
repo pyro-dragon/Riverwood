@@ -136,7 +136,12 @@ init:
             def changeSkillBonus(self, skill, change): 
                 if self.skillBonus.has_key(skill): 
                     self.skillBonus[skill] += change
-                    renpy.show_screen("skillShowBox", skill, change)
+                else: 
+                    # If the skill doesn't exist, add it.
+                    self.skillBonus[skill] = change
+
+                # Show the skill change bubble
+                renpy.show_screen("skillShowBox", skill, change)
             
             #-----------------------#
             # Add to the attributes #
