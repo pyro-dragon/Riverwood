@@ -19,6 +19,53 @@ init:
             currentLocation = None      # The current location
             daytime = True              # Is it day or night
             day = 1                     # The current day number
+            gameLoop = None             # The main game activity loop
+            lessons = [
+                dict({
+                    "name": "Engineering", 
+                    "lesson": "engineering", 
+                    "available": True
+                }),
+                dict({
+                    
+                    "name": "Hunting", 
+                    "lesson": "hunting", 
+                    "available": True
+                }),
+                dict({
+                    
+                    "name": "Hair Dressing", 
+                    "lesson": "hairDressing", 
+                    "available": False
+                }),
+                dict({
+                    
+                    "name": "Reading", 
+                    "lesson": "reading", 
+                    "available": True
+                }),
+                dict({
+                    
+                    "name": "Fighting", 
+                    "lesson": "fighting", 
+                    "available": True
+                })
+            ]
+
+            activities = [
+                dict({
+                    "name": "Slacking", 
+                    "activity": "slacking", 
+                    "available": True
+                }),
+                dict({
+                    "name": "Socialise", 
+                    "activity": "socialise", 
+                    "available": True
+                })
+            ]
+
+            test = ""
             
             # Possibly obsolete #
             questList = []
@@ -26,7 +73,7 @@ init:
             ##
             # The game object constructor
             def __init__(self):
-                True
+                self.gameLoop = GameLoop()
                
             ## 
             # Add a location to the game

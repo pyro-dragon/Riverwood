@@ -4,6 +4,8 @@
 
 label chapter1:
 
+    call chapter("Chapter 1", "Initiation")
+
     call introduction
 
     call characterCreation
