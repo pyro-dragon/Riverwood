@@ -37,10 +37,17 @@ label splashscreen:
     call screen releaseNotes(notes)
 
     with Pause(1)
+    
+    show image "largescaleindustries-small.png" with dissolve:
+        xalign 0.5
+        yalign 0.5
+    
+    with Pause(1)
 
     show text "Large Scale Industries Presents..." with dissolve
     with Pause(2)
 
+    hide image "largescaleindustries-small.png" with dissolve
     hide text with dissolve
     with Pause(1)
 
