@@ -24,7 +24,7 @@ init:
                 self.weekend = False
                 self.start = True        # Start of the week or weekend
                 
-                self.weekdayActivityChoices = [["engineering", "slacking"], ["engineering", "chatting"], ["hunting", "strengthTraining"], ["diplomacy", "chatting"], ["engineering", "slacking"]]
+                self.weekdayActivityChoices = [[Activity("hunting"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")]]
                 self.weekendActivityChoices = [["shopping", "converstion"], ["intelligenceTraining", "intelligenceTraining"]]
                 
                 self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
@@ -89,9 +89,12 @@ init:
                         self.eventWatchList.remove(self.eventWatchList[i])
                 
                 # Add the activities
-                if day.morningEvent != None and not day.morningEvent.override:
+                say("", "Morning event: " + str(day.morningEvent))
+                if day.morningEvent != None: #and (day.morningEvent.override == False or day.morningEvent == None):
+                    say("", "++adding morning activities")
                     day.morningActivity = self.weekdayActivityChoices[self.currentWeekday][0]
                 if day.afternoonEvent != None and not day.afternoonEvent.override: 
+                    say("", "++adding afternoon activities")
                     day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
                 
                 return day
@@ -130,6 +133,7 @@ init:
 
             def callMorningActivity(self):
                 if(self.morningActivity != None):
+                    say("", "calling morning activity: " + self.morningActivity.label)
                     renpy.call(self.morningActivity.label)
 
             def callAfternoonActivity(self):
@@ -196,11 +200,13 @@ label day:
     
     $day.callMorningEvent()
     
+    "Morning activity"
     $day.callMorningActivity()
     
     #"Calling afternoon event"
     $day.callAfternoonEvent()
     
+    "Afternoon activity"
     $day.callAfternoonActivity()
     
     $day.callEveningEvent()

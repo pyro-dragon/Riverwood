@@ -8,7 +8,7 @@ init:
 # Entry point for the engineering activity
 label engineering:
     
-        if engineeringCount == 0: 
+        if engineeringLessonCount == 0: 
             call engineering1
             return
             

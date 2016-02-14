@@ -8,7 +8,7 @@ init:
 # Entry point for the training activity
 label training:
     
-        if trainingCount == 0: 
+        if trainingLessonCount == 0: 
             call training1
             return
             

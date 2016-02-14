@@ -64,28 +64,28 @@ label setFamilyData:
         $crt_ally.trueName = "Scarah"
         $crt_rival.family = "Coppertail"
         $crt_rival.trueName= "Scorch"
-        $game.gameLoop.weekdayActivityChoices = [["hunting", "slacking"], ["hunting", "slacking"], ["engineering", "slacking"], ["training", "slacking"], ["readting", "slacking"]]
+        $game.gameLoop.weekdayActivityChoices = [[Activity("hunting"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")]]
     
     elif player.family == "Coppertail":
         $crt_ally.family = "Gildclaw"
         $crt_ally.trueName = "Deft"
         $crt_rival.family = "Daggermaw"
         $crt_rival.trueName = "Dirge"
-        $game.gameLoop.weekdayActivityChoices = [["engineering", "slacking"], ["engineering", "slacking"], ["training", "slacking"], ["reading", "slacking"], ["huntinging", "slacking"]]
+        $game.gameLoop.weekdayActivityChoices = [[Activity("engineering"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("huntinging"), Activity("slacking")]]
     
     elif player.family == "Daggermaw":
         $crt_ally.family = "Bloodrunner"
         $crt_ally.trueName = "Swift"
         $crt_rival.family = "Gildclaw"
         $crt_rival.trueName = "Silver"
-        $game.gameLoop.weekdayActivityChoices = [["training", "slacking"], ["training", "slacking"], ["reading", "slacking"], ["hunting", "slacking"], ["engineering", "slacking"]]
+        $game.gameLoop.weekdayActivityChoices = [[Activity("training"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")]]
 
     elif player.family == "Gildclaw":
         $crt_ally.family = "Coppertail"
         $crt_ally.trueName = "Spark"
         $crt_rival.family = "Bloodrunner"
         $crt_rival.trueName = "Shade"
-        $game.gameLoop.weekdayActivityChoices = [["reading", "slacking"], ["reading", "slacking"], ["hunting", "slacking"], ["engineering", "slacking"], ["training", "slacking"]]
+        $game.gameLoop.weekdayActivityChoices = [[Activity("reading"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")]]
 
     return
             

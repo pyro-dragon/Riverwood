@@ -8,7 +8,7 @@ init:
 # Entry point for the hunting activity
 label hunting:
     
-        if huntingCount == 0: 
+        if huntingLessonCount == 0: 
             call hunting1
             return
             
