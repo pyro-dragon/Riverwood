@@ -24,7 +24,7 @@ init:
                 self.weekend = False
                 self.start = True        # Start of the week or weekend
                 
-                self.weekdayActivityChoices = [[Activity("hunting"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")]]
+                self.weekdayActivityChoices = [[Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")]]
                 self.weekendActivityChoices = [["shopping", "converstion"], ["intelligenceTraining", "intelligenceTraining"]]
                 
                 self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
@@ -38,24 +38,26 @@ init:
                 self.currentDay += 1
                 
                 # Check if this is a weekend
-                if self.currentWeekday >= self.weekLength - self.weekendLength:
+                if self.currentDay >= self.weekLength - self.weekendLength:
+                    say("EDITOR", "Its the weekend!")
                     self.weekend = True         # It is the weekend
                     self.start = True           # Its the start of the weekend
                     self.currentWeekend += 1
+                # Check if the weekend it over
+                #elif self.currentDay > self.weekLength:
+                #    say("EDITOR", "Week reset, not another manic Monday :(")
+                #    self.start = True           # Its the start of a new week
+                #    self.weekend = False        # The weekend is over :(
+                #    self.currentDay = 0         # Reset
+                #    self.currentWeekend = 0     # Reset
+                #    self.currentWeekday = 0     # Reset
+                # Just another regular week day
+                else: 
+                    say("EDITOR", "Working hard, or hardly working?")
+                    self.currentWeekday += 1
                 
-                # Check if we have finished a week
-                if self.currentWeekday > self.weekLength: 
-                    self.start = True           # Its the start of a new week
-                    self.weekend = False        # The weekend is over :(
-                    self.currentWeekend = 0     # Reset
-                    self.currentWeekday = 0     # Reset
-                
-            # Things to do when we advance to the next day
-            def nextDay(self): 
-
-                # Advance the day counter
-                self.advanceDayCounter()
-                
+            # Do all the things needed to get today ready to play though
+            def prepareToday(self):
                 # Create a new day
                 day = Day()
                 
@@ -81,23 +83,31 @@ init:
                             day.morningEvent = self.eventWatchList[i]
                         elif self.eventWatchList[i].timeslot == "afternoon":
                             day.afternoonEvent = self.eventWatchList[i]
-                        else: 
-                            day.afternoonEvent = self.eventWatchList[i]
                             
                         # Remove the event from the list
-                        say("", "Event dropped: " + self.eventWatchList[i].label)
+                        #say("", "Event dropped: " + self.eventWatchList[i].label)
                         self.eventWatchList.remove(self.eventWatchList[i])
                 
                 # Add the activities
-                say("", "Morning event: " + str(day.morningEvent))
-                if day.morningEvent != None: #and (day.morningEvent.override == False or day.morningEvent == None):
-                    say("", "++adding morning activities")
+                #say("", "Morning event: " + str(day.morningEvent))
+                if day.morningEvent != None and day.morningEvent.override == True:
+                    #say("", "morning activity skipped")
+                    pass
+                else:
+                    say("EDITOR", "Current weekDay:" + str(self.currentWeekday))
                     day.morningActivity = self.weekdayActivityChoices[self.currentWeekday][0]
+                    #say("", "++added morning activities")
                 if day.afternoonEvent != None and not day.afternoonEvent.override: 
-                    say("", "++adding afternoon activities")
+                    #say("", "++adding afternoon activities")
                     day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
                 
                 return day
+            
+            # Things to do when we advance to the next day
+            def nextDay(self): 
+
+                # Advance the day counter
+                self.advanceDayCounter()
                
             # Add an event
             def addEvent(self, event, day):
@@ -134,6 +144,7 @@ init:
             def callMorningActivity(self):
                 if(self.morningActivity != None):
                     say("", "calling morning activity: " + self.morningActivity.label)
+                    #say("", "calling morning activity: " + self.morningActivity)
                     renpy.call(self.morningActivity.label)
 
             def callAfternoonActivity(self):
@@ -177,7 +188,7 @@ label yearCycle:
         $weekCount = 0
         while weekCount < game.gameLoop.monthLength: 
             
-            $dayCount = 0
+            #$dayCount = 0
             
             # Check if we need to suppress the menu
             if game.gameLoop.suppressMenu:
@@ -185,30 +196,35 @@ label yearCycle:
             else: 
                 call screen weekPlan
                     
-            while dayCount < game.gameLoop.weekLength:
+            while game.gameLoop.currentDay < game.gameLoop.weekLength:
                 
                 call day
-                    
-                $dayCount += 1
+                
+                #$dayCount += 1
             $weekCount += 1
         $monthCount += 1
         
     return
     
 label day:
-    $day = game.gameLoop.nextDay()
+    "Day number is [game.gameLoop.currentDay]"
+    $day = game.gameLoop.prepareToday()
     
+    # call pre-morning event
     $day.callMorningEvent()
     
     "Morning activity"
     $day.callMorningActivity()
     
-    #"Calling afternoon event"
+    #"Calling pre-afternoon event"
     $day.callAfternoonEvent()
     
     "Afternoon activity"
     $day.callAfternoonActivity()
     
+    # call any event happening in the evening
     $day.callEveningEvent()
+    
+    $game.gameLoop.nextDay()
     
     return

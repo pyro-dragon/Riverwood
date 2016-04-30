@@ -8,20 +8,26 @@ init:
 # Entry point for the hunting activity
 label hunting:
     
-        if huntingLessonCount == 0: 
-            call hunting1
-            return
-            
-        scene black with fade
-        $player.changeSkillBonus("hunting", 1)
-        "..."
-        "... ..."
+    "<<Hunting count [huntingLessonCount]>>"
+    
+    if huntingLessonCount == 0: 
+        call hunting1
+        return
+        
+    scene black with fade
+    $player.changeSkillBonus("hunting", 1)
+    "..."
+    "... ..."
 
             
 return
     
 # The intro to the hunting activity
 label hunting1:
+    "Hunting intro"
+    return
+
+label hunting11:
     $game.setLocation(glade)
     
     show Shana with dissolve
@@ -53,6 +59,8 @@ label hunting1:
 
     S "Todays lesson will not be onerous though."
     S "I wish to give you a simple introduction to the skills that were once essential for every young gnoll..."
+    
+    $huntingLessonCount += 1
     
     return
     
