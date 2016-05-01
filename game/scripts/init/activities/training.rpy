@@ -22,7 +22,7 @@ return
     
 # The intro to the training activity
 label training1:
-    $game.setLocation(glade)
+    $game.setLocation(arena)
     
     show Marrack with dissolve
     

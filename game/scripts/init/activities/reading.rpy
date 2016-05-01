@@ -22,7 +22,7 @@ return
     
 # The intro to the reading activity
 label reading1:
-    $game.setLocation(glade)
+    $game.setLocation(tent)
     
     show Temesh with dissolve
     

@@ -41,16 +41,22 @@ init:
         camp = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(camp)
         
-        # Family rooms
+        # Bloodrunner's Glade
         landData = game.getFileData("resources/environments/grove.json")
         glade = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(glade)
+        
+        # Coppertail's Forge
         landData = game.getFileData("resources/environments/forge.json")
         forge = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(forge)
+        
+        # Daggermaw's Arena
         landData = game.getFileData("resources/environments/arena.json")
         arena = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(arena)
+        
+        # Gildclaw's Tent
         landData = game.getFileData("resources/environments/tent.json")
         tent = Location(landData["name"], landData["day"], landData["night"], landData["concealment"], landData["discovered"], landData["visitable"], landData["keywords"])
         game.addLocation(tent)

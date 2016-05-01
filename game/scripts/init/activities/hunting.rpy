@@ -8,8 +8,6 @@ init:
 # Entry point for the hunting activity
 label hunting:
     
-    "<<Hunting count [huntingLessonCount]>>"
-    
     if huntingLessonCount == 0: 
         call hunting1
         return
@@ -24,10 +22,6 @@ return
     
 # The intro to the hunting activity
 label hunting1:
-    "Hunting intro"
-    return
-
-label hunting11:
     $game.setLocation(glade)
     
     show Shana with dissolve
