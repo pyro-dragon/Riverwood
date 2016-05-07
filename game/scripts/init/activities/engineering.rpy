@@ -8,17 +8,15 @@ init:
 # Entry point for the engineering activity
 label engineering:
     
-        if engineeringLessonCount == 0: 
-            call engineering1
-            return
+    if engineeringLessonCount == 0: 
+        call engineering1
+        
+    scene black with fade
+    $player.changeSkillBonus("engineering", 1)
+    "..."
+    "... ..."
             
-        scene black with fade
-        $player.changeSkillBonus("engineering", 1)
-        "..."
-        "... ..."
-
-            
-return
+    return
     
 # The intro to the engineering activity
 label engineering1:

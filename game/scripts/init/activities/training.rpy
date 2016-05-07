@@ -8,23 +8,21 @@ init:
 # Entry point for the training activity
 label training:
     
-        if trainingLessonCount == 0: 
-            call training1
-            return
+    if trainingLessonCount == 0: 
+        call training1
+        
+    scene black with fade
+    $player.changeSkillBonus("training", 1)
+    "..."
+    "... ..."
             
-        scene black with fade
-        $player.changeSkillBonus("training", 1)
-        "..."
-        "... ..."
-
-            
-return
+    return
     
 # The intro to the training activity
 label training1:
     $game.setLocation(arena)
     
-    show Marrack with dissolve
+    show Marrack with dissolve 
     
     M "So, you guys are here for a sample of what the Daggermaws can offter?"
     M "I don't think we are for just anyone."
@@ -36,7 +34,7 @@ label training1:
         M "A bow is all very well and good when you can get a good clear shot at a target, but when you are surrounded by dense undergrowth and its teaming with rain an axe is your best friend."
 
     elif player.family == "Coppertail": 
-        M "Well now, I would assume that many of you are thinking that your brains beat braun any day. And for some of you that might be right if you don't venture too far from your workshop."
+        M "I would assume that many of you are thinking that your brains beat braun any day. And for some of you that might be right if you don't venture too far from your workshop."
         M "However a grounding in basic martial combat will help you feel a lot safer when conducting field work."
 
     elif player.family == "Gildclaw": 

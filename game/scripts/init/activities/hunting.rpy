@@ -10,15 +10,13 @@ label hunting:
     
     if huntingLessonCount == 0: 
         call hunting1
-        return
         
     scene black with fade
     $player.changeSkillBonus("hunting", 1)
     "..."
     "... ..."
-
-            
-return
+                
+    return
     
 # The intro to the hunting activity
 label hunting1:
@@ -30,7 +28,6 @@ label hunting1:
     S "Welcome to the Silent Glade."
     S "It is a little way from the Den site and I do appologise my dears."
     S "But it is from here that we can really begin to connect with the world around us."
-    
     
     if player.family == "Coppertail": 
         S "I understand that some of you may have felt the anemosity between our families."
