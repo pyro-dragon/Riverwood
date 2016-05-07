@@ -39,21 +39,11 @@ init:
                 
                 # Check if this is a weekend
                 if self.currentDay >= self.weekLength - self.weekendLength:
-                    say("EDITOR", "Its the weekend!")
                     self.weekend = True         # It is the weekend
                     self.start = True           # Its the start of the weekend
                     self.currentWeekend += 1
-                # Check if the weekend it over
-                #elif self.currentDay > self.weekLength:
-                #    say("EDITOR", "Week reset, not another manic Monday :(")
-                #    self.start = True           # Its the start of a new week
-                #    self.weekend = False        # The weekend is over :(
-                #    self.currentDay = 0         # Reset
-                #    self.currentWeekend = 0     # Reset
-                #    self.currentWeekday = 0     # Reset
                 # Just another regular week day
                 else: 
-                    say("EDITOR", "Working hard, or hardly working?")
                     self.currentWeekday += 1
                 
             # Do all the things needed to get today ready to play though
@@ -73,7 +63,6 @@ init:
 
                     # Check for out-of-date events and remove them
                     if self.eventWatchList[i].expireryDate < self.currentDay:
-                        say("", "Event expired: " + self.eventWatchList[i].label)
                         self.eventWatchList.remove(self.eventWatchList[i])
                         pass
                     
@@ -85,20 +74,14 @@ init:
                             day.afternoonEvent = self.eventWatchList[i]
                             
                         # Remove the event from the list
-                        #say("", "Event dropped: " + self.eventWatchList[i].label)
                         self.eventWatchList.remove(self.eventWatchList[i])
                 
                 # Add the activities
-                #say("", "Morning event: " + str(day.morningEvent))
                 if day.morningEvent != None and day.morningEvent.override == True:
-                    #say("", "morning activity skipped")
                     pass
                 else:
-                    say("EDITOR", "Current weekDay:" + str(self.currentWeekday))
                     day.morningActivity = self.weekdayActivityChoices[self.currentWeekday][0]
-                    #say("", "++added morning activities")
                 if day.afternoonEvent != None and not day.afternoonEvent.override: 
-                    #say("", "++adding afternoon activities")
                     day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
                 
                 return day
@@ -143,8 +126,6 @@ init:
 
             def callMorningActivity(self):
                 if(self.morningActivity != None):
-                    say("", "calling morning activity: " + self.morningActivity.label)
-                    #say("", "calling morning activity: " + self.morningActivity)
                     renpy.call(self.morningActivity.label)
 
             def callAfternoonActivity(self):
@@ -188,8 +169,6 @@ label yearCycle:
         $weekCount = 0
         while weekCount < game.gameLoop.monthLength: 
             
-            #$dayCount = 0
-            
             # Check if we need to suppress the menu
             if game.gameLoop.suppressMenu:
                 $game.gameLoop.suppressMenu = False
@@ -200,26 +179,21 @@ label yearCycle:
                 
                 call day
                 
-                #$dayCount += 1
             $weekCount += 1
         $monthCount += 1
         
     return
     
 label day:
-    "Day number is [game.gameLoop.currentDay]"
     $day = game.gameLoop.prepareToday()
     
     # call pre-morning event
     $day.callMorningEvent()
     
-    "Morning activity"
     $day.callMorningActivity()
     
-    #"Calling pre-afternoon event"
     $day.callAfternoonEvent()
     
-    "Afternoon activity"
     $day.callAfternoonActivity()
     
     # call any event happening in the evening
