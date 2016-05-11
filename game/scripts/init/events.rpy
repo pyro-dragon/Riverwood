@@ -7,14 +7,14 @@ init 0:
         game.gameLoop.suppressMenu = True
         
         # Chapter 1: Intro and character creation
-        game.gameLoop.addEvent(Event("null", "morning", 2, False, lambda: True), 1)      # Skip the morning
-        #game.gameLoop.addEvent(Event("chapter1", "afternoon", 2, True, lambda: True), 1)
-        game.gameLoop.addEvent(Event("null", "afternoon", 2, False, lambda: True), 1)
+        game.gameLoop.addEvent(Event("testEvent1", "morning", 2, True, lambda: True), 0)      # Skip the morning
+        game.gameLoop.addEvent(Event("testEvent2", "afternoon", 2, True, lambda: True), 0)
+        #game.gameLoop.addEvent(Event("null", "afternoon", 2, False, lambda: True), 1)
 
         # Chapter 2: First day in the chose family
-        game.gameLoop.addEvent(Event("null", "morning", 3, False, lambda: True), 2)
+        game.gameLoop.addEvent(Event("testEvent3", "morning", 3, True, lambda: True), 1)
         #game.gameLoop.addEvent(Event("chapter2", "morning", 3, True, lambda: True), 2)
-        game.gameLoop.addEvent(Event("null", "afternoon", 3, False, lambda: True), 2)      # Skip the afternoon
+        game.gameLoop.addEvent(Event("testEvent4", "afternoon", 3, True, lambda: True), 1)      # Skip the afternoon
 
 # Null label to skip some time
 label null:

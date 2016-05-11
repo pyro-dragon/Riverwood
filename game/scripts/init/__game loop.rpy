@@ -17,7 +17,8 @@ init:
                 self.currentWeekend = 0 # The number of days that have passed in the current weekend
 
                 self.weekLength = 7      # Number of days in a week
-                self.weekendLength = 2   # Number of days in a weekend
+                self.weekdayLength = 5   # Number of days that are weekdays
+                #self.weekendLength = 2   # Number of days in a weekend
                 self.monthLength = 4     # Number of weeks in a month
                 self.yearLength = 12     # Number of months in a year
                 
@@ -38,7 +39,7 @@ init:
                 self.currentDay += 1
                 
                 # Check if this is a weekend
-                if self.currentDay >= self.weekLength - self.weekendLength:
+                if self.currentDay > self.weekdayLength:
                     self.weekend = True         # It is the weekend
                     self.start = True           # Its the start of the weekend
                     self.currentWeekend += 1
@@ -77,12 +78,8 @@ init:
                         self.eventWatchList.remove(self.eventWatchList[i])
                 
                 # Add the activities
-                if day.morningEvent != None and day.morningEvent.override == True:
-                    pass
-                else:
-                    day.morningActivity = self.weekdayActivityChoices[self.currentWeekday][0]
-                if day.afternoonEvent != None and not day.afternoonEvent.override: 
-                    day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
+                day.morningActivity = self.weekdayActivityChoices[self.currentWeekday][0]
+                day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
                 
                 return day
             
@@ -112,25 +109,44 @@ init:
                 self.morningActivity = morningActivity          # An activity that can occure in the morning, this is mostly lessons
                 self.afternoonActivity = afternoonActivity        # An activity that can occure in the afternoon, this is mostly leasure or training
                 
+            # Process the morning event
             def callMorningEvent(self):
                 if(self.morningEvent != None):
                     renpy.call(self.morningEvent.label)
                 
+            # Process the afternoon event
             def callAfternoonEvent(self):
                 if(self.afternoonEvent != None):
                     renpy.call(self.afternoonEvent.label)
 
+            # Process the evening event
             def callEveningEvent(self):
                 if(self.eveningEvent != None):
                     renpy.call(self.eveningEvent.label)
 
+            # Process the morning activity
             def callMorningActivity(self):
-                if(self.morningActivity != None):
-                    renpy.call(self.morningActivity.label)
+                
+                # Check if we have a morning event and that it is overriding
+                if day.morningEvent != None and day.morningEvent.override == True:
+                    pass
+                # There is no event or the event does not override so proceed with the activity
+                else:
+                    # Make sure we have an activity to do
+                    if(self.morningActivity != None):
+                        renpy.call(self.morningActivity.label)
 
+            # Process the afternoon activity
             def callAfternoonActivity(self):
-                if(self.afternoonActivity != None):
-                    renpy.call(self.afternoonActivity.label)
+                
+                # Check if we have a morning event and that it is overriding
+                if day.eveningEvent != None and day.eveningEvent.override == True:
+                    pass
+                # There is no event or the event does not override so proceed with the activity
+                else: 
+                    # Make sure we have an activity to do
+                    if(self.afternoonActivity != None):
+                        renpy.call(self.afternoonActivity.label)
         
         # An event. These may interrupt the day of the player
         class Event:
@@ -187,7 +203,6 @@ label yearCycle:
 label day:
     $day = game.gameLoop.prepareToday()
     
-    # call pre-morning event
     $day.callMorningEvent()
     
     $day.callMorningActivity()
@@ -196,7 +211,6 @@ label day:
     
     $day.callAfternoonActivity()
     
-    # call any event happening in the evening
     $day.callEveningEvent()
     
     $game.gameLoop.nextDay()
