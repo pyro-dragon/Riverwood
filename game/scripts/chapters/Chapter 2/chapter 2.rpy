@@ -28,11 +28,7 @@ label chapter2:
     elif player.family == "Gildclaw":
         call gildclawIntroduction
 
-    # What to do after the introduction
+    # Go send the player off to do something with whoever they met at the introduction
     if playerCompanion != None:
         call activityCycle
-    else:
-        # Instroduce the first datable
-        if player.family != "Coppertail":
-            call mechanicIntroduction
     return
