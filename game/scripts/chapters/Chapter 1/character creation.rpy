@@ -71,7 +71,7 @@ label setFamilyData:
         $crt_ally.trueName = "Deft"
         $crt_rival.family = "Daggermaw"
         $crt_rival.trueName = "Dirge"
-        $game.gameLoop.weekdayActivityChoices = [[Activity("engineering"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("huntinging"), Activity("slacking")]]
+        $game.gameLoop.weekdayActivityChoices = [[Activity("engineering"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("hunting"), Activity("slacking")]]
     
     elif player.family == "Daggermaw":
         $crt_ally.family = "Bloodrunner"
