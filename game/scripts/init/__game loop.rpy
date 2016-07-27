@@ -95,8 +95,8 @@ init:
                 self.callCount += 1;
 
             # Add an activity
-            def setActivity(self, activity, dayNum, period):
-                self.weekdayActivityChoices[dayNum][period] = activity
+            def setActivity(self, activity, dayNum, type):
+                self.weekdayActivityChoices[dayNum][type] = activity
         
         # A complete day
         class Day: 

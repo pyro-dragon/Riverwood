@@ -48,5 +48,7 @@ label reading1:
     T "Todays lesson will be a brief overview of the surrounding lands and who governs them."
     T "Now, let me start with Estansia. This is a land that has had a long history of peace with the Empire..."
     
+    $readingLessonCount += 1
+    
     return
     
