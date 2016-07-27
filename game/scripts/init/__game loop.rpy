@@ -25,7 +25,7 @@ init:
                 self.weekend = False
                 self.start = True        # Start of the week or weekend
                 
-                self.weekdayActivityChoices = [[Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")]]
+                self.weekdayActivityChoices = [{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("engineering"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}, {"lesson": Activity("training"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}]
                 self.weekendActivityChoices = [["shopping", "converstion"], ["intelligenceTraining", "intelligenceTraining"]]
                 
                 self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
@@ -78,8 +78,8 @@ init:
                         self.eventWatchList.remove(self.eventWatchList[i])
                 
                 # Add the activities
-                day.morningActivity = self.weekdayActivityChoices[self.currentWeekday][0]
-                day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday][1]
+                day.morningActivity = self.weekdayActivityChoices[self.currentWeekday]["lesson"]
+                day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday]["activity"]
                 
                 return day
             
@@ -95,8 +95,8 @@ init:
                 self.callCount += 1;
 
             # Add an activity
-            def setActivity(self, activity, day, period):
-                self.weekdayActivityChoices[day][period] = activity
+            def setActivity(self, activity, dayNum, period):
+                self.weekdayActivityChoices[dayNum][period] = activity
         
         # A complete day
         class Day: 
@@ -189,7 +189,7 @@ label yearCycle:
             if game.gameLoop.suppressMenu:
                 $game.gameLoop.suppressMenu = False
             else: 
-                call screen weekPlan
+                call planNewWeek
                     
             while game.gameLoop.currentDay < game.gameLoop.weekLength:
                 

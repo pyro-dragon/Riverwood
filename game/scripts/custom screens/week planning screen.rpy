@@ -4,22 +4,25 @@
 
 init:
     python:
-        testCount = 0
-        
         weekPlan = [{"day": "Monday", "lesson": "", "activity": ""}, 
                     {"day": "Tuseday", "lesson": "", "activity": ""},
                     {"day": "Wednesday", "lesson": "", "activity": ""},
                     {"day": "Thursday", "lesson": "", "activity": ""},
                     {"day": "Friday", "lesson": "", "activity": ""}]
-
-        def initialiseWeekPlan(): 
-            weekPlan = [{"day": "Monday", "lesson": "", "activity": ""}, 
-                    {"day": "Tuseday", "lesson": "", "activity": ""},
-                    {"day": "Wednesday", "lesson": "", "activity": ""},
-                    {"day": "Thursday", "lesson": "", "activity": ""},
-                    {"day": "Friday", "lesson": "", "activity": ""}]
             
-        
+label planNewWeek:
+    $weekPlan = [{"day": "Monday", "lesson": "", "activity": ""}, {"day": "Tuseday", "lesson": "", "activity": ""}, {"day": "Wednesday", "lesson": "", "activity": ""}, {"day": "Thursday", "lesson": "", "activity": ""}, {"day": "Friday", "lesson": "", "activity": ""}]
+    
+    call screen weekPlanScreen
+    
+    # Set the activity chices
+    python:
+        for i, day in enumerate(weekPlan):
+            game.gameLoop.setActivity(Activity(day["lesson"]), i, "lesson")
+            game.gameLoop.setActivity(Activity(day["activity"]), i, "activity")
+            
+    
+    return
 
 screen weekPlanScreen():
     default MondaySet = False
@@ -43,11 +46,17 @@ screen weekPlanScreen():
             hbox xfill True:
                 for i, day in enumerate(weekPlan):
                     use selectActivities(day["day"], i)
-
-        text str(testCount)
         
         # pseudo validation
-        if weekPlan[0]["lesson"] != "" and weekPlan[1]["lesson"] != "" and weekPlan[2]["lesson"] != "" and weekPlan[3]["lesson"] != "" and weekPlan[4]["lesson"] != "":
+        #if weekPlan[0]["lesson"] != "" and weekPlan[1]["lesson"] != "" and weekPlan[2]["lesson"] != "" and weekPlan[3]["lesson"] != "" and weekPlan[4]["lesson"] != "":
+        #python:
+            #def checkAllSet():
+        $allSet = 0
+        for day in weekPlan:
+            if day["lesson"] != "" and day["activity"] != "":
+                $allSet = allSet + 1
+                
+        if allSet == 5:
             textbutton "Start the week" action Return()
                 
 screen selectLesson(day, dayNum):
