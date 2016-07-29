@@ -69,7 +69,7 @@ screen selectLesson(day, dayNum):
             
             for lesson in game.lessons: 
                 if lesson["available"]:
-                    textbutton lesson["name"] action SetDict(weekPlan[dayNum], "lesson", lesson["name"]) xfill True
+                    textbutton lesson["name"] action SetDict(weekPlan[dayNum], "lesson", lesson["lesson"]) xfill True
                 else: 
                     textbutton "[[Hidden]" action False xfill True
 
@@ -84,7 +84,7 @@ screen selectActivities(day, dayNum):
             
             for activity in game.activities: 
                 if activity["available"]:
-                    textbutton activity["name"] action SetDict(weekPlan[dayNum], "activity", activity["name"]) xfill True
+                    textbutton activity["name"] action SetDict(weekPlan[dayNum], "activity", activity["activity"]) xfill True
                 else: 
                     textbutton "[[Hidden]" action False xfill True
 

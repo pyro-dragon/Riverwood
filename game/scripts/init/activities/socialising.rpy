@@ -1,8 +1,8 @@
 #-------------------------------------------------------------------------------
-# This is where the player meets all the other families
+# The activity mapper for the socialising activity
 #-------------------------------------------------------------------------------
 
-#$coppertailWeek = 1
-
-#label mainCycle:
-#    "Main Cycle"
+# Entry point for the socialising activity
+label socialising:
+    call chat
+       

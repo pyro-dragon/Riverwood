@@ -15,6 +15,8 @@ label engineering:
     $player.changeSkillBonus("engineering", 1)
     "..."
     "... ..."
+    
+    $engineeringLessonCount = engineeringLessonCount + 1
             
     return
     

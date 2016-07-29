@@ -177,6 +177,19 @@ init:
             # Run the activity
             def run():
                 renpy.call(self.label)
+                
+label mainCycle:
+    "Starting loop"
+    while True:
+        # Check for end of the week
+        if game.gameLoop.currentDay % 7 == 0 and game.gameLoop.suppressMenu == False:
+            call planNewWeek
+        elif game.gameLoop.suppressMenu == True:
+            $game.gameLoop.suppressMenu = False
+        
+        "Day num [game.gameLoop.currentDay]"
+        call day
+        
 
 label yearCycle:    
     $monthCount = 0

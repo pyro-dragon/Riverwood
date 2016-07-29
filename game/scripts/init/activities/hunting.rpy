@@ -15,6 +15,8 @@ label hunting:
     $player.changeSkillBonus("hunting", 1)
     "..."
     "... ..."
+    
+    $huntingLessonCount += 1
                 
     return
     
@@ -50,8 +52,6 @@ label hunting1:
 
     S "Todays lesson will not be onerous though."
     S "I wish to give you a simple introduction to the skills that were once essential for every young gnoll..."
-    
-    $huntingLessonCount += 1
     
     return
     

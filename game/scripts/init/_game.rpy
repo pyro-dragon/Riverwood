@@ -47,7 +47,7 @@ init:
                 dict({
                     
                     "name": "Fighting", 
-                    "lesson": "fighting", 
+                    "lesson": "training", 
                     "available": True
                 })
             ]
@@ -60,7 +60,7 @@ init:
                 }),
                 dict({
                     "name": "Socialise", 
-                    "activity": "socialise", 
+                    "activity": "socialising", 
                     "available": True
                 })
             ]
