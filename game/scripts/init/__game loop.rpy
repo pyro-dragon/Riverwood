@@ -25,8 +25,8 @@ init:
                 self.weekend = False
                 self.start = True        # Start of the week or weekend
                 
-                self.weekdayActivityChoices = [{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("engineering"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}, {"lesson": Activity("training"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}]
-                self.weekendActivityChoices = [["shopping", "converstion"], ["intelligenceTraining", "intelligenceTraining"]]
+                self.weekdayActivityChoices = [{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("engineering"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}, {"lesson": Activity("training"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
+                self.weekendActivityChoices = [{"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
                 
                 self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
                 self.eventWatchList = []                   # An array/list of events that may occure right now if their criteria are met
@@ -78,7 +78,7 @@ init:
                         self.eventWatchList.remove(self.eventWatchList[i])
                 
                 # Add the activities
-                day.morningActivity = self.weekdayActivityChoices[self.currentWeekday]["lesson"]
+                day.morningActivity = self.weekdayActivityChoices[self.currentDay % 7]["lesson"]
                 day.afternoonActivity = self.weekdayActivityChoices[self.currentWeekday]["activity"]
                 
                 return day
@@ -179,15 +179,18 @@ init:
                 renpy.call(self.label)
                 
 label mainCycle:
-    "Starting loop"
+
     while True:
         # Check for end of the week
         if game.gameLoop.currentDay % 7 == 0 and game.gameLoop.suppressMenu == False:
             call planNewWeek
         elif game.gameLoop.suppressMenu == True:
             $game.gameLoop.suppressMenu = False
+            
+        # Check for weekend
+        if game.gameLoop.currentDay % 7 == 5:
+            call planNewWeekend
         
-        "Day num [game.gameLoop.currentDay]"
         call day
         
 
