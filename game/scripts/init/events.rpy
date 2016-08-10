@@ -3,7 +3,6 @@
 #-------------------------------------------------------------------------------
 init 0: 
     python:
-        test45 = 0;
         # Stop the menu from appearing
         #game.gameLoop.suppressMenu = True
         
@@ -14,6 +13,9 @@ init 0:
         # Chapter 2: First day in the chose family
         #game.gameLoop.addEvent(Event("chapter2", "morning", 3, True, lambda: True), 1)
         #game.gameLoop.addEvent(Event("mechanicIntroduction", "afternoon", 2, True, lambda: True), 1)    # Oportunity to see the mechanic girl
+        
+        # Ally comes to speak to you after the week is over
+        game.gameLoop.addEvent(Event("endOfFirstWeek", "evening", 4, True, lambda: True), 4)
 
 # Null label to skip some time
 label null:
