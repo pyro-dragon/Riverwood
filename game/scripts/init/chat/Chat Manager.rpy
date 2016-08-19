@@ -57,17 +57,18 @@ label chat:
             # Asign character to participant
         peopleMap = {}
         for role in testcon["roles"]:
-            if playerCompanion.family == "Bloodrunner" and role == "Skeptic" : 
-                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
-            elif playerCompanion.family == "Coppertail" and role == "enthusiastic":
-                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
-            elif playerCompanion.family == "Daggermaw" and role == "bragger": 
-                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
-            elif playerCompanion.family == "Gildclaw" and role == "upset":
-                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
-            else: 
-                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
-        
+            peopleMap.update({role: chatMan.partMan.getParticipant(role)})
+#            if playerCompanion.family == "Bloodrunner" and role == "Skeptic" : 
+#                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
+#            elif playerCompanion.family == "Coppertail" and role == "enthusiastic":
+#                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
+#            elif playerCompanion.family == "Daggermaw" and role == "bragger": 
+#                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
+#            elif playerCompanion.family == "Gildclaw" and role == "upset":
+#                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
+#            else: 
+#                peopleMap.update({role: chatMan.partMan.getParticipant(role)})
+    
     while testcon["chatSegments"]:
         # Call the conversation segment label
         call expression testcon["chatSegments"][0].label pass(participants=peopleMap)

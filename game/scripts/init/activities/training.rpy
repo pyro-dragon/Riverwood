@@ -15,6 +15,8 @@ label training:
     $player.changeSkillBonus("training", 1)
     "..."
     "... ..."
+    
+    $trainingLessonCount = trainingLessonCount +1
             
     return
     

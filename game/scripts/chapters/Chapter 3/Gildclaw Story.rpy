@@ -1,6 +1,21 @@
 #-------------------------------------------------------------------------------
 # Gildclaw lessons
 #-------------------------------------------------------------------------------
+label firstWeekendGildclaws: 
+    scene black
+    show Temesh with dissolve
+    
+    T "Arise my young acolytes. "
+    T "The week has been long for you, I am shure."
+    T "However it is now a time for rest, reflextion and relaxation."
+    T "At the end of every week you have two days to do with as you desire."
+    T "It would be wise to spend this time between socialising with your fellow clanmates."
+    T "However, if you deel you need to spend some more time on your studies then I will not stop you."
+    T "We start trining again as usual after the weekend so please be mindful of this in your choice of activities."
+    
+    hide Temesh with dissolve
+    
+    return
 
 label gildclawLesson1:
     scene expression tent.name with fade

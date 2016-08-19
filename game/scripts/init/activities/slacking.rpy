@@ -6,4 +6,6 @@
 label slacking:
     "You slack off all afternoon, lazy bones."
 
+label Slacking:
+    "You slack off all afternoon, lazy bones."
        

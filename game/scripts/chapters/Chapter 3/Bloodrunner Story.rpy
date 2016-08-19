@@ -1,6 +1,23 @@
 #-------------------------------------------------------------------------------
 # Bloodrunner lessons
 #-------------------------------------------------------------------------------
+label endOfFirstWeek2:
+    "TEST"
+    
+    return
+
+label firstWeekendBloodrunners: 
+    scene black
+    show Shana with dissolve
+    
+    S "Ah, my young buds. I hope you ahve all had a restful sleep after such a turbulant first week."
+    S "The weekend is now here and the time is yours to do with what you wish."
+    S "You may spend the time socialising with your fellow Bloodrunners or exploring our lands, or even practicing your skills to accelerate your training."
+    S "Whatever you choose however, I must advise that you do it in moderation. You do not want to wear yourself out before you begin another week of training."
+    
+    hide Shana with dissolve
+    
+    return
 
 label bloodrunnerLesson1:
     scene expression grove.name with fade

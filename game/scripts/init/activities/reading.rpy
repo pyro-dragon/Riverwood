@@ -15,6 +15,8 @@ label reading:
     $player.changeSkillBonus("reading", 1)
     "..."
     "... ..."
+    
+    $readingLessonCount = readingLessonCount + 1
 
     return
             

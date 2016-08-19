@@ -1,6 +1,21 @@
 #-------------------------------------------------------------------------------
 # Daggermaw lessons
 #-------------------------------------------------------------------------------
+label firstWeekendDaggermaws: 
+    scene black
+    show Marrack with dissolve
+    
+    M "Attention young Daggermaws!"
+    M "Some of you will be pleased to know that there will be no scheduled activities today."
+    M "While I see that it is imperritive for the safety of the clan to get you trained and ready as soon as possible, some others do not."
+    M "I have been told that the weekend shutdown of training activities applies to the Daggermaws too."
+    M "So you are dismissed for now. Go and do whatever it is you want, but remeber, we restart training early Monday morning."
+    M "I would not take it amiss if you got in some extra practice during your time off however."
+    
+    hide Marrack with dissolve
+    
+    return
+
 
 label daggermawLesson1:
     scene expression arena.name with fade
