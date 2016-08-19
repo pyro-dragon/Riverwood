@@ -5,7 +5,7 @@
 label endOfFirstWeek: 
     
     # Pass time along into evening.
-    $game.advanceTime()
+    #$game.advanceTime()
     
     # Show the camp
     $game.setLocation(camp)
@@ -32,4 +32,42 @@ label endOfFirstWeek:
     
     scene black with fade
     
+    # Suppress the weekend menu. We will introduce it with an event instead
+    $game.gameLoop.suppressMenu = True
+    
     return
+    
+label endOfFirstWeekTaunt: 
+    
+    # Show the camp
+    $game.setLocation(camp)
+    
+    show expression crt_rival.image with dissolve
+    
+    r "Hey there loser."
+    r "Hows the [player.family] losers?"
+    P "Well-"
+    r "I don't even care."
+    r "I've been busy with the [crt_rival.family]s."
+    
+    if crt_rival.family == "Bloodrunner": 
+        r "I've been learning all about poisons and traps and things, all sorts of dangerous stuff."
+        
+    elif crt_rival.family == "Coppertail": 
+        r "I've been building all kinds of things. Huge things covered in spikes that shoot flames."
+        
+    elif crt_rival.family == "Daggermaw": 
+        r "I've been learning fifty different ways to kick your ass."
+        
+    elif crt_rival.family == "Gildclaws": 
+        r "I've been trying amazing spices and foods from all kinds of exoticcand far away lands."
+    
+    r "I'd say you should ask to change your family choice but I don't think you have the substance for our family."
+    r "I just hope you and your family don't end up dragging down the rest of the clan."
+    
+    r "Later."
+    
+    scene black with fade
+    
+    return
+    

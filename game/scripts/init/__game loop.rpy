@@ -25,7 +25,7 @@ init:
                 self.weekend = False
                 self.start = True        # Start of the week or weekend
                 
-                self.weekdayActivityChoices = [{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("engineering"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}, {"lesson": Activity("training"), "activity": Activity("slacking")}, {"lesson": Activity("reading"), "activity": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
+                self.weekdayActivityChoices = [{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
                 self.weekendActivityChoices = [{"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
                 
                 self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
@@ -52,12 +52,13 @@ init:
                 # Create a new day
                 day = Day()
                 
-                # Check for events that may start occuring on this day
+                # Check for events that may start occurring on this day
                 if len(self.eventList[self.currentDay]) > 0:
                     
                     # Add them to the watch list
-                    for event in self.eventList[self.currentDay]:
-                        self.eventWatchList.append(event)
+                    #for event in self.eventList[self.currentDay]:
+                    #    self.eventWatchList.append(event)
+                    self.eventWatchList = self.eventList[self.currentDay]
                 
                 # Cycle through watch list
                 for i in xrange(len(self.eventWatchList) - 1, -1, -1):       # Iterate over the list backwards
@@ -65,14 +66,16 @@ init:
                     # Check for out-of-date events and remove them
                     if self.eventWatchList[i].expireryDate < self.currentDay:
                         self.eventWatchList.remove(self.eventWatchList[i])
-                        pass
+                        break
                     
                     # Check if event criterias are met and add them to the right event slot
                     if self.eventWatchList[i].conditions(): 
                         if self.eventWatchList[i].timeslot == "morning": 
-                            day.morningEvent = self.eventWatchList[i]
+                            day.morningEvents.append(self.eventWatchList[i])
                         elif self.eventWatchList[i].timeslot == "afternoon":
-                            day.afternoonEvent = self.eventWatchList[i]
+                            day.afternoonEvents.append(self.eventWatchList[i])
+                        elif self.eventWatchList[i].timeslot == "evening":
+                            day.eveningEvents.append(self.eventWatchList[i])
                             
                         # Remove the event from the list
                         self.eventWatchList.remove(self.eventWatchList[i])
@@ -101,34 +104,55 @@ init:
         # A complete day
         class Day: 
             
-            def __init__(self, morningEvent = None, afternoonEvent = None, EveningEvent = None, morningActivity = None, afternoonActivity = None):
-                self.morningEvent = morningEvent             # An event that can occure in the morning before anything else
-                self.afternoonEvent = afternoonEvent           # An event that can occure in the afternoon between the morning and afternoon activity
-                self.eveningEvent = EveningEvent             # An event that can occure in the evening after the afternoon event
+            #def __init__(self, name="default", morningEvents =[], afternoonEvents = [], EveningEvents = [], morningActivity = None, afternoonActivity = None):
+            def __init__(self):
+                self.morningEvents = []              # An event that can occure in the morning before anything else
+                self.afternoonEvents = []          # An event that can occure in the afternoon between the morning and afternoon activity
+                self.eveningEvents = []              # An event that can occure in the evening after the afternoon event
                 
-                self.morningActivity = morningActivity          # An activity that can occure in the morning, this is mostly lessons
-                self.afternoonActivity = afternoonActivity        # An activity that can occure in the afternoon, this is mostly leasure or training
+                self.morningActivity = None          # An activity that can occure in the morning, this is mostly lessons
+                self.afternoonActivity = None      # An activity that can occure in the afternoon, this is mostly leasure or training
+                
+                self.missMorningActivity = False                # A flag to miss the morning activity
+                self.missAfternoonActivity = False              # A flag to miss the afternoon activity
                 
             # Process the morning event
-            def callMorningEvent(self):
-                if(self.morningEvent != None):
-                    renpy.call(self.morningEvent.label)
+            def callMorningEvents(self):
+                self.processOutEvents(self.morningEvents)
+                            
+                # Remove the morning events
+                self.morningEvents = []
                 
             # Process the afternoon event
-            def callAfternoonEvent(self):
-                if(self.afternoonEvent != None):
-                    renpy.call(self.afternoonEvent.label)
+            def callAfternoonEvents(self):
+                self.processOutEvents(self.afternoonEvents)
+                        
+                # Remove events
+                self.afternoonEvents = []
 
             # Process the evening event
-            def callEveningEvent(self):
-                if(self.eveningEvent != None):
-                    renpy.call(self.eveningEvent.label)
+            def callEveningEvents(self):
+                self.processOutEvents(self.eveningEvents)
+                            
+                # remove events
+                self.eveningEvents = []
+                    
+            def processOutEvents(self, eventList): 
+                if len(eventList) > 0:
+                    for j in xrange(len(eventList) - 1, -1, -1):       # Iterate over the list backwards
+                        
+                        # Check if the event has expired
+                        if eventList[j].expireryDate >= game.gameLoop.currentDay:
+                            renpy.say("DEBUG", "Calling event " + eventList[j].label)
+                            renpy.call_in_new_context(eventList[j].label)
+                            
+                return []
 
             # Process the morning activity
             def callMorningActivity(self):
                 
                 # Check if we have a morning event and that it is overriding
-                if day.morningEvent != None and day.morningEvent.override == True:
+                if len(self.morningEvents) > 0 and day.missMorningActivity == True:
                     pass
                 # There is no event or the event does not override so proceed with the activity
                 else:
@@ -140,7 +164,7 @@ init:
             def callAfternoonActivity(self):
                 
                 # Check if we have a morning event and that it is overriding
-                if day.eveningEvent != None and day.eveningEvent.override == True:
+                if len(self.afternoonEvents) > 0 and day.missAfternoonActivity == True:
                     pass
                 # There is no event or the event does not override so proceed with the activity
                 else: 
@@ -181,6 +205,7 @@ init:
 label mainCycle:
 
     while True:
+        
         # Check for end of the week
         if game.gameLoop.currentDay % 7 == 0 and game.gameLoop.suppressMenu == False:
             call planNewWeek
@@ -188,46 +213,29 @@ label mainCycle:
             $game.gameLoop.suppressMenu = False
             
         # Check for weekend
-        if game.gameLoop.currentDay % 7 == 5:
+        if game.gameLoop.currentDay % 7 == 5 and game.gameLoop.suppressMenu == False:
             call planNewWeekend
+        elif game.gameLoop.suppressMenu == True:
+            $game.gameLoop.suppressMenu = False
         
         call day
-        
-
-label yearCycle:    
-    $monthCount = 0
-    while monthCount < game.gameLoop.yearLength: 
-
-        $weekCount = 0
-        while weekCount < game.gameLoop.monthLength: 
-            
-            # Check if we need to suppress the menu
-            if game.gameLoop.suppressMenu:
-                $game.gameLoop.suppressMenu = False
-            else: 
-                call planNewWeek
-                    
-            while game.gameLoop.currentDay < game.gameLoop.weekLength:
-                
-                call day
-                
-            $weekCount += 1
-        $monthCount += 1
         
     return
     
 label day:
+    "Today is day [game.gameLoop.currentDay]."
+    
     $day = game.gameLoop.prepareToday()
     
-    $day.callMorningEvent()
+    $day.callMorningEvents()
     
     $day.callMorningActivity()
     
-    $day.callAfternoonEvent()
+    $day.callAfternoonEvents()
     
     $day.callAfternoonActivity()
     
-    $day.callEveningEvent()
+    $day.callEveningEvents()
     
     $game.gameLoop.nextDay()
     

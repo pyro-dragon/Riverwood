@@ -1,6 +1,23 @@
 #-------------------------------------------------------------------------------
 # Coppertail Missions
 #-------------------------------------------------------------------------------
+label firstWeekendCoppertails: 
+    scene black
+    show Clarence with dissolve
+    
+    C "Wakey wakey youg'uns!"
+    C "You have had a jolly busy week I trust."
+    C "But it is time for joyousness as the weekend is here!"
+    C "You have two days, two full days to do with what you wish!"
+    C "So go out there, have some fun, learn some new things about the world and eachother."
+    C "But don't get too emphatic, we have another week of training to follow."
+    C "Then another weekend, then more training then a weekend and then more training and..."
+    C "... Well, you get the idea."
+    C "I hope."
+    
+    hide Clarence with dissolve
+    
+    return
 
 init 2:
     $playerHasCopper = False
