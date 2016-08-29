@@ -25,7 +25,36 @@ init:
                 self.weekend = False
                 self.start = True        # Start of the week or weekend
                 
-                self.weekdayActivityChoices = [{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
+                self.weekdayActivityChoices = [
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    },
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    },
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    },
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    },
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    },
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    },
+                    {
+                        "lesson": Activity("nullActivity"), 
+                        "activity": Activity("nullActivity")
+                    }
+                ]#[{"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"lesson": Activity("hunting"), "activity": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
                 self.weekendActivityChoices = [{"morning": Activity("slacking"), "afternoon": Activity("slacking")}, {"morning": Activity("slacking"), "afternoon": Activity("slacking")}]
                 
                 self.eventList = [[] for x in range((self.monthLength * self.weekLength) * self.yearLength)]    # A list of events that may occur on any specific day. There may be multiple events here.
@@ -143,7 +172,6 @@ init:
                         
                         # Check if the event has expired
                         if eventList[j].expireryDate >= game.gameLoop.currentDay:
-                            renpy.say("DEBUG", "Calling event " + eventList[j].label)
                             renpy.call_in_new_context(eventList[j].label)
                             
                 return []
@@ -207,23 +235,24 @@ label mainCycle:
     while True:
         
         # Check for end of the week
-        if game.gameLoop.currentDay % 7 == 0 and game.gameLoop.suppressMenu == False:
-            call planNewWeek
-        elif game.gameLoop.suppressMenu == True:
-            $game.gameLoop.suppressMenu = False
+        if game.gameLoop.currentDay % 7 == 0:
+            if game.gameLoop.suppressMenu == False:
+                call planNewWeek
+            elif game.gameLoop.suppressMenu == True:
+                $game.gameLoop.suppressMenu = False
             
         # Check for weekend
-        if game.gameLoop.currentDay % 7 == 5 and game.gameLoop.suppressMenu == False:
-            call planNewWeekend
-        elif game.gameLoop.suppressMenu == True:
-            $game.gameLoop.suppressMenu = False
+        if game.gameLoop.currentDay % 7 == 5: 
+            if game.gameLoop.suppressMenu == False:
+                call planNewWeekend
+            elif game.gameLoop.suppressMenu == True:
+                $game.gameLoop.suppressMenu = False
         
         call day
         
     return
     
 label day:
-    "Today is day [game.gameLoop.currentDay]."
     
     $day = game.gameLoop.prepareToday()
     

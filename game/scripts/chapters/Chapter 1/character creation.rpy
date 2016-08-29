@@ -64,28 +64,144 @@ label setFamilyData:
         $crt_ally.trueName = "Scarah"
         $crt_rival.family = "Coppertail"
         $crt_rival.trueName= "Scorch"
-        $game.gameLoop.weekdayActivityChoices = [[Activity("hunting"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")]]
+        $game.gameLoop.weekdayActivityChoices = [
+            {
+                "lesson": Activity("hunting"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("engineering"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("training"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("reading"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("hunting"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }
+        ]
     
     elif player.family == "Coppertail":
         $crt_ally.family = "Gildclaw"
         $crt_ally.trueName = "Deft"
         $crt_rival.family = "Daggermaw"
         $crt_rival.trueName = "Dirge"
-        $game.gameLoop.weekdayActivityChoices = [[Activity("engineering"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("hunting"), Activity("slacking")]]
-    
+        $game.gameLoop.weekdayActivityChoices = [
+            {
+                "lesson": Activity("engineering"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("training"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("reading"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("hunting"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("engineering"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }
+        ]
+
     elif player.family == "Daggermaw":
         $crt_ally.family = "Bloodrunner"
         $crt_ally.trueName = "Swift"
         $crt_rival.family = "Gildclaw"
         $crt_rival.trueName = "Silver"
-        $game.gameLoop.weekdayActivityChoices = [[Activity("training"), Activity("slacking")], [Activity("training"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")]]
+        $game.gameLoop.weekdayActivityChoices = [
+            {
+                "lesson": Activity("training"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("reading"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("hunting"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("engineering"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("training"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }
+        ]
 
     elif player.family == "Gildclaw":
         $crt_ally.family = "Coppertail"
         $crt_ally.trueName = "Spark"
         $crt_rival.family = "Bloodrunner"
         $crt_rival.trueName = "Shade"
-        $game.gameLoop.weekdayActivityChoices = [[Activity("reading"), Activity("slacking")], [Activity("reading"), Activity("slacking")], [Activity("hunting"), Activity("slacking")], [Activity("engineering"), Activity("slacking")], [Activity("training"), Activity("slacking")]]
+        $game.gameLoop.weekdayActivityChoices = [
+            {
+                "lesson": Activity("reading"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("hunting"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("engineering"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("training"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("reading"), 
+                "activity": Activity("slacking")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }, 
+            {
+                "lesson": Activity("nullActivity"), 
+                "activity": Activity("nullActivity")
+            }
+        ]
 
     return
             

@@ -1,6 +1,6 @@
 label test:
     
-    call yearCycle
+    call mainCycle
     
     "END OF TEST"
  
