@@ -16,6 +16,9 @@ init 0:
         game.gameLoop.addEvent(Event("chapter2", "morning", 3, True, lambda: True), 1)
         #game.gameLoop.addEvent(Event("mechanicIntroduction", "afternoon", 2, True, lambda: True), 1)    # Oportunity to see the mechanic girl
         
+        # End of week assesment by family head
+        game.gameLoop.addEvent(Event("endOfWeekAssesment", "morning", 2, True, lambda: True), 4)      # Skip the morning
+
         # Ally comes to speak to you after the week is over
         game.gameLoop.addEvent(Event("endOfFirstWeek", "evening", 4, True, lambda: True), 4)
         
