@@ -77,6 +77,40 @@ label bloodrunnersEndOfWeek1:
     return
 
 label coppertailsEndOfWeek1: 
+
+    $game.setLocation(forge)
+    
+    show Clarance with dissolve
+    C "Hello, hello there everyone."
+    C "What an exciting week it must have been for you all!"
+    C "Learning lots of new stuff I hope. Getting your minds all sparked up and overflowing with ideas and inspiration and all sorts I have no doubt."
+    C "Now I expecf you are all feeling somewhat mentally fatigued after all of that, so instead of foisting upon you another lesson I will let you go early today"
+    C "But before I do that I must make an eentsy-weentsy little request from you all."
+    C "I am looking for volenteers tohelp me with some seriouse Coppertail family business tomorrow."
+    hide Clarance
+    
+    show crt_mechanic.image with spunch
+    m "I'll do it!"
+    hide crt_mechanic.img
+    
+    show Clarance with dissolve
+    C "Err, yes, thank you [crt_mechanic.name]. I suspected that you might."
+    C "I'm going to need more than one though, anyone else?"
+    
+    menu:
+        "Volunteer":
+            jehshsh
+        "Stay silent":
+            C "Your collective want of enthusiasm does not do you credit, nore will it bode well fot your future career inside the Coppertails."
+            C "Lets see here..."
+            C "..."
+            C "You, yes you, [player.name]."
+     
+     C "Congratulations on your appointment as my second volunteer."
+     C "The rest of you may now do what you wish."
+     
+            
+    
     return
     
 label daggermawEndOfWeek1: 
