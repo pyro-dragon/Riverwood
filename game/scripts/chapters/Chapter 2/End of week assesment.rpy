@@ -197,4 +197,45 @@ label daggermawEndOfWeek1:
     return
     
 label gildclawEndOfWeek1: 
+    
+    $game.setLocation(tent)
+    
+    show Temesh with dissolve
+    T "A very good morning to you my acolytes."
+    T "I trust the week has been engaging and not too onerouse."
+    T "It is important that you have now gained an overview abotu what each family is like and what training they have to offer you."
+    T "While I would be very flattered that you might want to spend all your time learning from me, it would be worth your time learning from the others."
+    T "Up to three times a week you may choose to learn with one of the other families. "
+    T "Now then, I have encouraged all the other family leaders to give everyone today off."
+    T "It has been a tough week and I think you need time to reflect on all you have leared thus far."
+    T "And our family will not be an exception. I wish you all to head away and spend some time thinking and talkning about all you have leared. "
+    T "However, before I do I wish to call upon a couple of you for some work I require assistance with tomorrow."
+    
+    menu:
+        "Volanteer": 
+            P "I wish to put my name foreard and volenteer."
+            T "Ah, that is most excelent!"
+        "Stay silent"
+            "..."
+            T "Oh, I am a little disapointed by the lack of enthusiasm here."
+            T "It doesn't say much about the new generation of Gildclaws, I must say."
+            T "Let me see here..."
+            T "..."
+            T "You, I think you shall be willing to help me tomorrow."
+            P "Me?"
+            P "But-"
+            
+    T "Thank you very much, truely."
+    T "Well now, I need one more person to help out."
+    hide Temesh
+    
+    show crt_trader.image
+    t "P-please ma'am, I-I would like t-to help out."
+    hide crt_trader.image
+    
+    show Temesh
+    T "Thank you [crt_trader.name], that would be very good of you."
+    T "I think that should be enough for now."
+    T "I shall see you tow tomorrow morning. The rest of you, I will see you first thing Monday morning, bright and early."
+    
     return
