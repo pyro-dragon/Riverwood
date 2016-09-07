@@ -89,7 +89,7 @@ label coppertailsEndOfWeek1:
     C "I am looking for volenteers tohelp me with some seriouse Coppertail family business tomorrow."
     hide Clarence
     
-    show expression crt_mechanic.image with spunch
+    show expression crt_mechanic.image with hpunch
     m "I'll do it!"
     hide expression crt_mechanic.image
     
