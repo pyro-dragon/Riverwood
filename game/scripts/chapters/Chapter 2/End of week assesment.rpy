@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 
 label endOfWeekAssesment:
-    if player.family == "Bloodrunner"; 
+    if player.family == "Bloodrunner": 
         call bloodrunnersEndOfWeek1
     elif player.family == "Coppertail": 
         call coppertailsEndOfWeek1
@@ -11,7 +11,7 @@ label endOfWeekAssesment:
         call daggermawEndOfWeek1
     elif player.family == "Gildclaw": 
         call gildclawEndOfWeek1
-    else
+    else:
         $renpy.say("DEBUG", "Error: No valid family selected.")
 
     return
@@ -39,9 +39,9 @@ label bloodrunnersEndOfWeek1:
             S "Anyone?"
             hide Shana with dissolve
             
-            show crt_hunter.image with dissolve
+            show expression crt_hunter.image with dissolve
             h "Ugh, I guess I had better volenteer then."
-            hide crt_hunter.image with dissolve
+            hide expression crt_hunter.image with dissolve
             
             show Shana with dissolve
             S "Bless you [crt_hunter.name]!"
@@ -55,9 +55,9 @@ label bloodrunnersEndOfWeek1:
             S "[crt_hunter.name]"
             hide Shana
             
-            show crt_hunter.image
+            show expression crt_hunter.image
             h "Me??"
-            hide crt_hunter.image
+            hide expression crt_hunter.image
             
             show Shana 
             S "And, [player.name]."
@@ -66,9 +66,9 @@ label bloodrunnersEndOfWeek1:
     S "Thank you again, your loyalty to your family will be noted."
     hide Shana
     
-    show crt_hunter.image
+    show expression crt_hunter.image
     h "Whatever."
-    hide crt_hunter.image
+    hide expression crt_hunter.image
     
     show Shana
     S "Now you all may go, see you all next week."
@@ -89,9 +89,9 @@ label coppertailsEndOfWeek1:
     C "I am looking for volenteers tohelp me with some seriouse Coppertail family business tomorrow."
     hide Clarence
     
-    show crt_mechanic.image with spunch
+    show expression crt_mechanic.image with spunch
     m "I'll do it!"
-    hide crt_mechanic.image
+    hide expression crt_mechanic.image
     
     show Clarence with dissolve
     C "Err, yes, thank you [crt_mechanic.name]. I suspected that you might."
@@ -111,9 +111,9 @@ label coppertailsEndOfWeek1:
     C "The rest of you may now do what you wish."
     hide Clarence
     
-    show crt_mechanic.image
+    show expression crt_mechanic.image
     m "What is it that you need us for, sir?"
-    hide crt_mechanic.image
+    hide expression crt_mechanic.image
     
     show Clarence
     C "Ah, well. You will find out when you get there. "
@@ -123,9 +123,9 @@ label coppertailsEndOfWeek1:
     C "I think."
     hide Clarence with dissolve
     
-    show crt_mechanic.image
+    show expression crt_mechanic.image
     m "I think we should probably head off now."
-    hide crt_mechanic.image with dissolve
+    hide expression crt_mechanic.image with dissolve
     
     return
     
@@ -152,10 +152,10 @@ label daggermawEndOfWeek1:
     M "I told her, I said we arn't training a bunch of bean counters or mushroom pickers here. This is the defence of the clan we are talking about here. Our very existance-"
     hide Marrack
     
-    show crt_fighter.image
+    show expression crt_fighter.image
     f "So we can go then?"
     f "That's great because I have some-"
-    hide crt_fighter.image
+    hide expression crt_fighter.image
     
     show Marrack with hpunch
     M "I'M STILL TALKING!!"
@@ -163,9 +163,9 @@ label daggermawEndOfWeek1:
     M "EVER!"
     hide Marrack
     
-    show crt_fighter.image
+    show expression crt_fighter.image
     f "Sor-"
-    hide crt_fighter.image
+    hide expression crt_fighter.image
     
     show Marrack with vpunch
     M "YOU'RE STILL DOING IT!!"
@@ -215,7 +215,7 @@ label gildclawEndOfWeek1:
         "Volanteer": 
             P "I wish to put my name foreard and volenteer."
             T "Ah, that is most excelent!"
-        "Stay silent"
+        "Stay silent": 
             "..."
             T "Oh, I am a little disapointed by the lack of enthusiasm here."
             T "It doesn't say much about the new generation of Gildclaws, I must say."
@@ -229,9 +229,9 @@ label gildclawEndOfWeek1:
     T "Well now, I need one more person to help out."
     hide Temesh
     
-    show crt_trader.image
+    show expression crt_trader.image
     t "P-please ma'am, I-I would like t-to help out."
-    hide crt_trader.image
+    hide expression crt_trader.image
     
     show Temesh
     T "Thank you [crt_trader.name], that would be very good of you."
